@@ -14,7 +14,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # Read more about Android versioning at https://developer.android.com/studio/publish/versioning
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
-# https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
+# https://developer.apple.com/    - library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 version: 1.0.0+1
 
 environment:
@@ -23,12 +23,13 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+ 
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
-
+  provider: ^5.0.0
+  
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -45,8 +46,52 @@ flutter:
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:
-  # assets:
-  #   - images/a_dot_burr.jpeg
+  assets:
+    - lib/assets/SMART VISION/
+    - lib/assets/SMART VISION/3 METROS/
+    - lib/assets/SMART VISION/3 METROS/1 LETRAS LOG/
+    - lib/assets/SMART VISION/3 METROS/2 NUMEROS LOG/
+    - lib/assets/SMART VISION/3 METROS/3 E DIR LOG/
+    - lib/assets/SMART VISION/3 METROS/4 C LANDOLT LOG/
+    - lib/assets/SMART VISION/3 METROS/5 NIÑOS/
+    - lib/assets/SMART VISION/3 METROS/6 LETRAS/
+    - lib/assets/SMART VISION/3 METROS/7 NUMEROS/
+    - lib/assets/SMART VISION/3 METROS/8 E DIRECCIONAL/
+    - lib/assets/SMART VISION/3 METROS/11 ROJO-VERDE/
+    - lib/assets/SMART VISION/3 METROS/DIAL/
+    - lib/assets/SMART VISION/3 METROS/HERRAMIENTAS/
+    - lib/assets/SMART VISION/3 METROS/PRUEBAS Y AYUDAS DIAGNOSTICAS/
+    - lib/assets/SMART VISION/3 METROS/VIDEOS PUNTOS DE FIJACION/
+    - lib/assets/SMART VISION/4 METROS/
+    - lib/assets/SMART VISION/5 METROS/
+    - lib/assets/SMART VISION/6 METROS/
+    - lib/assets/SMART VISION/ATLAS E IMAGENES DE REFERENCIA/
+    - lib/assets/SMART VISION/DEFECTOS REFRACTIVOS/
+    - lib/assets/SMART VISION/MACULOPATIA/
+    - lib/assets/SMART VISION/TEST DE STEREOPSIS/
+    - lib/assets/SMART VISION/TEST DEL COLOR/
+    - lib/assets/SMART VISION/TIPOS DE LENTES/
+    - lib/assets/3 metros.jpg
+    - lib/assets/4 metros.jpg
+    - lib/assets/5 metros.jpg
+    - lib/assets/6 metros.jpg
+    - lib/assets/ATLAS.JPG
+    - lib/assets/CONFIGURACION.jpg
+    - lib/assets/CONFIGURACION2.jpg
+    - lib/assets/DEFECTOS REFRACTIVOS.jpg
+    - lib/assets/fondo arranque.jpg
+    - lib/assets/fondo imagenes.jpg
+    - lib/assets/FONDOS BLANCO.jpg
+    - lib/assets/MACULOPATIA.jpg
+    - lib/assets/SA3000V.JPG
+    - lib/assets/SMART VISION.jpg
+    - lib/assets/SMARTVISION PREMIUM.jpg
+    - lib/assets/SMARTVISION.jpg
+    - lib/assets/tipos de lentes.jpg
+    - lib/assets/videos de fijacion adultos.jpg
+    - lib/assets/videos de fijacion niños.jpg
+    - lib/assets/videos de fijacion.jpg
+    - lib/assets/VIDEOS ENFERMEDADES.jpg
   #   - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see

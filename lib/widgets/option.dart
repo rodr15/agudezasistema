@@ -61,26 +61,26 @@ class optionImage extends StatelessWidget {
     double widthScreen = MediaQuery.of(context).size.width;
     return InkWell(
       onTap: () {
-        pushRoute(context);
+        // pushRoute(context);
       },
       child: Container(
-        //padding: EdgeInsets.only(right: widthScreen / 10),
+          //padding: EdgeInsets.only(right: widthScreen / 10),
 
-        width: widthScreen / 3,
-        height: heigthScreen / 3,
-        decoration: BoxDecoration(
-          border: Border.all(
-              color: Colors.amber, width: 5, style: BorderStyle.solid),
-          borderRadius: BorderRadius.all(Radius.circular(20)),
-          boxShadow: <BoxShadow>[
-            BoxShadow(
-              color: Colors.black,
-              blurRadius: 20,
-              offset: Offset(0.0, 0.0),
-            ),
-          ],
-        ),
-      ),
+          width: widthScreen / 3,
+          height: heigthScreen / 3,
+          decoration: BoxDecoration(
+            border: Border.all(
+                color: Colors.amber, width: 5, style: BorderStyle.solid),
+            borderRadius: BorderRadius.all(Radius.circular(20)),
+            // boxShadow: <BoxShadow>[
+            //   BoxShadow(
+            //     color: Colors.black,
+            //     blurRadius: 20,
+            //     offset: Offset(0.0, 0.0),
+            //   ),
+            // ],
+          ),
+          child: Image.asset(image)),
     );
   }
 }
