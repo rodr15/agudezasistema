@@ -49,11 +49,15 @@ flutter:
   assets:
     - lib/assets/SMART VISION/
     - lib/assets/SMART VISION/3 METROS/
+    - lib/assets/SMART VISION/3 METROS/0 OPTOTIPO SNELLEN/
     - lib/assets/SMART VISION/3 METROS/1 LETRAS LOG/
     - lib/assets/SMART VISION/3 METROS/2 NUMEROS LOG/
     - lib/assets/SMART VISION/3 METROS/3 E DIR LOG/
     - lib/assets/SMART VISION/3 METROS/4 C LANDOLT LOG/
     - lib/assets/SMART VISION/3 METROS/5 NIÑOS/
+    - lib/assets/SMART VISION/3 METROS/5 NIÑOS/NLH/
+    - lib/assets/SMART VISION/3 METROS/5 NIÑOS/TEST DE COLOR/
+    - lib/assets/SMART VISION/3 METROS/5 NIÑOS/VIDEOS PUNTOS DE FIJACION/
     - lib/assets/SMART VISION/3 METROS/6 LETRAS/
     - lib/assets/SMART VISION/3 METROS/7 NUMEROS/
     - lib/assets/SMART VISION/3 METROS/8 E DIRECCIONAL/

@@ -16,7 +16,7 @@ class _OptionsState extends State<Options> {
     double widthScreen = MediaQuery.of(context).size.width;
     return Column(children: [
       optionImage(widget.image),
-      Name(widget.name),
+      // Name(widget.name),
     ]);
   }
 }

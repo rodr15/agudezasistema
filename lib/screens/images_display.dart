@@ -1,3 +1,5 @@
+import 'package:provider/provider.dart';
+import 'package:sistemaagudeza/provider/images_provider.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +9,7 @@ class ImagesDisplay extends StatefulWidget {
 }
 
 class _ImagesDisplay extends State<ImagesDisplay> {
-  List<String> imagenes = [];
+  List imagenes = [];
   int index = 0;
   int _pulsaciones = 0;
   bool tap = false;
@@ -21,8 +23,10 @@ class _ImagesDisplay extends State<ImagesDisplay> {
 
   @override
   Widget build(BuildContext context) {
+    final provider = Provider.of<ProvideImages>(context);
     double heigthScreen = MediaQuery.of(context).size.height;
     double widthScreen = MediaQuery.of(context).size.width;
+    imagenes = provider.getImages;
     void onTap() {
       setState(() {
         if (backGroundColor == Colors.black) {
@@ -96,7 +100,7 @@ class _ImagesDisplay extends State<ImagesDisplay> {
             color: backGroundColor,
             height: heigthScreen,
             width: widthScreen,
-            child: Image.asset("lib/assets/${imagenes[index]}"),
+            child: Image.asset(imagenes[index][0]),
           ),
         ),
       ),
