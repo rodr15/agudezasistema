@@ -15,7 +15,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   int _pulsaciones = 0;
 
   int _contador = 0;
-  List menu = [0, 0, 0, 0];
+  List menu = [0, 0, 0, 0, 0];
   int indexMenu = 0;
 
   bool change = true;
@@ -43,6 +43,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
         if (_pulsaciones == 2) {
           print('menuIndex -> $index');
+          print('contador -> $_contador');
           switch (event.physicalKey.usbHidUsage) {
             case 458831: // DERECHA
               _controller.animateTo(
@@ -52,6 +53,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               _contador++;
               if (_contador > imagenes.length - 1)
                 _contador = imagenes.length - 1;
+              index = _contador;
               break;
             case 458832: // IZQUIERDA
               _controller.animateTo(
@@ -60,8 +62,10 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   duration: Duration(milliseconds: 100));
               _contador--;
               if (_contador < 0) _contador = 0;
+              index = _contador;
               break;
             case 458792: // ENTER
+              provider.setTriggerVideo = false;
               print('TRIGGER IMAGE');
               print(provider.getTriggerImage);
               /*if (provider.getTriggerImage) {
@@ -92,10 +96,12 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                 index = menu[menu.indexOf(0) - 1] - 1;
               else
                 index = menu[menu.length - 1] - 1;
+              if (provider.getTriggerImage) _contador = index;
+
               break;
             case 458756: // LETRA A
               provider.setTriggerImage = false;
-              provider.setTriggerVideo = false;
+
               if (menu.indexOf(0) != 0) menu[menu.indexOf(0) - 1] = 0;
               _controller.jumpTo(0.0);
               provider.setMenus = menu;
@@ -117,8 +123,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
         focusNode: _focusNode,
         onKey: _handleKeyEvent,
         child: Stack(children: [
-          if (provider.getTriggerVideo)
-            VideoPlayerScreen(imagenes[_contador][0]),
+          if (provider.getTriggerVideo) VideoPlayerScreen(imagenes[index][0]),
           Container(
               color: (provider.getTriggerVideo
                   ? Colors.transparent
@@ -144,7 +149,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   return Options(imagenes[index][0], imagenes[index][1]);
                 }),
               )),
-          if (provider.getTriggerImage) ImagesDisplay(imagenes[_contador][0]),
+          if (provider.getTriggerImage) ImagesDisplay(imagenes[index][0]),
           Positioned(
             top: heigthScreen * 9 / 10,
             child: Container(
