@@ -15,8 +15,11 @@ class SistemaApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (context) => ProvideImages()),
         ],
-        child: MaterialApp(initialRoute: 'home', routes: {
-          'home': (context) => MenuPrincipal(),
-        }));
+        child: MaterialApp(
+            //theme: ThemeData(scaffoldBackgroundColor: Colors.black),
+            initialRoute: 'home',
+            routes: {
+              'home': (context) => MenuPrincipal(),
+            }));
   }
 }

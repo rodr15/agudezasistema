@@ -18,9 +18,12 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   List menu = [0, 0, 0, 0, 0];
   int indexMenu = 0;
 
-  bool change = true;
   List imagenes = [];
   int index = 0;
+  bool imageTrigger = false;
+  bool videoTrigger = false;
+  bool isPlaying = false;
+  bool play = true;
   final FocusNode _focusNode = FocusNode();
   final ScrollController _controller = ScrollController();
   @override
@@ -37,6 +40,10 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
     menu = provider.getMenus;
     imagenes = provider.getImages;
+    isPlaying = provider.getIsPlaying;
+    videoTrigger = provider.getTriggerVideo;
+    imageTrigger = provider.getTriggerImage;
+
     void _handleKeyEvent(RawKeyEvent event) {
       setState(() {
         _pulsaciones++;
@@ -44,30 +51,46 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
         if (_pulsaciones == 2) {
           print('menuIndex -> $index');
           print('contador -> $_contador');
+
+          print('IMAGE -> ${provider.getTriggerImage}');
+          print('VIDEO -> ${provider.getTriggerVideo}');
+          print('ISPLAYING -> ${provider.getIsPlaying}');
+
+          print('Escribiendo en -> ${menu.indexOf(0)}');
+          print('CONTADOR -> ${_contador} ');
+          print('INDEX -> ${_contador}');
           switch (event.physicalKey.usbHidUsage) {
             case 458831: // DERECHA
-              _controller.animateTo(
-                  _controller.offset + MediaQuery.of(context).size.width / 4,
-                  curve: Curves.linear,
-                  duration: Duration(milliseconds: 100));
+
               _contador++;
               if (_contador > imagenes.length - 1)
                 _contador = imagenes.length - 1;
               index = _contador;
+              _controller.jumpTo(
+                  _contador * (MediaQuery.of(context).size.width * 1 / 3));
+              // _controller.animateTo(
+              //     _controller.offset +
+              //         _contador * (MediaQuery.of(context).size.width * 7 / 20),
+              //     curve: Curves.linear,
+              //     duration: Duration(milliseconds: 100));
+
               break;
             case 458832: // IZQUIERDA
-              _controller.animateTo(
-                  _controller.offset - MediaQuery.of(context).size.width / 4,
-                  curve: Curves.linear,
-                  duration: Duration(milliseconds: 100));
+
               _contador--;
               if (_contador < 0) _contador = 0;
               index = _contador;
+              print(_controller.offset);
+              _controller.jumpTo(
+                  _contador * (MediaQuery.of(context).size.width * 1 / 3));
+              // _controller.animateTo(
+              //     _controller.offset -
+              //         _contador * (MediaQuery.of(context).size.width * 7 / 20),
+              //     curve: Curves.linear,
+              //     duration: Duration(milliseconds: 100));
               break;
             case 458792: // ENTER
-              provider.setTriggerVideo = false;
-              print('TRIGGER IMAGE');
-              print(provider.getTriggerImage);
+
               /*if (provider.getTriggerImage) {
                 Navigator.push(
                   context,
@@ -85,29 +108,31 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                           VideoPlayerScreen(imagenes[index][0])),
                 );
               }*/
-              menu[menu.indexOf(0)] = _contador + 1;
-              provider.setMenus = menu;
-              _controller.jumpTo(0.0);
-              _contador = 0;
-              print('INDEX $indexMenu');
-              print('MENU PRINCIPAL $menu');
+              if (!imageTrigger && !videoTrigger) {
+                menu[menu.indexOf(0)] = _contador + 1;
+                provider.setMenus = menu;
+                _controller.jumpTo(0.0);
+                _contador = 0;
 
-              if (menu.contains(0))
-                index = menu[menu.indexOf(0) - 1] - 1;
-              else
-                index = menu[menu.length - 1] - 1;
-              if (provider.getTriggerImage) _contador = index;
+                if (menu.contains(0))
+                  index = menu[menu.indexOf(0) - 1] - 1;
+                else
+                  index = menu[menu.length - 1] - 1;
 
+                // if (provider.getTriggerImage) _contador = index;
+              }
               break;
             case 458756: // LETRA A
+
+              provider.setTriggerVideo = false;
               provider.setTriggerImage = false;
 
-              if (menu.indexOf(0) != 0) menu[menu.indexOf(0) - 1] = 0;
+              print('cero ${menu.indexOf(0)}');
+              if (menu.indexOf(0) > 0) menu[menu.indexOf(0) - 1] = 0;
               _controller.jumpTo(0.0);
               provider.setMenus = menu;
               _contador = 0;
-              print('INDEX $indexMenu');
-              print('MENU PRINCIPAL $menu');
+
               break;
             default:
           }
@@ -123,50 +148,63 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
         focusNode: _focusNode,
         onKey: _handleKeyEvent,
         child: Stack(children: [
-          if (provider.getTriggerVideo) VideoPlayerScreen(imagenes[index][0]),
           Container(
-              color: (provider.getTriggerVideo
-                  ? Colors.transparent
-                  : Colors.black),
+              child: Image.asset(
+            'lib/assets/miniaturas/SMARTVISION PREMIUM.jpg',
+          )),
+          // Positioned(
+          //   left: widthScreen * 13 / 40,
+          //   child: Container(
+          //     width: widthScreen * 7 / 20,
+          //     height: heigthScreen,
+          //     color: Colors.red,
+          //   ),
+          // ),
+          if (isPlaying) VideoPlayerScreen(imagenes[index][0], play),
+          Container(
+              color: Colors.transparent,
               height: heigthScreen,
               width: widthScreen,
               child: GridView.count(
                 controller: _controller,
                 padding: EdgeInsets.only(
-                  top: heigthScreen * 16 / 30,
-                  left: widthScreen * 4 / 10,
-                  right: widthScreen * 6 / 10,
+                  top: heigthScreen * 20 / 30,
+                  left: widthScreen * 1 / 3,
+                  right: widthScreen * 13 / 40,
                 ),
                 shrinkWrap: true,
                 // primary: true,
-
-                childAspectRatio: 1,
-                mainAxisSpacing: widthScreen / 10,
+// w/h
+                // childAspectRatio: 1.0,
+                childAspectRatio: (heigthScreen / 4) / (widthScreen / 4),
+                // mainAxisSpacing: widthScreen / 10,
                 scrollDirection: Axis.horizontal,
                 //controller: _controller,
                 crossAxisCount: 1,
                 children: List.generate(imagenes.length, (index) {
-                  return Options(imagenes[index][0], imagenes[index][1]);
+                  return Options(imagenes[index][0], imagenes[index][1],
+                      index == _contador);
                 }),
               )),
-          if (provider.getTriggerImage) ImagesDisplay(imagenes[index][0]),
-          Positioned(
-            top: heigthScreen * 9 / 10,
-            child: Container(
-              height: heigthScreen / 10,
-              width: widthScreen,
-              color: Colors.transparent,
-              child: Center(
-                  child: Text(
-                imagenes[_contador][1].toString(),
-                style: TextStyle(
-                  fontSize: heigthScreen / 10,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-              )),
+          if (imageTrigger) ImagesDisplay(imagenes[index][0]),
+          if (!videoTrigger)
+            Positioned(
+              top: heigthScreen * 9 / 10,
+              child: Container(
+                height: heigthScreen / 10,
+                width: widthScreen,
+                color: Colors.transparent,
+                child: Center(
+                    child: Text(
+                  imagenes[_contador][1].toString(),
+                  style: TextStyle(
+                    fontSize: heigthScreen / 30,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
+                )),
+              ),
             ),
-          ),
         ]),
       ),
     );

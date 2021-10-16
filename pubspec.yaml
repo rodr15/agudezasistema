@@ -80,6 +80,23 @@ flutter:
     - lib/assets/3 METROS/HERRAMIENTAS/
     - lib/assets/3 METROS/PRUEBAS Y AYUDAS DIAGNOSTICAS/
     - lib/assets/3 METROS/VIDEOS PUNTOS DE FIJACION/
+    - lib/assets/4 METROS/
+    - lib/assets/4 METROS/0 OPTOTIPO SNELLEN/
+    - lib/assets/4 METROS/1 LETRAS LOG/
+    - lib/assets/4 METROS/2 NUMEROS LOG/
+    - lib/assets/4 METROS/3 E DIR LOG/
+    - lib/assets/4 METROS/4 C LANDOLT LOG/
+    - lib/assets/4 METROS/5 NIÑOS/
+    - lib/assets/4 METROS/5 NIÑOS/NLH/
+    - lib/assets/4 METROS/5 NIÑOS/TEST DE COLOR/
+    - lib/assets/4 METROS/6 LETRAS/
+    - lib/assets/4 METROS/7 NUMEROS/
+    - lib/assets/4 METROS/8 E DIRECCIONAL/
+    - lib/assets/4 METROS/11 ROJO-VERDE/
+    - lib/assets/4 METROS/DIAL/
+    - lib/assets/4 METROS/HERRAMIENTAS/
+    - lib/assets/4 METROS/PRUEBAS Y AYUDAS DIAGNOSTICAS/
+    - lib/assets/4 METROS/VIDEOS PUNTOS DE FIJACION/
     # - lib/assets/VIDEOS PUNTOS DE FIJACION/
   #   - images/a_dot_ham.jpeg
 
