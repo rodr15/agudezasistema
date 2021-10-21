@@ -17,22 +17,7 @@ class VideoPlayerScreen extends StatefulWidget {
 }
 
 class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
-  void _validation(BuildContext context) async {
-    final provider = Provider.of<ProvideImages>(context, listen: false);
-    List menu = [];
-
-    if (menu.contains(0))
-      menu[menu.indexOf(0) - 1] = 0;
-    else
-      menu.last = 0;
-    provider.setMenus = menu;
-    provider.setTriggerVideo = false;
-    Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (BuildContext context) => MenuPrincipal()),
-        (route) => true);
-  }
-
-  late VideoPlayerController _controller;
+  late VideoPlayerController _Vcontroller;
   late Future<void> _initializeVideoPlayerFuture;
   String video = '';
   void correct() {
@@ -47,21 +32,21 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // Create and store the VideoPlayerController. The VideoPlayerController
     // offers several different constructors to play videos from assets, files,
     //  or the internet.
-    // _controller = VideoPlayerController.network(
+    // _Vcontroller = VideoPlayerController.network(
     //   'https://flutter.github.io/assets-for-api-docs/assets/videos/butterfly.mp4',
     // );
 
     video = widget.videos;
     correct();
     print('video- > $video');
-    _controller = VideoPlayerController.asset(video);
+    _Vcontroller = VideoPlayerController.asset(video);
 
     // Initialize the controller and store the Future for later use.
-    _initializeVideoPlayerFuture = _controller.initialize();
+    _initializeVideoPlayerFuture = _Vcontroller.initialize();
 
     // Use the controller to loop the video.
-    _controller.setLooping(true);
-    _controller.play();
+    _Vcontroller.setLooping(true);
+    _Vcontroller.play();
 
     super.initState();
   }
@@ -69,8 +54,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   void dispose() {
     // Ensure disposing of the VideoPlayerController to free up resources.
-    _controller.dispose();
-
+    _Vcontroller.dispose();
     super.dispose();
   }
 
@@ -81,15 +65,11 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
 
     // video = widget.videos;
     // correct();
-    print('');
-    print('');
-    print(widget.videos);
-    print('');
-    print('');
-    if (play)
-      _controller.play();
-    else
-      _controller.pause();
+
+    // if (play)
+    //   _Vcontroller.play();
+    // else
+    //   _Vcontroller.pause();
     return Scaffold(
       // Use a FutureBuilder to display a loading spinner while waiting for the
       // VideoPlayerController to finish initializing.
@@ -98,13 +78,13 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
         builder: (context, snapshot) {
           // if (snapshot.connectionState == ConnectionState.done) {
 
-          if (_controller.value.isInitialized) {
+          if (_Vcontroller.value.isInitialized) {
             // If the VideoPlayerController has finished initialization, use
             // the data it provides to limit the aspect ratio of the video.
             return AspectRatio(
-              aspectRatio: _controller.value.aspectRatio,
+              aspectRatio: _Vcontroller.value.aspectRatio,
               // Use the VideoPlayer widget to display the video.
-              child: VideoPlayer(_controller),
+              child: VideoPlayer(_Vcontroller),
             );
           } else {
             // If the VideoPlayerController is still initializing, show a

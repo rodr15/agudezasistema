@@ -81,7 +81,7 @@ class optionImage extends StatelessWidget {
         decoration: BoxDecoration(
           image: DecorationImage(fit: BoxFit.fill, image: AssetImage(image)),
           border: Border.all(
-              color: (selected ? Colors.amber : Colors.amber.shade50),
+              color: (selected ? Colors.orange : Colors.orange.shade50),
               width: 5,
               style: BorderStyle.solid),
           borderRadius: BorderRadius.all(Radius.circular(20)),
