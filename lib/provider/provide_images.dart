@@ -13,8 +13,8 @@ class ProvideImages with ChangeNotifier {
     ['lib/assets/miniaturas/ATLAS.JPG', 'ATLAS E IMAGENES DE REFERENCIA'],
     ['lib/assets/miniaturas/DEFECTOS REFRACTIVOS.jpg', 'DEFECTOS REFRACTIVOS'],
     ['lib/assets/miniaturas/MACULOPATIA.jpg', 'MACULOPATIA'],
-    ['', 'TEST DE ESTEREOPSIS'],
-    ['', 'TEST DE COLOR'],
+    ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE ESTEREOPSIS'],
+    ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE COLOR'],
     ['lib/assets/miniaturas/tipos de lentes.jpg', 'TITPOS DE LENTES']
   ];
 
@@ -80,8 +80,8 @@ class ProvideImages with ChangeNotifier {
             'DEFECTOS REFRACTIVOS'
           ],
           ['lib/assets/miniaturas/MACULOPATIA.jpg', 'MACULOPATIA'],
-          ['', 'TEST DE ESTEREOPSIS'],
-          ['', 'TEST DE COLOR'],
+          ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE ESTEREOPSIS'],
+          ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE COLOR'],
           ['lib/assets/miniaturas/tipos de lentes.jpg', 'TITPOS DE LENTES']
         ];
         break;
@@ -92,12 +92,12 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/3 METROS/0 OPTOTIPO SNELLEN/1.JPG', 'OPTOTIPO SNELLEN'],
           ['lib/assets/3 METROS/1 LETRAS LOG/1.PNG', 'LETRAS LOG'],
           ['lib/assets/3 METROS/2 NUMEROS LOG/1.PNG', 'NUMEROS LOG'],
-          ['lib/assets/3 METROS/3 E DIR LOG/1.PNG', 'E DIR LOG'],
+          ['lib/assets/3 METROS/3 E DIR LOG/1.PNG', 'E DIR'],
           ['lib/assets/3 METROS/4 C LANDOLT LOG/1.PNG', 'C LANDOLT LOG'],
           ['lib/assets/3 METROS/5 NIÑOS/1.PNG', 'NIÑOS'],
           ['lib/assets/3 METROS/6 LETRAS/3_50-10.JPG', 'LETRAS'],
           ['lib/assets/3 METROS/7 NUMEROS/3_50-6.JPG', 'NUMEROS'],
-          ['lib/assets/3 METROS/8 E DIRECCIONAL/3_50-14.jpg', 'E DIRECCIONAL'],
+          ['lib/assets/3 METROS/8 E DIRECCIONAL/3_50-14.JPG', 'E DIRECCIONAL'],
           ['lib/assets/3 METROS/11 ROJO-VERDE/3_50-6-rg.jpg', 'ROJO VERDE'],
           ['lib/assets/DIAL/0.JPG', 'DIAL'],
           ['lib/assets/HERRAMIENTAS/1.JPG', 'HERRAMIENTAS'],
@@ -3863,7 +3863,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/5 METROS/5 NIÑOS/1.PNG', 'NIÑOS'],
           ['lib/assets/5 METROS/6 LETRAS/5_50-10.JPG', 'LETRAS'],
           ['lib/assets/5 METROS/7 NUMEROS/5_50-6.JPG', 'NUMEROS'],
-          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-14.jpg', 'E DIRECCIONAL'],
+          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-14.JPG', 'E DIRECCIONAL'],
           ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-6-rg.jpg', 'ROJO VERDE'],
           ['lib/assets/DIAL/0.JPG', 'DIAL'],
           ['lib/assets/HERRAMIENTAS/1.JPG', 'HERRAMIENTAS'],
@@ -6303,7 +6303,7 @@ class ProvideImages with ChangeNotifier {
 
       case '4,6,0,0,0':
         images = [
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/058.JPG', 'NLH'],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/059.JPG', 'NLH'],
           [
             'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 01.jpg',
             'TEST COLOR'
@@ -6314,7 +6314,7 @@ class ProvideImages with ChangeNotifier {
         break;
       case '4,6,1,0,0':
         images = [
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/058.JPG', ''],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/059.JPG', ''],
           ['lib/assets/6 METROS/5 NIÑOS/NLH/060.JPG', ''],
           ['lib/assets/6 METROS/5 NIÑOS/NLH/061.JPG', ''],
           ['lib/assets/6 METROS/5 NIÑOS/NLH/062.JPG', ''],
@@ -7644,7 +7644,7 @@ class ProvideImages with ChangeNotifier {
             ''
           ],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/BLEFARITIS.jpg', ''],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/CATARATA.Jpg', ''],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/CATARATA.JPG', ''],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/CHALAZION.jpg', ''],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CONJUNTIVITIS ALERGICA.jpg',
@@ -7675,14 +7675,14 @@ class ProvideImages with ChangeNotifier {
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/dermatochalasis 2.jpeg',
             ''
           ],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/EPICANTO.Jpg', ''],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/GLAUCOMA.Jpg', ''],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/EPICANTO.JPG', ''],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/GLAUCOMA.JPG', ''],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/HEMORRAGIA SUBCONJUNTIVAL.jpg',
             ''
           ],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/HERPES OCULAR.jpeg', ''],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/NEVUS.Jpg', ''],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/NEVUS.JPG', ''],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/orzuelo 1.jpeg', ''],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/orzuelo 2.jpeg', ''],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/pinguecula 1.jpeg', ''],
@@ -8734,6 +8734,106 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/TIPOS DE LENTES/POLARIZADO 2.jpg', ''],
           ['lib/assets/TIPOS DE LENTES/TransitionsLensColors.jpg', '']
         ];
+        break;
+
+      case '10,1,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,3,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,4,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,5,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,6,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,7,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,8,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,9,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,10,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,11,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,12,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,13,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,14,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,15,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,16,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,17,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,18,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,19,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,20,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
         break;
       default:
     }

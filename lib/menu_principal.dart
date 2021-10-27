@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
 import 'package:videoplayer/provider/provide_images.dart';
@@ -21,13 +22,16 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   int _contador = 0;
   List menu = [0, 0, 0, 0, 0];
   int indexMenu = 0;
-
+  bool isInMenu = true;
   List imagenes = [];
   int index = 0;
+  int indexMenuVideo = 0;
+  bool changeVideo = false;
   bool imageTrigger = false;
   bool videoTrigger = false;
   bool isPlaying = false;
   bool play = true;
+  double volume = 0.5;
   final FocusNode _focusNode = FocusNode();
   final ScrollController _controller = ScrollController();
   @override
@@ -41,12 +45,86 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     final provider = Provider.of<ProvideImages>(context);
     double heigthScreen = MediaQuery.of(context).size.height;
     double widthScreen = MediaQuery.of(context).size.width;
-
+    int botones = 2;
     menu = provider.getMenus;
     imagenes = provider.getImages;
     isPlaying = provider.getIsPlaying;
     videoTrigger = provider.getTriggerVideo;
     imageTrigger = provider.getTriggerImage;
+    void playStop() {
+      setState(() {
+        play = !play;
+      });
+    }
+
+    void upVolume() {
+      if (volume < 1.0) {
+        setState(() {
+          volume = volume + 0.1;
+        });
+      }
+    }
+
+    void downVolume() {
+      if (volume >= 0.0) {
+        setState(() {
+          volume = volume - 0.1;
+        });
+      }
+    }
+
+    Stack VideoTools = Stack(
+      children: [
+        Positioned(
+            left: widthScreen / 3,
+            child: Container(
+              color: Colors.transparent,
+              width: widthScreen / 3,
+              child: Row(
+                children: [
+                  Spacer(),
+                  FloatingActionButton(
+                    backgroundColor: Colors.amber,
+                    heroTag: 'playStopButton',
+                    mini: true,
+                    child: Icon(
+                      (!play ? Icons.play_arrow : Icons.pause),
+                      color: (!isInMenu && indexMenuVideo == 0
+                          ? Colors.black
+                          : Colors.white),
+                    ),
+                    onPressed: playStop,
+                  ),
+                  Spacer(),
+                  FloatingActionButton(
+                      backgroundColor: Colors.amber,
+                      heroTag: 'upVolume',
+                      mini: true,
+                      child: Icon(
+                        Icons.volume_up_outlined,
+                        color: (!isInMenu && indexMenuVideo == 1
+                            ? Colors.black
+                            : Colors.white),
+                      ),
+                      onPressed: upVolume),
+                  FloatingActionButton(
+                      backgroundColor: Colors.amber,
+                      heroTag: 'downVolume',
+                      mini: true,
+                      child: Icon(
+                        Icons.volume_down_outlined,
+                        color: (!isInMenu && indexMenuVideo == 2
+                            ? Colors.black
+                            : Colors.white),
+                      ),
+                      onPressed: downVolume),
+                  // Text(volume.toString()),
+                  Spacer(),
+                ],
+              ),
+            )),
+      ],
+    );
 
     void _handleKeyEvent(RawKeyEvent event) {
       setState(() {
@@ -64,28 +142,39 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           print('Escribiendo en -> ${menu.indexOf(0)}');
           print('CONTADOR -> ${_contador} ');
           print('INDEX -> ${index}');
+          print('change -> $changeVideo');
+          print(event.physicalKey.usbHidUsage);
           switch (event.physicalKey.usbHidUsage) {
             case 458831: // DERECHA
-              _contador++;
-              if (_contador > imagenes.length - 1) _contador = 0;
-              index = _contador;
-              _controller.jumpTo(
-                  _contador * (MediaQuery.of(context).size.width * 1 / 3));
+              if (isInMenu) {
+                _contador++;
+                if (_contador > imagenes.length - 1) _contador = 0;
+                index = _contador;
+                _controller.jumpTo(
+                    _contador * (MediaQuery.of(context).size.width * 1 / 3));
+              } else {
+                indexMenuVideo++;
+                if (indexMenu > botones) indexMenu = botones;
+              }
               // _controller.animateTo(
               //     _controller.offset +
-              //         _contador * (MediaQuery.of(context).size.width * 7 / 20),
+              //         (MediaQuery.of(context).size.width * 1 / 3),
               //     curve: Curves.linear,
               //     duration: Duration(milliseconds: 100));
 
               break;
             case 458832: // IZQUIERDA
-
-              _contador--;
-              if (_contador < 0) _contador = imagenes.length - 1;
-              index = _contador;
-              print(_controller.offset);
-              _controller.jumpTo(
-                  _contador * (MediaQuery.of(context).size.width * 1 / 3));
+              if (isInMenu) {
+                _contador--;
+                if (_contador < 0) _contador = imagenes.length - 1;
+                index = _contador;
+                print(_controller.offset);
+                _controller.jumpTo(
+                    _contador * (MediaQuery.of(context).size.width * 1 / 3));
+              } else {
+                indexMenuVideo--;
+                if (indexMenuVideo < 0) indexMenuVideo = 0;
+              }
               // _controller.animateTo(
               //     _controller.offset -
               //         _contador * (MediaQuery.of(context).size.width * 7 / 20),
@@ -93,34 +182,67 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               //     duration: Duration(milliseconds: 100));
               break;
             case 458792: // ENTER
+              if (isInMenu) {
+                if (changeVideo) {
+                  provider.setIsPlaying = false;
+                  changeVideo = false;
+                  break;
+                }
+                if ((!imageTrigger && !videoTrigger) &&
+                    (menu.indexOf(0) < menu.length - 1)) {
+                  menu[menu.indexOf(0)] = _contador + 1;
+                  provider.setMenus = menu;
+                  _controller.jumpTo(0.0);
+                  _contador = 0;
 
-              if ((!imageTrigger && !videoTrigger) &&
-                  (menu.indexOf(0) < menu.length - 1)) {
-                menu[menu.indexOf(0)] = _contador + 1;
-                provider.setMenus = menu;
-                _controller.jumpTo(0.0);
-                _contador = 0;
+                  if (menu.contains(0))
+                    index = menu[menu.indexOf(0) - 1] - 1;
+                  else
+                    index = menu[menu.length - 1] - 1;
 
-                if (menu.contains(0))
-                  index = menu[menu.indexOf(0) - 1] - 1;
-                else
-                  index = menu[menu.length - 1] - 1;
-
-                if (provider.getTriggerImage) _contador = index;
+                  if (provider.getTriggerImage) _contador = index;
+                }
+              } else {
+                switch (indexMenuVideo) {
+                  case 0:
+                    playStop();
+                    break;
+                  case 1:
+                    upVolume();
+                    break;
+                  case 2:
+                    downVolume();
+                    break;
+                  default:
+                }
               }
               break;
             case 458756: // LETRA A
-              if (menu.indexOf(0) > 0) {
-                provider.setTriggerVideo = false;
-                provider.setTriggerImage = false;
+              if (isInMenu) {
+                if (isPlaying && videoTrigger)
+                  changeVideo = true;
+                else
+                  changeVideo = false;
+                if (menu.indexOf(0) > 0) {
+                  provider.setTriggerVideo = false;
+                  provider.setTriggerImage = false;
 
-                print('cero ${menu.indexOf(0)}');
-                menu[menu.indexOf(0) - 1] = 0;
-                _controller.jumpTo(0.0);
-                provider.setMenus = menu;
-                _contador = 0;
-                index = 0;
+                  print('cero ${menu.indexOf(0)}');
+                  menu[menu.indexOf(0) - 1] = 0;
+                  _controller.jumpTo(0.0);
+                  provider.setMenus = menu;
+                  _contador = 0;
+                  index = 0;
+                }
               }
+              break;
+            case 458834: // Arriba
+              if (isPlaying) {
+                isInMenu = false;
+              }
+              break;
+            case 458833: //Abajo
+              isInMenu = true;
               break;
             default:
           }
@@ -134,16 +256,22 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       body: WillPopScope(
         onWillPop: () {
           _validation(context);
-          if (menu.indexOf(0) > 0) {
-            provider.setTriggerVideo = false;
-            provider.setTriggerImage = false;
+          if (isInMenu) {
+            if (isPlaying && videoTrigger)
+              changeVideo = true;
+            else
+              changeVideo = false;
+            if (menu.indexOf(0) > 0) {
+              provider.setTriggerVideo = false;
+              provider.setTriggerImage = false;
 
-            print('cero ${menu.indexOf(0)}');
-            menu[menu.indexOf(0) - 1] = 0;
-            _controller.jumpTo(0.0);
-            provider.setMenus = menu;
-            _contador = 0;
-            index = 0;
+              print('cero ${menu.indexOf(0)}');
+              menu[menu.indexOf(0) - 1] = 0;
+              _controller.jumpTo(0.0);
+              provider.setMenus = menu;
+              _contador = 0;
+              index = 0;
+            }
           }
           return Future.value(false);
         },
@@ -156,20 +284,13 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                 child: Image.asset(
               'lib/assets/miniaturas/SMARTVISION PREMIUM.jpg',
             )),
-            // Positioned(
-            //   left: widthScreen * 13 / 40,
-            //   child: Container(
-            //     width: widthScreen * 7 / 20,
-            //     height: heigthScreen,
-            //     color: Colors.red,
-            //   ),
-            // ),
-            if (isPlaying) VideoPlayerScreen(imagenes[index][0], play),
+            if (isPlaying) VideoPlayerScreen(imagenes[index][0], play, volume),
             Container(
                 color: Colors.transparent,
                 height: heigthScreen,
                 width: widthScreen,
                 child: GridView.count(
+                  dragStartBehavior: DragStartBehavior.start,
                   controller: _controller,
                   padding: EdgeInsets.only(
                     top: heigthScreen * 20 / 30,
@@ -187,7 +308,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   crossAxisCount: 1,
                   children: List.generate(imagenes.length, (index) {
                     return Options(imagenes[index][0], imagenes[index][1],
-                        index == _contador);
+                        isInMenu && (index == _contador));
                   }),
                 )),
             if (imageTrigger) ImagesDisplay(imagenes[index][0]),
@@ -209,6 +330,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   )),
                 ),
               ),
+            if (isPlaying) VideoTools,
           ]),
         ),
       ),

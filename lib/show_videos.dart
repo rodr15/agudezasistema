@@ -9,8 +9,8 @@ import 'menu_principal.dart';
 class VideoPlayerScreen extends StatefulWidget {
   String videos = '';
   bool play = true;
-
-  VideoPlayerScreen(this.videos, this.play);
+  double volume = 0;
+  VideoPlayerScreen(this.videos, this.play, this.volume);
 
   @override
   _VideoPlayerScreenState createState() => _VideoPlayerScreenState();
@@ -62,14 +62,16 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   Widget build(BuildContext context) {
     final provider = Provider.of<ProvideImages>(context);
     bool play = widget.play;
-
+    double volume = widget.volume;
     // video = widget.videos;
     // correct();
 
-    // if (play)
-    //   _Vcontroller.play();
-    // else
-    //   _Vcontroller.pause();
+    if (play)
+      _Vcontroller.play();
+    else
+      _Vcontroller.pause();
+
+    _Vcontroller.setVolume(volume);
     return Scaffold(
       // Use a FutureBuilder to display a loading spinner while waiting for the
       // VideoPlayerController to finish initializing.
