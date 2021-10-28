@@ -45,7 +45,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     final provider = Provider.of<ProvideImages>(context);
     double heigthScreen = MediaQuery.of(context).size.height;
     double widthScreen = MediaQuery.of(context).size.width;
-    int botones = 2;
+    int botones = 1;
     menu = provider.getMenus;
     imagenes = provider.getImages;
     isPlaying = provider.getIsPlaying;
@@ -57,21 +57,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       });
     }
 
-    void upVolume() {
-      if (volume < 1.0) {
-        setState(() {
-          volume = volume + 0.1;
-        });
-      }
-    }
-
-    void downVolume() {
-      if (volume >= 0.0) {
-        setState(() {
-          volume = volume - 0.1;
-        });
-      }
-    }
+    void stop() {}
 
     Stack VideoTools = Stack(
       children: [
@@ -98,26 +84,16 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   Spacer(),
                   FloatingActionButton(
                       backgroundColor: Colors.amber,
-                      heroTag: 'upVolume',
+                      heroTag: 'stop',
                       mini: true,
                       child: Icon(
-                        Icons.volume_up_outlined,
+                        Icons.stop,
                         color: (!isInMenu && indexMenuVideo == 1
                             ? Colors.black
                             : Colors.white),
                       ),
-                      onPressed: upVolume),
-                  FloatingActionButton(
-                      backgroundColor: Colors.amber,
-                      heroTag: 'downVolume',
-                      mini: true,
-                      child: Icon(
-                        Icons.volume_down_outlined,
-                        color: (!isInMenu && indexMenuVideo == 2
-                            ? Colors.black
-                            : Colors.white),
-                      ),
-                      onPressed: downVolume),
+                      onPressed: stop),
+
                   // Text(volume.toString()),
                   Spacer(),
                 ],
@@ -154,7 +130,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                     _contador * (MediaQuery.of(context).size.width * 1 / 3));
               } else {
                 indexMenuVideo++;
-                if (indexMenu > botones) indexMenu = botones;
+                if (indexMenuVideo > botones) indexMenuVideo = botones;
               }
               // _controller.animateTo(
               //     _controller.offset +
@@ -208,10 +184,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                     playStop();
                     break;
                   case 1:
-                    upVolume();
+                    stop();
                     break;
                   case 2:
-                    downVolume();
                     break;
                   default:
                 }
