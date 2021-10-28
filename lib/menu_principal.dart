@@ -20,6 +20,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   int _pulsaciones = 0;
 
   int _contador = 0;
+  int _contadorAbajo = 0;
   List menu = [0, 0, 0, 0, 0];
   int indexMenu = 0;
   bool isInMenu = true;
@@ -32,6 +33,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   bool isPlaying = false;
   bool play = true;
   double volume = 0.5;
+  String complemento = '';
   final FocusNode _focusNode = FocusNode();
   final ScrollController _controller = ScrollController();
   @override
@@ -46,6 +48,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     double heigthScreen = MediaQuery.of(context).size.height;
     double widthScreen = MediaQuery.of(context).size.width;
     int botones = 1;
+
     menu = provider.getMenus;
     imagenes = provider.getImages;
     isPlaying = provider.getIsPlaying;
@@ -122,6 +125,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           print(event.physicalKey.usbHidUsage);
           switch (event.physicalKey.usbHidUsage) {
             case 458831: // DERECHA
+              complemento = '';
+              _contadorAbajo = 0;
               if (isInMenu) {
                 _contador++;
                 if (_contador > imagenes.length - 1) _contador = 0;
@@ -140,6 +145,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
               break;
             case 458832: // IZQUIERDA
+              complemento = '';
+              _contadorAbajo = 0;
               if (isInMenu) {
                 _contador--;
                 if (_contador < 0) _contador = imagenes.length - 1;
@@ -193,6 +200,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               }
               break;
             case 458756: // LETRA A
+              complemento = '';
+              _contadorAbajo = 0;
               if (isInMenu) {
                 if (isPlaying && videoTrigger)
                   changeVideo = true;
@@ -212,12 +221,50 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               }
               break;
             case 458834: // Arriba
-              if (isPlaying) {
-                isInMenu = false;
+              if (isPlaying) isInMenu = false;
+              if (imageTrigger && (imagenes[index][2] > 0)) {
+                _contadorAbajo--;
+                if (_contadorAbajo < 0) _contadorAbajo = imagenes[index][2];
+                switch (_contadorAbajo) {
+                  case 0:
+                    complemento = '';
+                    break;
+                  case 1:
+                    complemento = "-h1.jpg";
+                    break;
+                  case 2:
+                    complemento = "-h2.jpg";
+                    break;
+                  case 3:
+                    complemento = "-h3.jpg";
+                    break;
+                  default:
+                    complemento = '';
+                }
               }
               break;
             case 458833: //Abajo
-              isInMenu = true;
+              if (isPlaying) isInMenu = true;
+              if (imageTrigger && (imagenes[index][2] > 0)) {
+                _contadorAbajo++;
+                if (_contadorAbajo > imagenes[index][2]) _contadorAbajo = 0;
+                switch (_contadorAbajo) {
+                  case 0:
+                    complemento = '';
+                    break;
+                  case 1:
+                    complemento = "-h1.jpg";
+                    break;
+                  case 2:
+                    complemento = "-h2.jpg";
+                    break;
+                  case 3:
+                    complemento = "-h3.jpg";
+                    break;
+                  default:
+                    complemento = '';
+                }
+              }
               break;
             default:
           }
@@ -286,7 +333,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                         isInMenu && (index == _contador));
                   }),
                 )),
-            if (imageTrigger) ImagesDisplay(imagenes[index][0]),
+            if (imageTrigger) ImagesDisplay(imagenes[index][0], complemento),
             if (!videoTrigger)
               Positioned(
                 top: heigthScreen * 9 / 10,
