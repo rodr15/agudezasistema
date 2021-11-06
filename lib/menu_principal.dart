@@ -57,13 +57,48 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     videoTrigger = provider.getTriggerVideo;
     imageTrigger = provider.getTriggerImage;
 
+    void izquierda() {
+      _contador--;
+      if (_contador < 0) _contador = imagenes.length - 1;
+      index = _contador;
+      print(_controller.offset);
+      _controller
+          .jumpTo(_contador * (MediaQuery.of(context).size.width * 1 / 3));
+    }
+
+    void derecha() {
+      _contador++;
+      if (_contador > imagenes.length - 1) _contador = 0;
+      index = _contador;
+      _controller
+          .jumpTo(_contador * (MediaQuery.of(context).size.width * 1 / 3));
+    }
+
     void playStop() {
       setState(() {
         play = !play;
       });
     }
 
-    void stop() {}
+    void stop() {
+      setState(() {
+        isInMenu = true;
+        provider.setIsPlaying = false;
+        changeVideo = false;
+        if (menu.indexOf(0) > 0) {
+          provider.setTriggerVideo = false;
+          provider.setTriggerImage = false;
+
+          print('cero ${menu.indexOf(0)}');
+          _contador = menu[menu.indexOf(0) - 1];
+          izquierda();
+          // index = menu[menu.indexOf(0) - 1] - 1;
+          menu[menu.indexOf(0) - 1] = 0;
+
+          provider.setMenus = menu;
+        }
+      });
+    }
 
     Stack VideoTools = Stack(
       children: [
@@ -107,22 +142,6 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             )),
       ],
     );
-    void izquierda() {
-      _contador--;
-      if (_contador < 0) _contador = imagenes.length - 1;
-      index = _contador;
-      print(_controller.offset);
-      _controller
-          .jumpTo(_contador * (MediaQuery.of(context).size.width * 1 / 3));
-    }
-
-    void derecha() {
-      _contador++;
-      if (_contador > imagenes.length - 1) _contador = 0;
-      index = _contador;
-      _controller
-          .jumpTo(_contador * (MediaQuery.of(context).size.width * 1 / 3));
-    }
 
     void _handleKeyEvent(RawKeyEvent event) {
       setState(() {
@@ -258,7 +277,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               }
               break;
             case 458756: // LETRA A
-              _validation(context);
+
               if (isInMenu) {
                 if (isPlaying && videoTrigger)
                   changeVideo = true;
@@ -269,11 +288,12 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   provider.setTriggerImage = false;
 
                   print('cero ${menu.indexOf(0)}');
+                  _contador = menu[menu.indexOf(0) - 1];
+                  izquierda();
+                  // index = menu[menu.indexOf(0) - 1] - 1;
                   menu[menu.indexOf(0) - 1] = 0;
-                  _controller.jumpTo(0.0);
+
                   provider.setMenus = menu;
-                  _contador = 0;
-                  index = 0;
                 }
               }
               zoom = false;
