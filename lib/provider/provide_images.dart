@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class ProvideImages with ChangeNotifier {
+  bool moveZoom = false;
   bool triggerVideo = false;
   bool triggerImage = false;
   bool isPlaying = false;
@@ -40,6 +41,14 @@ class ProvideImages with ChangeNotifier {
 
   set setTriggerImage(nTriggerImage) {
     triggerImage = nTriggerImage;
+  }
+
+  get getMoveZoom {
+    return moveZoom;
+  }
+
+  set setMoveZoom(bool nMove) {
+    moveZoom = nMove;
   }
 
   get getTriggerVideo {

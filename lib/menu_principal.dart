@@ -34,6 +34,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   bool play = true;
   double volume = 0.5;
   String complemento = '';
+  String _scale = '';
+  bool zoom = false;
   final FocusNode _focusNode = FocusNode();
   final ScrollController _controller = ScrollController();
   @override
@@ -54,6 +56,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     isPlaying = provider.getIsPlaying;
     videoTrigger = provider.getTriggerVideo;
     imageTrigger = provider.getTriggerImage;
+
     void playStop() {
       setState(() {
         play = !play;
@@ -140,30 +143,78 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           print('change -> $changeVideo');
           print(event.physicalKey.usbHidUsage);
           switch (event.physicalKey.usbHidUsage) {
+            case 458782: // NUMERO 1
+              _scale = '1';
+              zoom = true;
+              break;
+            case 458783: // NUMERO 2
+              _scale = '2';
+              zoom = true;
+              break;
+            case 458784: // NUMERO 3
+              _scale = '3';
+              zoom = true;
+              break;
+            case 458785: // NUMERO 4
+              _scale = '4';
+              zoom = true;
+              break;
+            case 458786: // NUMERO 5
+              _scale = '5';
+              zoom = true;
+              break;
+            case 458787: // NUMERO 6
+              _scale = '6';
+              zoom = true;
+              break;
+            case 458788: // NUMERO 7
+              _scale = '7';
+              zoom = true;
+              break;
+            case 458789: // NUMERO 8
+              _scale = '8';
+              zoom = true;
+              break;
+            case 458790: // NUMERO 9
+              _scale = '9';
+              zoom = true;
+              break;
+            case 458791:
+              _scale = '0';
+              zoom = false;
+              break;
+
             case 458831: // DERECHA
-              complemento = '';
-              _contadorAbajo = 0;
-              if (isInMenu) {
-                derecha();
+              print('imageTrigger -> $imageTrigger');
+              print('zoom -> $zoom');
+              if (imageTrigger && zoom) {
+                _scale = 'flecha derecha';
+                provider.setMoveZoom = true;
               } else {
-                indexMenuVideo++;
-                if (indexMenuVideo > botones) indexMenuVideo = botones;
+                complemento = '';
+                _contadorAbajo = 0;
+                if (isInMenu) {
+                  derecha();
+                } else {
+                  indexMenuVideo++;
+                  if (indexMenuVideo > botones) indexMenuVideo = botones;
+                }
               }
-              // _controller.animateTo(
-              //     _controller.offset +
-              //         (MediaQuery.of(context).size.width * 1 / 3),
-              //     curve: Curves.linear,
-              //     duration: Duration(milliseconds: 100));
 
               break;
             case 458832: // IZQUIERDA
-              complemento = '';
-              _contadorAbajo = 0;
-              if (isInMenu) {
-                izquierda();
+              if (imageTrigger && zoom) {
+                _scale = 'flecha izquierda';
+                provider.setMoveZoom = true;
               } else {
-                indexMenuVideo--;
-                if (indexMenuVideo < 0) indexMenuVideo = 0;
+                complemento = '';
+                _contadorAbajo = 0;
+                if (isInMenu) {
+                  izquierda();
+                } else {
+                  indexMenuVideo--;
+                  if (indexMenuVideo < 0) indexMenuVideo = 0;
+                }
               }
               // _controller.animateTo(
               //     _controller.offset -
@@ -207,8 +258,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               }
               break;
             case 458756: // LETRA A
-              complemento = '';
-              _contadorAbajo = 0;
+              _validation(context);
               if (isInMenu) {
                 if (isPlaying && videoTrigger)
                   changeVideo = true;
@@ -226,6 +276,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   index = 0;
                 }
               }
+              zoom = false;
+              _scale = '0';
               break;
             case 458834: // Arriba
               if (isPlaying) isInMenu = false;
@@ -251,7 +303,11 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   default:
                     complemento = '';
                 }
+              } else if (imageTrigger && zoom) {
+                _scale = 'flecha arriba';
+                provider.setMoveZoom = true;
               }
+
               break;
             case 458833: //Abajo
               if (isPlaying) isInMenu = true;
@@ -282,6 +338,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   default:
                     complemento = '';
                 }
+              } else if (imageTrigger && zoom) {
+                _scale = 'flecha abajo';
+                provider.setMoveZoom = true;
               }
               break;
             default:
@@ -313,6 +372,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               index = 0;
             }
           }
+          zoom = false;
+          _scale = '0';
           return Future.value(false);
         },
         child: RawKeyboardListener(
@@ -352,7 +413,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   }),
                 )),
             if (imageTrigger)
-              ImagesDisplay(imagenes[index][0], complemento, 0.1),
+              ImagesDisplay(imagenes[index][0], complemento, _scale),
             if (!videoTrigger)
               Positioned(
                 top: heigthScreen * 9 / 10,
