@@ -1249,7 +1249,7 @@ class ProvideImages with ChangeNotifier {
 
       case '1,8,0,0,0':
         images = [
-          ['lib/assets/3 METROS/7 NUMEROS/3_50-6.JPG', '', 0],
+          ['lib/assets/3 METROS/7 NUMEROS/3_50-6.JPG', '', -1],
           ['lib/assets/3 METROS/7 NUMEROS/3_50-7.JPG', '', 2],
           ['lib/assets/3 METROS/7 NUMEROS/3_50-8.JPG', '', 3],
           ['lib/assets/3 METROS/7 NUMEROS/3_50-9.JPG', '', 3],
@@ -3111,7 +3111,7 @@ class ProvideImages with ChangeNotifier {
 
       case '2,8,0,0,0':
         images = [
-          ['lib/assets/4 METROS/7 NUMEROS/4_50-6.JPG', '', 0],
+          ['lib/assets/4 METROS/7 NUMEROS/4_50-6.JPG', '', -1],
           ['lib/assets/4 METROS/7 NUMEROS/4_50-7.JPG', '', 2],
           ['lib/assets/4 METROS/7 NUMEROS/4_50-8.JPG', '', 3],
           ['lib/assets/4 METROS/7 NUMEROS/4_50-9.JPG', '', 3],
@@ -4992,7 +4992,7 @@ class ProvideImages with ChangeNotifier {
 
       case '3,8,0,0,0':
         images = [
-          ['lib/assets/5 METROS/7 NUMEROS/5_50-6.JPG', '', 0],
+          ['lib/assets/5 METROS/7 NUMEROS/5_50-6.JPG', '', -1],
           ['lib/assets/5 METROS/7 NUMEROS/5_50-7.JPG', '', 2],
           ['lib/assets/5 METROS/7 NUMEROS/5_50-8.JPG', '', 3],
           ['lib/assets/5 METROS/7 NUMEROS/5_50-9.JPG', '', 3],
@@ -6873,7 +6873,7 @@ class ProvideImages with ChangeNotifier {
 
       case '4,8,0,0,0':
         images = [
-          ['lib/assets/6 METROS/7 NUMEROS/6_50-6.JPG', '', 0],
+          ['lib/assets/6 METROS/7 NUMEROS/6_50-6.JPG', '', -1],
           ['lib/assets/6 METROS/7 NUMEROS/6_50-7.JPG', '', 2],
           ['lib/assets/6 METROS/7 NUMEROS/6_50-8.JPG', '', 3],
           ['lib/assets/6 METROS/7 NUMEROS/6_50-9.JPG', '', 3],
@@ -8067,7 +8067,7 @@ class ProvideImages with ChangeNotifier {
       case '8,0,0,0,0':
         images = [
           ['lib/assets/TEST DE STEREOPSIS/1_R.PNG', '', 0],
-          ['lib/assets/TEST DE STEREOPSIS/1.PNG', '', 0],
+          // ['lib/assets/TEST DE STEREOPSIS/1.PNG', '', 0],
           ['lib/assets/TEST DE STEREOPSIS/2.PNG', '', 0],
           ['lib/assets/TEST DE STEREOPSIS/3.PNG', '', 0],
           ['lib/assets/TEST DE STEREOPSIS/4.PNG', '', 0],

@@ -104,6 +104,22 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             )),
       ],
     );
+    void izquierda() {
+      _contador--;
+      if (_contador < 0) _contador = imagenes.length - 1;
+      index = _contador;
+      print(_controller.offset);
+      _controller
+          .jumpTo(_contador * (MediaQuery.of(context).size.width * 1 / 3));
+    }
+
+    void derecha() {
+      _contador++;
+      if (_contador > imagenes.length - 1) _contador = 0;
+      index = _contador;
+      _controller
+          .jumpTo(_contador * (MediaQuery.of(context).size.width * 1 / 3));
+    }
 
     void _handleKeyEvent(RawKeyEvent event) {
       setState(() {
@@ -128,11 +144,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               complemento = '';
               _contadorAbajo = 0;
               if (isInMenu) {
-                _contador++;
-                if (_contador > imagenes.length - 1) _contador = 0;
-                index = _contador;
-                _controller.jumpTo(
-                    _contador * (MediaQuery.of(context).size.width * 1 / 3));
+                derecha();
               } else {
                 indexMenuVideo++;
                 if (indexMenuVideo > botones) indexMenuVideo = botones;
@@ -148,12 +160,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               complemento = '';
               _contadorAbajo = 0;
               if (isInMenu) {
-                _contador--;
-                if (_contador < 0) _contador = imagenes.length - 1;
-                index = _contador;
-                print(_controller.offset);
-                _controller.jumpTo(
-                    _contador * (MediaQuery.of(context).size.width * 1 / 3));
+                izquierda();
               } else {
                 indexMenuVideo--;
                 if (indexMenuVideo < 0) indexMenuVideo = 0;
@@ -224,7 +231,10 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               if (isPlaying) isInMenu = false;
               if (imageTrigger && (imagenes[index][2] > 0)) {
                 _contadorAbajo--;
-                if (_contadorAbajo < 0) _contadorAbajo = imagenes[index][2];
+                if (_contadorAbajo < 1) {
+                  izquierda();
+                  _contadorAbajo = imagenes[index][2];
+                }
                 switch (_contadorAbajo) {
                   case 0:
                     complemento = '';
@@ -245,9 +255,17 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               break;
             case 458833: //Abajo
               if (isPlaying) isInMenu = true;
-              if (imageTrigger && (imagenes[index][2] > 0)) {
+              if (imageTrigger && (imagenes[index][2] < 0)) {
+                derecha();
+
+                _contadorAbajo = 1;
+                complemento = "-h1.jpg";
+              } else if (imageTrigger && (imagenes[index][2] > 0)) {
                 _contadorAbajo++;
-                if (_contadorAbajo > imagenes[index][2]) _contadorAbajo = 0;
+                if (_contadorAbajo > imagenes[index][2]) {
+                  derecha();
+                  if (_contador != 0) _contadorAbajo = 1;
+                }
                 switch (_contadorAbajo) {
                   case 0:
                     complemento = '';
@@ -333,7 +351,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                         isInMenu && (index == _contador));
                   }),
                 )),
-            if (imageTrigger) ImagesDisplay(imagenes[index][0], complemento),
+            if (imageTrigger)
+              ImagesDisplay(imagenes[index][0], complemento, 0.1),
             if (!videoTrigger)
               Positioned(
                 top: heigthScreen * 9 / 10,
