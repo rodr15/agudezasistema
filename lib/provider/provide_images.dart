@@ -20,7 +20,7 @@ class ProvideImages with ChangeNotifier {
     ['lib/assets/miniaturas/MACULOPATIA.jpg', 'MACULOPATIA', 0],
     ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE ESTEREOPSIS', 0],
     ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE COLOR', 0],
-    ['lib/assets/miniaturas/tipos de lentes.jpg', 'TITPOS DE LENTES']
+    ['lib/assets/miniaturas/tipos de lentes.jpg', 'TIPOS DE LENTES']
   ];
 
   get getImages {
@@ -99,7 +99,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/miniaturas/MACULOPATIA.jpg', 'MACULOPATIA', 0],
           ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE ESTEREOPSIS', 0],
           ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE COLOR', 0],
-          ['lib/assets/miniaturas/tipos de lentes.jpg', 'TITPOS DE LENTES']
+          ['lib/assets/miniaturas/tipos de lentes.jpg', 'TIPOS DE LENTES']
         ];
         break;
       case '1,0,0,0,0':
@@ -7844,7 +7844,129 @@ class ProvideImages with ChangeNotifier {
         isPlaying = false;
 
         break;
+      //'6,0
       case '6,0,0,0,0':
+        images = [
+          [
+            'lib/assets/0ELOJOHUMANOBIENEXPLICADO.jpg',
+            'VIDEOS EXPLICATIVOS',
+            0
+          ],
+          ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', '', 0],
+        ];
+        break;
+      case '6,1,0,0,0':
+        images = [
+          ['lib/assets/0ELOJOHUMANOBIENEXPLICADO.jpg', 'EL OJO HUMANO', 0],
+          [
+            'lib/assets/0MiopiaHipermetropiaoAstigmatismo.jpg',
+            'HIPERMETROPIA O ASTIGMATISMO',
+            0
+          ],
+          [
+            'lib/assets/0PresbiciaoVistaCansadaSintomasySoluciones.jpg',
+            'PREBICIA O VISTA CANSADA SISTOMAS Y SOLUCIONES',
+            0
+          ],
+          [
+            'lib/assets/Comoponeryquitarloslentesdecontacto.jpg',
+            'QUITAR LOS LENTES DE CONTACTO',
+            0
+          ],
+          [
+            'lib/assets/ComousarlentesprogresivosAcostumbratealoslentesprogresivos.png',
+            'LENTES PROGRESIVOS',
+            0
+          ],
+          [
+            'lib/assets/ConoceTransitionslarevolucionenlentesquecambiandecolor.jpg',
+            'CONOCE TRANSITIONS',
+            0
+          ],
+        ];
+
+        break;
+      case '6,1,1,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+
+        break;
+      case '6,1,2,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,3,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,4,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,5,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,6,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,7,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,8,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,9,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,10,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,11,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,12,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,13,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,14,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,15,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,16,0,0':
+        triggerVideo = true;
+        break;
+      case '6,1,17,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,18,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,19,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,1,20,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '6,2,0,0,0':
         //Defectos
         images = [
           ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', '', 0],
@@ -7863,114 +7985,112 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/DEFECTOS REFRACTIVOS/14.JPG', '', 0],
         ];
         break;
-      case '6,1,0,0,0':
+      case '6,2,1,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,2,0,0,0':
+      case '6,2,2,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,3,0,0,0':
+      case '6,2,3,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,4,0,0,0':
+      case '6,2,4,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,5,0,0,0':
+      case '6,2,5,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,6,0,0,0':
+      case '6,2,6,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,7,0,0,0':
+      case '6,2,7,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,8,0,0,0':
+      case '6,2,8,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,9,0,0,0':
+      case '6,2,9,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,10,0,0,0':
+      case '6,2,10,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,11,0,0,0':
+      case '6,2,11,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,12,0,0,0':
+      case '6,2,12,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,13,0,0,0':
+      case '6,2,13,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,14,0,0,0':
+      case '6,2,14,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,15,0,0,0':
+      case '6,2,15,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,16,0,0,0':
+      case '6,2,16,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,17,0,0,0':
+      case '6,2,17,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,18,0,0,0':
+      case '6,2,18,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,19,0,0,0':
+      case '6,2,19,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '6,20,0,0,0':
+      case '6,2,20,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
+
       case '7,0,0,0,0':
         images = [
-          ['lib/assets/MACULOPATIA/1.JPG', '', 0],
-          ['lib/assets/MACULOPATIA/2.JPG', '', 0],
-          ['lib/assets/MACULOPATIA/3.JPG', '', 0],
-          ['lib/assets/MACULOPATIA/4.JPG', '', 0],
-          ['lib/assets/MACULOPATIA/5.JPG', '', 0],
-          ['lib/assets/MACULOPATIA/6.JPG', '', 0],
+          ['lib/assets/MACULOPATIA/1.JPG', '', 70],
+          ['lib/assets/MACULOPATIA/3.JPG', '', 70],
+          ['lib/assets/MACULOPATIA/5.JPG', '', 70],
         ];
         break;
       case '7,1,0,0,0':
@@ -8195,279 +8315,9 @@ class ProvideImages with ChangeNotifier {
         triggerImage = true;
         isPlaying = false;
         break;
+      //9,0
+
       case '9,0,0,0,0':
-        images = [
-          ['lib/assets/TESTD/FONDO BLANCO/1.PNG', 'FONDO BLANCO', 0],
-          ['lib/assets/TESTD/FONDO NEGRO/1.PNG', 'FONDO NEGRO']
-        ];
-        break;
-      case '9,1,0,0,0':
-        images = [
-          ['lib/assets/TESTD/FONDO BLANCO/1.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/2.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/3.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/4.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/5.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/6.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/7.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/8.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/9.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/10.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/11.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/12.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/13.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/14.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/15.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/16.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/17.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/18.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/19.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/20.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/21.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/22.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/23.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/24.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/25.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/26.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/27.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/28.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/29.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/30.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/31.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/32.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/33.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/34.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/35.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/36.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/37.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/38.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/39.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/40.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/41.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/42.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO BLANCO/43.JPG', '', 0],
-        ];
-        break;
-      case '9,1,1,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,2,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,3,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,4,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,5,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,6,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,7,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,8,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,9,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,10,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,11,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,12,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,13,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,14,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,15,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,16,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,17,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,18,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,19,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,20,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,21,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,22,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,23,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,24,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,25,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,26,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,27,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,28,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,29,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,30,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,31,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,32,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,33,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,34,0,0':
-        triggerImage = true;
-        isPlaying = false;
-        break;
-      case '9,1,35,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,36,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,37,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,38,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,39,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,40,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,41,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,42,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,43,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,1,44,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,2,0,0,0':
         images = [
           ['lib/assets/TESTD/FONDO NEGRO/1.PNG', '', 0],
           ['lib/assets/TESTD/FONDO NEGRO/2.JPG', '', 0],
@@ -8514,221 +8364,221 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/TESTD/FONDO NEGRO/43.JPG', '', 0],
         ];
         break;
-      case '9,2,1,0,0':
+      case '9,1,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,2,0,0':
+      case '9,2,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,3,0,0':
+      case '9,3,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,4,0,0':
+      case '9,4,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,5,0,0':
+      case '9,5,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,6,0,0':
+      case '9,6,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,7,0,0':
+      case '9,7,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,8,0,0':
+      case '9,8,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,9,0,0':
+      case '9,9,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,10,0,0':
+      case '9,10,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,11,0,0':
+      case '9,11,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,12,0,0':
+      case '9,12,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,13,0,0':
+      case '9,13,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,14,0,0':
+      case '9,14,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,15,0,0':
+      case '9,15,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,16,0,0':
+      case '9,16,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,17,0,0':
+      case '9,17,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,18,0,0':
+      case '9,18,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,19,0,0':
+      case '9,19,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,20,0,0':
+      case '9,20,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,21,0,0':
+      case '9,21,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,22,0,0':
+      case '9,22,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,23,0,0':
+      case '9,23,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,24,0,0':
+      case '9,24,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,25,0,0':
+      case '9,25,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,26,0,0':
+      case '9,26,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,27,0,0':
+      case '9,27,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,28,0,0':
+      case '9,28,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,29,0,0':
+      case '9,29,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,30,0,0':
+      case '9,30,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,31,0,0':
+      case '9,31,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,32,0,0':
+      case '9,32,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,33,0,0':
+      case '9,33,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,34,0,0':
+      case '9,34,0,0,0':
         triggerImage = true;
         isPlaying = false;
         break;
-      case '9,2,35,0,0':
-        triggerImage = true;
-        isPlaying = false;
-
-        break;
-      case '9,2,36,0,0':
+      case '9,35,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,37,0,0':
+      case '9,36,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,38,0,0':
+      case '9,37,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,39,0,0':
+      case '9,38,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,40,0,0':
+      case '9,39,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,41,0,0':
+      case '9,40,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,42,0,0':
+      case '9,41,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,43,0,0':
+      case '9,42,0,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '9,2,44,0,0':
+      case '9,43,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '9,44,0,0,0':
         triggerImage = true;
         isPlaying = false;
 

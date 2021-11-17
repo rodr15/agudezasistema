@@ -8,7 +8,9 @@ class ImagesDisplay extends StatefulWidget {
   String imagen = '';
   String complemento = '';
   String scale = '';
-  ImagesDisplay(this.imagen, this.complemento, this.scale);
+  Color backGroundColor;
+  ImagesDisplay(
+      this.imagen, this.complemento, this.scale, this.backGroundColor);
   @override
   _ImagesDisplay createState() => _ImagesDisplay();
 }
@@ -117,10 +119,13 @@ class _ImagesDisplay extends State<ImagesDisplay> {
       body: Stack(
         children: <Widget>[
           Container(
+              color: Colors.transparent,
               child: PhotoView(
-            imageProvider: AssetImage(imagenes),
-            controller: scaleController,
-          )),
+                backgroundDecoration:
+                    BoxDecoration(color: widget.backGroundColor),
+                imageProvider: AssetImage(imagenes),
+                controller: scaleController,
+              )),
           Text("Scale applied: ${(scaleCopy! * 100) / initialScale!}")
         ],
       ),

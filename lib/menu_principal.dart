@@ -17,8 +17,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     final result = false;
   }
 
+  Color backgroundColor = Colors.white;
+  bool triggerBackgroundColor = false;
   int _pulsaciones = 0;
-
   int _contador = 0;
   int _contadorAbajo = 0;
   List menu = [0, 0, 0, 0, 0];
@@ -242,6 +243,19 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               //     duration: Duration(milliseconds: 100));
               break;
             case 458792: // ENTER
+              if (imageTrigger) {
+                triggerBackgroundColor = !triggerBackgroundColor;
+                if (triggerBackgroundColor) {
+                  backgroundColor = Colors.black;
+                  if (imagenes[index][2] == 70) {
+                    complemento = 'N.JPG';
+                  }
+                } else {
+                  backgroundColor = Colors.white;
+                  complemento = '';
+                }
+              }
+              print('color -> $backgroundColor');
               if (isInMenu) {
                 if (changeVideo) {
                   provider.setIsPlaying = false;
@@ -375,6 +389,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       body: WillPopScope(
         onWillPop: () {
           _validation(context);
+
           if (isInMenu) {
             if (isPlaying && videoTrigger)
               changeVideo = true;
@@ -385,11 +400,12 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               provider.setTriggerImage = false;
 
               print('cero ${menu.indexOf(0)}');
+              _contador = menu[menu.indexOf(0) - 1];
+              izquierda();
+              // index = menu[menu.indexOf(0) - 1] - 1;
               menu[menu.indexOf(0) - 1] = 0;
-              _controller.jumpTo(0.0);
+
               provider.setMenus = menu;
-              _contador = 0;
-              index = 0;
             }
           }
           zoom = false;
@@ -433,7 +449,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   }),
                 )),
             if (imageTrigger)
-              ImagesDisplay(imagenes[index][0], complemento, _scale),
+              ImagesDisplay(
+                  imagenes[index][0], complemento, _scale, backgroundColor),
             if (!videoTrigger)
               Positioned(
                 top: heigthScreen * 9 / 10,
