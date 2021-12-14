@@ -19,8 +19,9 @@ class _ImagesDisplay extends State<ImagesDisplay> {
   PhotoViewController scaleController = PhotoViewController();
   double? scaleCopy = 0.0;
   int _pulsaciones = 0;
-  double? initialScale = 1.0;
+  double? initialScale = 0.0;
   final FocusNode _focusNode = FocusNode();
+
   @override
   void initState() {
     super.initState();
@@ -37,11 +38,18 @@ class _ImagesDisplay extends State<ImagesDisplay> {
   void listener(PhotoViewControllerValue value) {
     setState(() {
       scaleCopy = value.scale;
-
-      if (scaleCopy != null) {
-        if (scaleCopy! < initialScale!) {
-          initialScale = scaleCopy;
-        }
+      print('0000000000000000000000000000000');
+      print(scaleCopy);
+      print(scaleCopy != null);
+      print(scaleCopy! < initialScale!);
+      print(widget.scale);
+      print(widget.scale == '0');
+      print('0000000000000000000000000000000');
+      if (((scaleCopy != null) || (scaleCopy! < initialScale!)) &&
+          (widget.scale == '0')) {
+        print('HERE');
+        print(initialScale);
+        initialScale = scaleCopy;
       }
     });
   }
@@ -53,14 +61,20 @@ class _ImagesDisplay extends State<ImagesDisplay> {
   Color backGroundColor = Colors.black;
   String _scale = '';
   double _previusScale = 0.0;
+  List menu = [];
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<ProvideImages>(context);
     double heigthScreen = MediaQuery.of(context).size.height;
     double widthScreen = MediaQuery.of(context).size.width;
+    print(scaleController.value.scale);
+    print(scaleController.initial.scale);
+    print(widget.imagen);
     imagenes = widget.imagen;
     complemento = widget.complemento;
     _scale = widget.scale;
+    menu = provider.getMenus;
+
     switch (_scale) {
       case '1': // NUMERO 1
         scaleController.scale = initialScale! * 1.1;
@@ -90,7 +104,14 @@ class _ImagesDisplay extends State<ImagesDisplay> {
         scaleController.scale = initialScale! * 1.9;
         break;
       case '0':
-        scaleController.reset();
+        // if (menu[0] > 4) {
+        scaleController = PhotoViewController()
+          ..outputStateStream.listen(listener);
+        // scaleController.value = scaleController.initial;
+        // initialScale = scaleController.value.scale!;
+        print(scaleController.value);
+        // } else
+        scaleController.scale = initialScale!;
         break;
       case 'flecha derecha': // FLECHA DERECHA
         if (provider.getMoveZoom) scaleController.position += Offset(-10.0, 0);

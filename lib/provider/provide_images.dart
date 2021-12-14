@@ -12,15 +12,11 @@ class ProvideImages with ChangeNotifier {
     ['lib/assets/miniaturas/5 metros.jpg', '5 metros', 0],
     ['lib/assets/miniaturas/6 metros.jpg', '6 metros', 0],
     ['lib/assets/miniaturas/ATLAS.JPG', 'ATLAS E IMAGENES DE REFERENCIA', 0],
-    [
-      'lib/assets/miniaturas/DEFECTOS REFRACTIVOS.jpg',
-      'DEFECTOS REFRACTIVOS',
-      0
-    ],
+    ['lib/assets/miniaturas/DEFECTOS REFRACTIVOS.jpg', 'DEFECTOS REFRACTIVOS'],
     ['lib/assets/miniaturas/MACULOPATIA.jpg', 'MACULOPATIA', 0],
-    ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE ESTEREOPSIS', 0],
-    ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE COLOR', 0],
-    ['lib/assets/miniaturas/tipos de lentes.jpg', 'TIPOS DE LENTES']
+    ['lib/assets/miniaturas/estereopsis.png', 'TEST DE ESTEREOPSIS', 0],
+    ['lib/assets/miniaturas/ISHIHARA.png', 'TEST DE COLOR', 0],
+    ['lib/assets/miniaturas/tipos de lentes.jpg', 'TIPOS DE LENTES', 0]
   ];
 
   get getImages {
@@ -97,9 +93,9 @@ class ProvideImages with ChangeNotifier {
             'DEFECTOS REFRACTIVOS'
           ],
           ['lib/assets/miniaturas/MACULOPATIA.jpg', 'MACULOPATIA', 0],
-          ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE ESTEREOPSIS', 0],
-          ['lib/assets/miniaturas/SA3000V.JPG', 'TEST DE COLOR', 0],
-          ['lib/assets/miniaturas/tipos de lentes.jpg', 'TIPOS DE LENTES']
+          ['lib/assets/miniaturas/estereopsis.png', 'TEST DE ESTEREOPSIS', 0],
+          ['lib/assets/miniaturas/ISHIHARA.png', 'TEST DE COLOR', 0],
+          ['lib/assets/miniaturas/tipos de lentes.jpg', 'TIPOS DE LENTES', 0]
         ];
         break;
       case '1,0,0,0,0':
@@ -249,7 +245,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/3 METROS/1 LETRAS LOG/5.PNG', '', 0],
           ['lib/assets/3 METROS/1 LETRAS LOG/6.PNG', '', 0],
           ['lib/assets/3 METROS/1 LETRAS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/3 METROS/1 LETRAS LOG/DIAL.JPG', '']
+          ['lib/assets/3 METROS/1 LETRAS LOG/DIAL.JPG', '', 0]
         ];
         break;
       case '1,2,1,0,0':
@@ -357,7 +353,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/3 METROS/2 NUMEROS LOG/5.PNG', '', 0],
           ['lib/assets/3 METROS/2 NUMEROS LOG/6.PNG', '', 0],
           ['lib/assets/3 METROS/2 NUMEROS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/3 METROS/2 NUMEROS LOG/DIAL.JPG', '']
+          ['lib/assets/3 METROS/2 NUMEROS LOG/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -466,7 +462,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/3 METROS/3 E DIR LOG/5.PNG', '', 0],
           ['lib/assets/3 METROS/3 E DIR LOG/6.PNG', '', 0],
           ['lib/assets/3 METROS/3 E DIR LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/3 METROS/3 E DIR LOG/DIAL.JPG', '']
+          ['lib/assets/3 METROS/3 E DIR LOG/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -944,7 +940,7 @@ class ProvideImages with ChangeNotifier {
         images = [
           ['lib/assets/LAVACALOLA.jpg', 'La vaca lola', 0],
           ['lib/assets/LosPollitosDicen.jpg', 'Los pollitos', 0],
-          ['lib/assets/PINOCHO.jpg', 'Pinocho']
+          ['lib/assets/PINOCHO.jpg', 'Pinocho', 0]
         ];
 
         break;
@@ -1044,7 +1040,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/3 METROS/5 NIÑOS/11.PNG', '', 0],
           ['lib/assets/3 METROS/5 NIÑOS/12.PNG', '', 0],
           ['lib/assets/3 METROS/5 NIÑOS/CROSSCYL.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/DIAL.JPG', '']
+          ['lib/assets/3 METROS/5 NIÑOS/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -1944,7 +1940,7 @@ class ProvideImages with ChangeNotifier {
       case '1,14,0,0,0':
         images = [
           ['lib/assets/PuntoDeFijacionLineas.PNG', 'FIJACION LINEAS', 0],
-          ['lib/assets/PuntoDeFijacionCaras.PNG', 'FIJACION CARAS']
+          ['lib/assets/PuntoDeFijacionCaras.PNG', 'FIJACION CARAS', 0]
         ];
 
         break;
@@ -2111,7 +2107,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/4 METROS/1 LETRAS LOG/5.PNG', '', 0],
           ['lib/assets/4 METROS/1 LETRAS LOG/6.PNG', '', 0],
           ['lib/assets/4 METROS/1 LETRAS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/4 METROS/1 LETRAS LOG/DIAL.JPG', '']
+          ['lib/assets/4 METROS/1 LETRAS LOG/DIAL.JPG', '', 0]
         ];
         break;
       case '2,2,1,0,0':
@@ -2219,7 +2215,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/4 METROS/2 NUMEROS LOG/5.PNG', '', 0],
           ['lib/assets/4 METROS/2 NUMEROS LOG/6.PNG', '', 0],
           ['lib/assets/4 METROS/2 NUMEROS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/4 METROS/2 NUMEROS LOG/DIAL.JPG', '']
+          ['lib/assets/4 METROS/2 NUMEROS LOG/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -2328,7 +2324,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/4 METROS/3 E DIR LOG/5.PNG', '', 0],
           ['lib/assets/4 METROS/3 E DIR LOG/6.PNG', '', 0],
           ['lib/assets/4 METROS/3 E DIR LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/4 METROS/3 E DIR LOG/DIAL.JPG', '']
+          ['lib/assets/4 METROS/3 E DIR LOG/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -2806,7 +2802,7 @@ class ProvideImages with ChangeNotifier {
         images = [
           ['lib/assets/LAVACALOLA.jpg', 'La vaca lola', 0],
           ['lib/assets/LosPollitosDicen.jpg', 'Los pollitos', 0],
-          ['lib/assets/PINOCHO.jpg', 'Pinocho']
+          ['lib/assets/PINOCHO.jpg', 'Pinocho', 0]
         ];
 
         break;
@@ -2906,7 +2902,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/4 METROS/5 NIÑOS/11.PNG', '', 0],
           ['lib/assets/4 METROS/5 NIÑOS/12.PNG', '', 0],
           ['lib/assets/4 METROS/5 NIÑOS/CROSSCYL.JPG', '', 0],
-          ['lib/assets/4 METROS/5 NIÑOS/DIAL.JPG', '']
+          ['lib/assets/4 METROS/5 NIÑOS/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -3825,7 +3821,7 @@ class ProvideImages with ChangeNotifier {
       case '2,14,0,0,0':
         images = [
           ['lib/assets/PuntoDeFijacionLineas.PNG', 'FIJACION LINEAS', 0],
-          ['lib/assets/PuntoDeFijacionCaras.PNG', 'FIJACION CARAS']
+          ['lib/assets/PuntoDeFijacionCaras.PNG', 'FIJACION CARAS', 0]
         ];
 
         break;
@@ -3992,7 +3988,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/5 METROS/1 LETRAS LOG/5.PNG', '', 0],
           ['lib/assets/5 METROS/1 LETRAS LOG/6.PNG', '', 0],
           ['lib/assets/5 METROS/1 LETRAS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/5 METROS/1 LETRAS LOG/DIAL.JPG', '']
+          ['lib/assets/5 METROS/1 LETRAS LOG/DIAL.JPG', '', 0]
         ];
         break;
       case '3,2,1,0,0':
@@ -4100,7 +4096,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/5 METROS/2 NUMEROS LOG/5.PNG', '', 0],
           ['lib/assets/5 METROS/2 NUMEROS LOG/6.PNG', '', 0],
           ['lib/assets/5 METROS/2 NUMEROS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/5 METROS/2 NUMEROS LOG/DIAL.JPG', '']
+          ['lib/assets/5 METROS/2 NUMEROS LOG/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -4209,7 +4205,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/5 METROS/3 E DIR LOG/5.PNG', '', 0],
           ['lib/assets/5 METROS/3 E DIR LOG/6.PNG', '', 0],
           ['lib/assets/5 METROS/3 E DIR LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/5 METROS/3 E DIR LOG/DIAL.JPG', '']
+          ['lib/assets/5 METROS/3 E DIR LOG/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -4687,7 +4683,7 @@ class ProvideImages with ChangeNotifier {
         images = [
           ['lib/assets/LAVACALOLA.jpg', 'La vaca lola', 0],
           ['lib/assets/LosPollitosDicen.jpg', 'Los pollitos', 0],
-          ['lib/assets/PINOCHO.jpg', 'Pinocho']
+          ['lib/assets/PINOCHO.jpg', 'Pinocho', 0]
         ];
 
         break;
@@ -4787,7 +4783,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/5 METROS/5 NIÑOS/11.PNG', '', 0],
           ['lib/assets/5 METROS/5 NIÑOS/12.PNG', '', 0],
           ['lib/assets/5 METROS/5 NIÑOS/CROSSCYL.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/DIAL.JPG', '']
+          ['lib/assets/5 METROS/5 NIÑOS/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -5706,7 +5702,7 @@ class ProvideImages with ChangeNotifier {
       case '3,14,0,0,0':
         images = [
           ['lib/assets/PuntoDeFijacionLineas.PNG', 'FIJACION LINEAS', 0],
-          ['lib/assets/PuntoDeFijacionCaras.PNG', 'FIJACION CARAS']
+          ['lib/assets/PuntoDeFijacionCaras.PNG', 'FIJACION CARAS', 0]
         ];
 
         break;
@@ -5873,7 +5869,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/6 METROS/1 LETRAS LOG/5.PNG', '', 0],
           ['lib/assets/6 METROS/1 LETRAS LOG/6.PNG', '', 0],
           ['lib/assets/6 METROS/1 LETRAS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/1 LETRAS LOG/DIAL.JPG', '']
+          ['lib/assets/6 METROS/1 LETRAS LOG/DIAL.JPG', '', 0]
         ];
         break;
       case '4,2,1,0,0':
@@ -5981,7 +5977,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/6 METROS/2 NUMEROS LOG/5.PNG', '', 0],
           ['lib/assets/6 METROS/2 NUMEROS LOG/6.PNG', '', 0],
           ['lib/assets/6 METROS/2 NUMEROS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/2 NUMEROS LOG/DIAL.JPG', '']
+          ['lib/assets/6 METROS/2 NUMEROS LOG/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -6090,7 +6086,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/6 METROS/3 E DIR LOG/5.PNG', '', 0],
           ['lib/assets/6 METROS/3 E DIR LOG/6.PNG', '', 0],
           ['lib/assets/6 METROS/3 E DIR LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/3 E DIR LOG/DIAL.JPG', '']
+          ['lib/assets/6 METROS/3 E DIR LOG/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -6568,7 +6564,7 @@ class ProvideImages with ChangeNotifier {
         images = [
           ['lib/assets/LAVACALOLA.jpg', 'La vaca lola', 0],
           ['lib/assets/LosPollitosDicen.jpg', 'Los pollitos', 0],
-          ['lib/assets/PINOCHO.jpg', 'Pinocho']
+          ['lib/assets/PINOCHO.jpg', 'Pinocho', 0]
         ];
 
         break;
@@ -6668,7 +6664,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/6 METROS/5 NIÑOS/11.PNG', '', 0],
           ['lib/assets/6 METROS/5 NIÑOS/12.PNG', '', 0],
           ['lib/assets/6 METROS/5 NIÑOS/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/DIAL.JPG', '']
+          ['lib/assets/6 METROS/5 NIÑOS/DIAL.JPG', '', 0]
         ];
 
         break;
@@ -7587,7 +7583,7 @@ class ProvideImages with ChangeNotifier {
       case '4,14,0,0,0':
         images = [
           ['lib/assets/PuntoDeFijacionLineas.PNG', 'FIJACION LINEAS', 0],
-          ['lib/assets/PuntoDeFijacionCaras.PNG', 'FIJACION CARAS']
+          ['lib/assets/PuntoDeFijacionCaras.PNG', 'FIJACION CARAS', 0]
         ];
 
         break;
@@ -7612,7 +7608,8 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/0 OJO.jpg', '', 0],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/1 ANATOMIA DEL OJO.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/2 OJO ANATOMICO.jpg',
@@ -7621,11 +7618,13 @@ class ProvideImages with ChangeNotifier {
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/3  MUSCULOS OCULARES 2.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/4  MUSCULOS OCULARES.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/19 ESTRABISMOS.jpg',
@@ -7634,34 +7633,41 @@ class ProvideImages with ChangeNotifier {
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/20 FONDO DE OJO SANO.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/21 FONDO DE OJO SANO 2.jpg',
-            ''
+            '',
+            0
           ],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/BLEFARITIS.jpg', '', 0],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/CATARATA.JPG', '', 0],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/CHALAZION.jpg', '', 0],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CONJUNTIVITIS ALERGICA.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CONJUNTIVITIS BACTERIANA.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CONJUTIVITIS PAPILAR.jpeg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CUERPO EXTRAÑO EN CONJUNTIVA TARSAL.jpeg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CUERPO EXTRAÑO EN CORNEA.jpeg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/DACRIOSISTITIS.jpeg',
@@ -7670,17 +7676,20 @@ class ProvideImages with ChangeNotifier {
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/depositos corneales 2.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/dermatochalasis 2.jpeg',
-            ''
+            '',
+            0
           ],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/EPICANTO.JPG', '', 0],
           ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/GLAUCOMA.JPG', '', 0],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/HEMORRAGIA SUBCONJUNTIVAL.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/HERPES OCULAR.jpeg',
@@ -7715,23 +7724,28 @@ class ProvideImages with ChangeNotifier {
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/RETINOPATIA DIABETICA 1.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/RETINOPATIA DIABETICA.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/retinopatia hipertensiva.jpeg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/retinopatia-diabetica (2).jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/retinopatia-diabetica.jpg',
-            ''
+            '',
+            0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/toxoplasmosis 2.jpg',
@@ -7740,7 +7754,8 @@ class ProvideImages with ChangeNotifier {
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/ULCERA CORNEAL 1.jpg',
-            ''
+            '',
+            0
           ],
         ];
         break;
@@ -7844,15 +7859,129 @@ class ProvideImages with ChangeNotifier {
         isPlaying = false;
 
         break;
+      case '5,21,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,22,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,23,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,24,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,25,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,26,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,27,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,28,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,29,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,30,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,31,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,32,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,33,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,34,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+        break;
+      case '5,35,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,36,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,37,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,38,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,39,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,40,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,41,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,42,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,43,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '5,44,0,0,0':
+        triggerImage = true;
+        isPlaying = false;
+        break;
       //'6,0
       case '6,0,0,0,0':
         images = [
-          [
-            'lib/assets/0ELOJOHUMANOBIENEXPLICADO.jpg',
-            'VIDEOS EXPLICATIVOS',
-            0
-          ],
-          ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', '', 0],
+          ['lib/assets/miniaturas/VIDEOS.png', 'VIDEOS EXPLICATIVOS', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', 'DEFECTOS REFRACTIVOS', 0],
         ];
         break;
       case '6,1,0,0,0':
@@ -7866,21 +7995,6 @@ class ProvideImages with ChangeNotifier {
           [
             'lib/assets/0PresbiciaoVistaCansadaSintomasySoluciones.jpg',
             'PREBICIA O VISTA CANSADA SISTOMAS Y SOLUCIONES',
-            0
-          ],
-          [
-            'lib/assets/Comoponeryquitarloslentesdecontacto.jpg',
-            'QUITAR LOS LENTES DE CONTACTO',
-            0
-          ],
-          [
-            'lib/assets/ComousarlentesprogresivosAcostumbratealoslentesprogresivos.png',
-            'LENTES PROGRESIVOS',
-            0
-          ],
-          [
-            'lib/assets/ConoceTransitionslarevolucionenlentesquecambiandecolor.jpg',
-            'CONOCE TRANSITIONS',
             0
           ],
         ];
@@ -8583,20 +8697,141 @@ class ProvideImages with ChangeNotifier {
         isPlaying = false;
 
         break;
+      //LENTES
       case '10,0,0,0,0':
+        images = [
+          ['lib/assets/miniaturas/VIDEOS.png', 'VIDEOS EXPLICATIVOS', 0],
+          ['lib/assets/miniaturas/TIPOS DE LENTES.png', 'TIPOS DE LENTES', 0],
+        ];
+        break;
+
+      case '10,1,0,0,0':
+        images = [
+          [
+            'lib/assets/Comoponeryquitarloslentesdecontacto.jpg',
+            'QUITAR LOS LENTES DE CONTACTO',
+            0
+          ],
+          ['lib/assets/LentesProgresivos.png', 'LENTES PROGRESIVOS', 0],
+          [
+            'lib/assets/ComousarlentesprogresivosAcostumbratealoslentesprogresivos.jpg',
+            'COMO USAR LENTES PROGRESIVOS',
+            0
+          ],
+          [
+            'lib/assets/ConoceTransitionslarevolucionenlentesquecambiandecolor.jpg',
+            'CONOCE LOS LENTES TRANSITIONS',
+            0
+          ],
+          ['lib/assets/LentesTransitions.jpg', 'LENTES TRANSITIONS', 0],
+          [
+            'lib/assets/LentesPhotoFusionZeiss.jpg',
+            'LENTES PHOTOFUSION ZEISS',
+            0
+          ],
+          [
+            'lib/assets/ProteccionBlueLightCutenlentesparachicos.jpg',
+            'PROTECCION BLUE LIGTH',
+            0
+          ],
+        ];
+
+        break;
+      case '10,1,1,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+
+        break;
+      case '10,1,2,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,3,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,4,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,5,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,6,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,7,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,8,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,9,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,10,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,11,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,12,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,13,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,14,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,15,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,16,0,0':
+        triggerVideo = true;
+        break;
+      case '10,1,17,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,18,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,19,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,1,20,0,0':
+        isPlaying = true;
+        triggerVideo = true;
+        break;
+      case '10,2,0,0,0':
         images = [
           ['lib/assets/TIPOS DE LENTES/ANTIRREFLEJO 1.jpg', '', 0],
           ['lib/assets/TIPOS DE LENTES/ANTIRREFLEJO 2.jpg', '', 0],
           ['lib/assets/TIPOS DE LENTES/BIFOCAL FLAT TOP.jpg', '', 0],
           [
             'lib/assets/TIPOS DE LENTES/ERGONOMIA FRENTE AL COMPUTADOR 2.jpg',
-            ''
-          ],
-          [
-            'lib/assets/TIPOS DE LENTES/ERGONOMIA FRENTE AL COMPUTADOR.jpg',
             '',
             0
           ],
+          // [
+          //   'lib/assets/TIPOS DE LENTES/ERGONOMIA FRENTE AL COMPUTADOR.jpg',
+          //   '',
+          //   0
+          // ],
           ['lib/assets/TIPOS DE LENTES/LENTE DE CONTACTO BLANDO.jpeg', '', 0],
           [
             'lib/assets/TIPOS DE LENTES/LENTE DE CONTACTO GAS PERMEABLE.jpeg',
@@ -8607,106 +8842,106 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/TIPOS DE LENTES/LENTE PROGRESIVO 3.jpg', '', 0],
           ['lib/assets/TIPOS DE LENTES/POLARIZADO 1.jpg', '', 0],
           ['lib/assets/TIPOS DE LENTES/POLARIZADO 2.jpg', '', 0],
-          ['lib/assets/TIPOS DE LENTES/TransitionsLensColors.jpg', '']
+          ['lib/assets/TIPOS DE LENTES/TransitionsLensColors.jpg', '', 0]
         ];
         break;
 
-      case '10,1,0,0,0':
+      case '10,2,1,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,2,0,0,0':
+      case '10,2,2,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,3,0,0,0':
+      case '10,2,3,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,4,0,0,0':
+      case '10,2,4,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,5,0,0,0':
+      case '10,2,5,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,6,0,0,0':
+      case '10,2,6,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,7,0,0,0':
+      case '10,2,7,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,8,0,0,0':
+      case '10,2,8,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,9,0,0,0':
+      case '10,2,9,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,10,0,0,0':
+      case '10,2,10,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,11,0,0,0':
+      case '10,2,11,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,12,0,0,0':
+      case '10,2,12,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,13,0,0,0':
+      case '10,2,13,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,14,0,0,0':
+      case '10,2,14,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,15,0,0,0':
+      case '10,2,15,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,16,0,0,0':
+      case '10,2,16,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,17,0,0,0':
+      case '10,2,17,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,18,0,0,0':
+      case '10,2,18,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,19,0,0,0':
+      case '10,2,19,0,0':
         triggerImage = true;
         isPlaying = false;
 
         break;
-      case '10,20,0,0,0':
+      case '10,2,20,0,0':
         triggerImage = true;
         isPlaying = false;
         break;

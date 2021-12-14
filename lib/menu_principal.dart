@@ -35,14 +35,22 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   bool play = true;
   double volume = 0.5;
   String complemento = '';
-  String _scale = '';
+  String _scale = '0';
   bool zoom = false;
+  bool _initialPosition = false;
   final FocusNode _focusNode = FocusNode();
   final ScrollController _controller = ScrollController();
   @override
   void dispose() {
     super.dispose();
     _focusNode.dispose();
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    _initialPosition = true;
+    super.initState();
   }
 
   @override
@@ -62,7 +70,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       _contador--;
       if (_contador < 0) _contador = imagenes.length - 1;
       index = _contador;
-      print(_controller.offset);
+      print('IZQUIERDA');
       _controller
           .jumpTo(_contador * (MediaQuery.of(context).size.width * 1 / 3));
     }
@@ -145,6 +153,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     );
 
     void _handleKeyEvent(RawKeyEvent event) {
+      _initialPosition = false;
       setState(() {
         print('--------------------');
         _pulsaciones++;
@@ -260,6 +269,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                 if (changeVideo) {
                   provider.setIsPlaying = false;
                   changeVideo = false;
+                  _contador = 0;
+                  index = 0;
                   break;
                 }
                 if ((!imageTrigger && !videoTrigger) &&
@@ -306,7 +317,6 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   izquierda();
                   // index = menu[menu.indexOf(0) - 1] - 1;
                   menu[menu.indexOf(0) - 1] = 0;
-
                   provider.setMenus = menu;
                 }
               }
@@ -385,6 +395,15 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       });
     }
 
+    void correctionPosition() {
+      if (_controller.offset !=
+          _contador * (MediaQuery.of(context).size.width * 1 / 3)) {
+        _controller
+            .jumpTo(_contador * (MediaQuery.of(context).size.width * 1 / 3));
+      }
+    }
+
+    if (!_initialPosition) correctionPosition();
     return Scaffold(
       body: WillPopScope(
         onWillPop: () {
@@ -418,10 +437,11 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           onKey: _handleKeyEvent,
           child: Stack(children: [
             Container(
-                child: Image.asset(
-              'lib/assets/miniaturas/SMARTVISION PREMIUM.jpg',
-            )),
-            if (isPlaying) VideoPlayerScreen(imagenes[index][0], play, volume),
+                child: isPlaying
+                    ? VideoPlayerScreen(imagenes[index][0], play, volume)
+                    : Image.asset(
+                        'lib/assets/miniaturas/SMARTVISION PREMIUM.jpg',
+                      )),
             Container(
                 color: Colors.transparent,
                 height: heigthScreen,

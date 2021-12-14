@@ -83,10 +83,15 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
           if (_Vcontroller.value.isInitialized) {
             // If the VideoPlayerController has finished initialization, use
             // the data it provides to limit the aspect ratio of the video.
-            return AspectRatio(
-              aspectRatio: _Vcontroller.value.aspectRatio,
-              // Use the VideoPlayer widget to display the video.
-              child: VideoPlayer(_Vcontroller),
+            return Container(
+              width: MediaQuery.of(context).size.width,
+              child: Center(
+                child: AspectRatio(
+                  aspectRatio: _Vcontroller.value.aspectRatio,
+                  // Use the VideoPlayer widget to display the video.
+                  child: VideoPlayer(_Vcontroller),
+                ),
+              ),
             );
           } else {
             // If the VideoPlayerController is still initializing, show a
