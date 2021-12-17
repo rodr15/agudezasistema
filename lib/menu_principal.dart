@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
@@ -38,6 +40,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   String _scale = '0';
   bool zoom = false;
   bool _initialPosition = false;
+  String ruta = '';
   final FocusNode _focusNode = FocusNode();
   final ScrollController _controller = ScrollController();
   @override
@@ -65,6 +68,17 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     isPlaying = provider.getIsPlaying;
     videoTrigger = provider.getTriggerVideo;
     imageTrigger = provider.getTriggerImage;
+
+    if (!isPlaying) {
+      ruta = imagenes[0][0];
+      print('---------------');
+      // print(ruta.);
+      print('---------------');
+      ruta = ruta.replaceAll('lib/assets/', '');
+      ruta = ruta.replaceRange(ruta.indexOf('/'), ruta.length, '');
+
+      ruta = ruta.toUpperCase();
+    }
 
     void izquierda() {
       _contador--;
@@ -438,10 +452,26 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           child: Stack(children: [
             Container(
                 child: isPlaying
-                    ? VideoPlayerScreen(imagenes[index][0], play, volume)
+                    // ? VideoPlayerScreen(imagenes[index][0], play, volume)
+                    ? Container()
                     : Image.asset(
-                        'lib/assets/miniaturas/SMARTVISION PREMIUM.jpg',
+                        'lib/assets/Menu Principal/Fondo0.png',
                       )),
+            if (!isPlaying)
+              Positioned(
+                  top: heigthScreen * 17 / 30,
+                  // left: widthScreen * 1 / 3,
+                  child: Container(
+                    width: widthScreen,
+                    color: Colors.transparent,
+                    child: Center(
+                      child: Text(ruta,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: heigthScreen / 20,
+                          )),
+                    ),
+                  )),
             Container(
                 color: Colors.transparent,
                 height: heigthScreen,

@@ -7,16 +7,23 @@ class ProvideImages with ChangeNotifier {
   bool isPlaying = false;
   List pMenu = [0, 0, 0, 0, 0];
   List images = [
-    ['lib/assets/miniaturas/3 metros.jpg', '3 metros', 0],
-    ['lib/assets/miniaturas/4 metros.jpg', '4 metros', 0],
-    ['lib/assets/miniaturas/5 metros.jpg', '5 metros', 0],
-    ['lib/assets/miniaturas/6 metros.jpg', '6 metros', 0],
-    ['lib/assets/miniaturas/ATLAS.JPG', 'ATLAS E IMAGENES DE REFERENCIA', 0],
-    ['lib/assets/miniaturas/DEFECTOS REFRACTIVOS.jpg', 'DEFECTOS REFRACTIVOS'],
-    ['lib/assets/miniaturas/MACULOPATIA.jpg', 'MACULOPATIA', 0],
-    ['lib/assets/miniaturas/estereopsis.png', 'TEST DE ESTEREOPSIS', 0],
-    ['lib/assets/miniaturas/ISHIHARA.png', 'TEST DE COLOR', 0],
-    ['lib/assets/miniaturas/tipos de lentes.jpg', 'TIPOS DE LENTES', 0]
+    ['lib/assets/Menu Principal/3 metros.jpg', '3 metros', 0],
+    ['lib/assets/Menu Principal/4 metros.jpg', '4 metros', 0],
+    ['lib/assets/Menu Principal/5 metros.jpg', '5 metros', 0],
+    ['lib/assets/Menu Principal/6 metros.jpg', '6 metros', 0],
+    [
+      'lib/assets/Menu Principal/ATLAS.JPG',
+      'ATLAS E IMAGENES DE REFERENCIA',
+      0
+    ],
+    [
+      'lib/assets/Menu Principal/DEFECTOS REFRACTIVOS.jpg',
+      'DEFECTOS REFRACTIVOS'
+    ],
+    ['lib/assets/Menu Principal/MACULOPATIA.jpg', 'MACULOPATIA', 0],
+    ['lib/assets/Menu Principal/estereopsis.png', 'TEST DE ESTEREOPSIS', 0],
+    ['lib/assets/Menu Principal/ISHIHARA.png', 'TEST DE COLOR', 0],
+    ['lib/assets/Menu Principal/tipos de lentes.jpg', 'TIPOS DE LENTES', 0]
   ];
 
   get getImages {
@@ -79,23 +86,31 @@ class ProvideImages with ChangeNotifier {
       case '0,0,0,0,0':
         isPlaying = false;
         images = [
-          ['lib/assets/miniaturas/3 metros.jpg', '3 metros', 0],
-          ['lib/assets/miniaturas/4 metros.jpg', '4 metros', 0],
-          ['lib/assets/miniaturas/5 metros.jpg', '5 metros', 0],
-          ['lib/assets/miniaturas/6 metros.jpg', '6 metros', 0],
+          ['lib/assets/Menu Principal/3 metros.jpg', '3 metros', 0],
+          ['lib/assets/Menu Principal/4 metros.jpg', '4 metros', 0],
+          ['lib/assets/Menu Principal/5 metros.jpg', '5 metros', 0],
+          ['lib/assets/Menu Principal/6 metros.jpg', '6 metros', 0],
           [
-            'lib/assets/miniaturas/ATLAS.JPG',
+            'lib/assets/Menu Principal/ATLAS.JPG',
             'ATLAS E IMAGENES DE REFERENCIA',
             0
           ],
           [
-            'lib/assets/miniaturas/DEFECTOS REFRACTIVOS.jpg',
+            'lib/assets/Menu Principal/DEFECTOS REFRACTIVOS.jpg',
             'DEFECTOS REFRACTIVOS'
           ],
-          ['lib/assets/miniaturas/MACULOPATIA.jpg', 'MACULOPATIA', 0],
-          ['lib/assets/miniaturas/estereopsis.png', 'TEST DE ESTEREOPSIS', 0],
-          ['lib/assets/miniaturas/ISHIHARA.png', 'TEST DE COLOR', 0],
-          ['lib/assets/miniaturas/tipos de lentes.jpg', 'TIPOS DE LENTES', 0]
+          ['lib/assets/Menu Principal/MACULOPATIA.jpg', 'MACULOPATIA', 0],
+          [
+            'lib/assets/Menu Principal/estereopsis.png',
+            'TEST DE ESTEREOPSIS',
+            0
+          ],
+          ['lib/assets/Menu Principal/ISHIHARA.png', 'TEST DE COLOR', 0],
+          [
+            'lib/assets/Menu Principal/tipos de lentes.jpg',
+            'TIPOS DE LENTES',
+            0
+          ]
         ];
         break;
       case '1,0,0,0,0':
@@ -127,7 +142,7 @@ class ProvideImages with ChangeNotifier {
             'PRUEBAS Y AYUDAS DIAGNOSTICAS'
           ],
           [
-            'lib/assets/miniaturas/videos de fijacion.jpg',
+            'lib/assets/Menu Principal/videos de fijacion.jpg',
             'VIDEOS PUNTOS DE FIJACION'
           ],
         ];
@@ -679,26 +694,30 @@ class ProvideImages with ChangeNotifier {
             'lib/assets/3 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 01.jpg',
             'TEST COLOR'
           ],
-          ['lib/assets/miniaturas/videos de fijacion niños.jpg', 'VIDEOS', 0],
+          [
+            'lib/assets/Menu Principal/videos de fijacion niños.jpg',
+            'VIDEOS',
+            0
+          ],
           ['lib/assets/3 METROS/5 NIÑOS/1.PNG', '1', 0],
         ];
         break;
       case '1,6,1,0,0':
         images = [
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/058.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/060.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/061.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/062.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/063.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/064.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/065.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/066.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/067.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/068.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/069.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/070.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/071.JPG', '', 0],
-          ['lib/assets/3 METROS/5 NIÑOS/NLH/072.JPG', '', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/058.JPG', '20/400', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/060.JPG', '20/200', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/061.JPG', '20/160', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/062.JPG', '20/125', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/063.JPG', '20/100', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/064.JPG', '20/80', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/065.JPG', '20/63', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/066.JPG', '20/50', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/067.JPG', '20/40', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/068.JPG', '20/32', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/069.JPG', '20/25', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/070.JPG', '20/20', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/071.JPG', '20/16', 0],
+          ['lib/assets/3 METROS/5 NIÑOS/NLH/072.JPG', 'DIAL', 0],
           ['lib/assets/3 METROS/5 NIÑOS/NLH/073.JPG', '', 0],
         ];
 
@@ -1988,7 +2007,7 @@ class ProvideImages with ChangeNotifier {
             'PRUEBAS Y AYUDAS DIAGNOSTICAS'
           ],
           [
-            'lib/assets/miniaturas/videos de fijacion.jpg',
+            'lib/assets/Menu Principal/videos de fijacion.jpg',
             'VIDEOS PUNTOS DE FIJACION'
           ],
         ];
@@ -2541,7 +2560,11 @@ class ProvideImages with ChangeNotifier {
             'lib/assets/4 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 01.jpg',
             'TEST COLOR'
           ],
-          ['lib/assets/miniaturas/videos de fijacion niños.jpg', 'VIDEOS', 0],
+          [
+            'lib/assets/Menu Principal/videos de fijacion niños.jpg',
+            'VIDEOS',
+            0
+          ],
           ['lib/assets/4 METROS/5 NIÑOS/1.PNG', '1', 0],
         ];
         break;
@@ -3869,7 +3892,7 @@ class ProvideImages with ChangeNotifier {
             'PRUEBAS Y AYUDAS DIAGNOSTICAS'
           ],
           [
-            'lib/assets/miniaturas/videos de fijacion.jpg',
+            'lib/assets/Menu Principal/videos de fijacion.jpg',
             'VIDEOS PUNTOS DE FIJACION'
           ],
         ];
@@ -4422,7 +4445,11 @@ class ProvideImages with ChangeNotifier {
             'lib/assets/5 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 01.jpg',
             'TEST COLOR'
           ],
-          ['lib/assets/miniaturas/videos de fijacion niños.jpg', 'VIDEOS', 0],
+          [
+            'lib/assets/Menu Principal/videos de fijacion niños.jpg',
+            'VIDEOS',
+            0
+          ],
           ['lib/assets/5 METROS/5 NIÑOS/1.PNG', '1', 0],
         ];
         break;
@@ -5750,7 +5777,7 @@ class ProvideImages with ChangeNotifier {
             'PRUEBAS Y AYUDAS DIAGNOSTICAS'
           ],
           [
-            'lib/assets/miniaturas/videos de fijacion.jpg',
+            'lib/assets/Menu Principal/videos de fijacion.jpg',
             'VIDEOS PUNTOS DE FIJACION'
           ],
         ];
@@ -6303,7 +6330,11 @@ class ProvideImages with ChangeNotifier {
             'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 01.jpg',
             'TEST COLOR'
           ],
-          ['lib/assets/miniaturas/videos de fijacion niños.jpg', 'VIDEOS', 0],
+          [
+            'lib/assets/Menu Principal/videos de fijacion niños.jpg',
+            'VIDEOS',
+            0
+          ],
           ['lib/assets/6 METROS/5 NIÑOS/1.PNG', '1', 0],
         ];
         break;
@@ -7980,7 +8011,7 @@ class ProvideImages with ChangeNotifier {
       //'6,0
       case '6,0,0,0,0':
         images = [
-          ['lib/assets/miniaturas/VIDEOS.png', 'VIDEOS EXPLICATIVOS', 0],
+          ['lib/assets/Menu Principal/VIDEOS.png', 'VIDEOS EXPLICATIVOS', 0],
           ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', 'DEFECTOS REFRACTIVOS', 0],
         ];
         break;
@@ -8700,8 +8731,12 @@ class ProvideImages with ChangeNotifier {
       //LENTES
       case '10,0,0,0,0':
         images = [
-          ['lib/assets/miniaturas/VIDEOS.png', 'VIDEOS EXPLICATIVOS', 0],
-          ['lib/assets/miniaturas/TIPOS DE LENTES.png', 'TIPOS DE LENTES', 0],
+          ['lib/assets/Menu Principal/VIDEOS.png', 'VIDEOS EXPLICATIVOS', 0],
+          [
+            'lib/assets/Menu Principal/TIPOS DE LENTES.png',
+            'TIPOS DE LENTES',
+            0
+          ],
         ];
         break;
 

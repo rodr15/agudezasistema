@@ -104,13 +104,13 @@ class _ImagesDisplay extends State<ImagesDisplay> {
         scaleController.scale = initialScale! * 1.9;
         break;
       case '0':
-        // if (menu[0] > 4) {
-        scaleController = PhotoViewController()
-          ..outputStateStream.listen(listener);
-        // scaleController.value = scaleController.initial;
-        // initialScale = scaleController.value.scale!;
-        print(scaleController.value);
-        // } else
+        if (menu[0] > 4) {
+          scaleController = PhotoViewController()
+            ..outputStateStream.listen(listener);
+          // scaleController.value = scaleController.initial;
+          // initialScale = scaleController.value.scale!;
+          print(scaleController.value);
+        }
         scaleController.scale = initialScale!;
         break;
       case 'flecha derecha': // FLECHA DERECHA
@@ -139,14 +139,20 @@ class _ImagesDisplay extends State<ImagesDisplay> {
     return Scaffold(
       body: Stack(
         children: <Widget>[
-          Container(
-              color: Colors.transparent,
-              child: PhotoView(
-                backgroundDecoration:
-                    BoxDecoration(color: widget.backGroundColor),
-                imageProvider: AssetImage(imagenes),
-                controller: scaleController,
-              )),
+          menu[0] > 4
+              ? Container(
+                  color: Colors.transparent,
+                  child: PhotoView(
+                    backgroundDecoration:
+                        BoxDecoration(color: widget.backGroundColor),
+                    imageProvider: AssetImage(imagenes),
+                    controller: scaleController,
+                  ))
+              : Container(
+                  width: MediaQuery.of(context).size.width,
+                  height: MediaQuery.of(context).size.height,
+                  child: Image.asset(imagenes),
+                ),
           Text("Scale applied: ${(scaleCopy! * 100) / initialScale!}")
         ],
       ),

@@ -63,7 +63,8 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - lib/assets/
-    - lib/assets/miniaturas/
+    - lib/assets/FondosSistemaAgudeza/
+    - lib/assets/Menu Principal/
     - lib/assets/3 METROS/
     - lib/assets/3 METROS/0 OPTOTIPO SNELLEN/
     - lib/assets/3 METROS/1 LETRAS LOG/
