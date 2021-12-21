@@ -153,7 +153,7 @@ class _ImagesDisplay extends State<ImagesDisplay> {
                   height: MediaQuery.of(context).size.height,
                   child: Image.asset(imagenes),
                 ),
-          Text("Scale applied: ${(scaleCopy! * 100) / initialScale!}")
+          // Text("Scale applied: ${(scaleCopy! * 100) / initialScale!}")
         ],
       ),
     );

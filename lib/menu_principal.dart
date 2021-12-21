@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
@@ -40,7 +38,24 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   String _scale = '0';
   bool zoom = false;
   bool _initialPosition = false;
-  String ruta = '';
+  int indexFondos = 0;
+  List Fondos = [
+    'lib/assets/Menu Principal/Fondo0.png',
+    'lib/assets/Menu Principal/Fondo1.png',
+    'lib/assets/Menu Principal/Fondo2.png',
+    'lib/assets/Menu Principal/Fondo3.png',
+    'lib/assets/Menu Principal/Fondo4.png',
+    'lib/assets/Menu Principal/Fondo5.png',
+    'lib/assets/Menu Principal/Fondo6.png',
+    'lib/assets/Menu Principal/Fondo7.png',
+    'lib/assets/Menu Principal/Fondo8.png',
+    'lib/assets/Menu Principal/Fondo9.png',
+    'lib/assets/Menu Principal/Fondo10.png',
+    'lib/assets/Menu Principal/Fondo11.png',
+    'lib/assets/Menu Principal/Fondo12.png',
+    'lib/assets/Menu Principal/Fondo13.png',
+  ];
+  String Fondo = 'lib/assets/Menu Principal/Fondo0.png';
   final FocusNode _focusNode = FocusNode();
   final ScrollController _controller = ScrollController();
   @override
@@ -68,17 +83,6 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     isPlaying = provider.getIsPlaying;
     videoTrigger = provider.getTriggerVideo;
     imageTrigger = provider.getTriggerImage;
-
-    if (!isPlaying) {
-      ruta = imagenes[0][0];
-      print('---------------');
-      // print(ruta.);
-      print('---------------');
-      ruta = ruta.replaceAll('lib/assets/', '');
-      ruta = ruta.replaceRange(ruta.indexOf('/'), ruta.length, '');
-
-      ruta = ruta.toUpperCase();
-    }
 
     void izquierda() {
       _contador--;
@@ -186,6 +190,16 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           print('change -> $changeVideo');
           print(event.physicalKey.usbHidUsage);
           switch (event.physicalKey.usbHidUsage) {
+            case 458806:
+              // Cambio fondo
+              indexFondos++;
+              if (indexFondos >= Fondos.length - 1) indexFondos = 0;
+              Fondo = Fondos[indexFondos];
+              break;
+            case 458807:
+              // Cambio contornos
+              break;
+
             case 458782: // NUMERO 1
               _scale = '1';
               zoom = true;
@@ -234,6 +248,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                 _scale = 'flecha derecha';
                 provider.setMoveZoom = true;
               } else {
+                triggerBackgroundColor = false;
                 complemento = '';
                 _contadorAbajo = 0;
                 if (isInMenu) {
@@ -250,6 +265,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                 _scale = 'flecha izquierda';
                 provider.setMoveZoom = true;
               } else {
+                triggerBackgroundColor = false;
                 complemento = '';
                 _contadorAbajo = 0;
                 if (isInMenu) {
@@ -271,7 +287,10 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                 if (triggerBackgroundColor) {
                   backgroundColor = Colors.black;
                   if (imagenes[index][2] == 70) {
-                    complemento = 'N.JPG';
+                    String imageChange = imagenes[index][0];
+                    imageChange = imageChange.replaceRange(
+                        0, imageChange.indexOf('.'), '');
+                    complemento = 'N' + imageChange;
                   }
                 } else {
                   backgroundColor = Colors.white;
@@ -452,26 +471,10 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           child: Stack(children: [
             Container(
                 child: isPlaying
-                    // ? VideoPlayerScreen(imagenes[index][0], play, volume)
-                    ? Container()
+                    ? VideoPlayerScreen(imagenes[index][0], play, volume)
                     : Image.asset(
-                        'lib/assets/Menu Principal/Fondo0.png',
+                        Fondo,
                       )),
-            if (!isPlaying)
-              Positioned(
-                  top: heigthScreen * 17 / 30,
-                  // left: widthScreen * 1 / 3,
-                  child: Container(
-                    width: widthScreen,
-                    color: Colors.transparent,
-                    child: Center(
-                      child: Text(ruta,
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: heigthScreen / 20,
-                          )),
-                    ),
-                  )),
             Container(
                 color: Colors.transparent,
                 height: heigthScreen,
@@ -501,7 +504,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             if (imageTrigger)
               ImagesDisplay(
                   imagenes[index][0], complemento, _scale, backgroundColor),
-            if (!videoTrigger)
+            if (!videoTrigger && !imageTrigger)
               Positioned(
                 top: heigthScreen * 9 / 10,
                 child: Container(
@@ -510,7 +513,24 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   color: Colors.transparent,
                   child: Center(
                       child: Text(
-                    imagenes[_contador][1].toString(),
+                    imagenes[_contador][1].toString().toUpperCase(),
+                    style: TextStyle(
+                      fontSize: heigthScreen / 30,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
+                  )),
+                ),
+              ),
+            if (!videoTrigger && !imageTrigger)
+              Positioned(
+                top: heigthScreen * 17.2 / 30,
+                child: Container(
+                  width: widthScreen,
+                  color: Colors.transparent,
+                  child: Center(
+                      child: Text(
+                    provider.getRuta.toUpperCase(),
                     style: TextStyle(
                       fontSize: heigthScreen / 30,
                       fontWeight: FontWeight.bold,
