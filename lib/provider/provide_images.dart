@@ -8,24 +8,32 @@ class ProvideImages with ChangeNotifier {
   String ruta = 'Menu Principal';
   List pMenu = [0, 0, 0, 0, 0];
   List images = [
-    ['lib/assets/Menu Principal/3 metros.jpg', '3 metros', 0],
-    ['lib/assets/Menu Principal/4 metros.jpg', '4 metros', 0],
-    ['lib/assets/Menu Principal/5 metros.jpg', '5 metros', 0],
-    ['lib/assets/Menu Principal/6 metros.jpg', '6 metros', 0],
-    [
-      'lib/assets/Menu Principal/ATLAS.JPG',
-      'ATLAS E IMAGENES DE REFERENCIA',
-      0
-    ],
-    [
-      'lib/assets/Menu Principal/DEFECTOS REFRACTIVOS.jpg',
-      'DEFECTOS REFRACTIVOS'
-    ],
-    ['lib/assets/Menu Principal/MACULOPATIA.jpg', 'MACULOPATIA', 0],
-    ['lib/assets/Menu Principal/estereopsis.png', 'TEST DE ESTEREOPSIS', 0],
-    ['lib/assets/Menu Principal/ISHIHARA.png', 'TEST DE COLOR', 0],
-    ['lib/assets/Menu Principal/tipos de lentes.jpg', 'TIPOS DE LENTES', 0]
-  ];
+          ['lib/assets/Menu Principal/3 metros.jpg', '3 metros', 0],
+          ['lib/assets/Menu Principal/4 metros.jpg', '4 metros', 0],
+          ['lib/assets/Menu Principal/5 metros.jpg', '5 metros', 0],
+          ['lib/assets/Menu Principal/6 metros.jpg', '6 metros', 0],
+          [
+            'lib/assets/Menu Principal/ATLAS.PNG',
+            'ATLAS E IMAGENES DE REFERENCIA',
+            0
+          ],
+          [
+            'lib/assets/Menu Principal/DEFECTOS REFRACTIVOS.png',
+            'DEFECTOS REFRACTIVOS'
+          ],
+          ['lib/assets/Menu Principal/MACULOPATIA.jpg', 'MACULOPATIA', 0],
+          [
+            'lib/assets/Menu Principal/estereopsis.png',
+            'TEST DE ESTEREOPSIS',
+            0
+          ],
+          ['lib/assets/Menu Principal/ISHIHARA.png', 'TEST DE COLOR', 0],
+          [
+            'lib/assets/Menu Principal/TIPOS DE LENTES.png',
+            'TIPOS DE LENTES',
+            0
+          ]
+        ];
   get getRuta {
     return ruta;
   }
@@ -96,12 +104,12 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/Menu Principal/5 metros.jpg', '5 metros', 0],
           ['lib/assets/Menu Principal/6 metros.jpg', '6 metros', 0],
           [
-            'lib/assets/Menu Principal/ATLAS.JPG',
+            'lib/assets/Menu Principal/ATLAS.PNG',
             'ATLAS E IMAGENES DE REFERENCIA',
             0
           ],
           [
-            'lib/assets/Menu Principal/DEFECTOS REFRACTIVOS.jpg',
+            'lib/assets/Menu Principal/DEFECTOS REFRACTIVOS.png',
             'DEFECTOS REFRACTIVOS'
           ],
           ['lib/assets/Menu Principal/MACULOPATIA.jpg', 'MACULOPATIA', 0],
@@ -112,7 +120,7 @@ class ProvideImages with ChangeNotifier {
           ],
           ['lib/assets/Menu Principal/ISHIHARA.png', 'TEST DE COLOR', 0],
           [
-            'lib/assets/Menu Principal/tipos de lentes.jpg',
+            'lib/assets/Menu Principal/TIPOS DE LENTES.png',
             'TIPOS DE LENTES',
             0
           ]
@@ -143,12 +151,12 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/DIAL/0.JPG', 'DIAL', 0],
           ['lib/assets/HERRAMIENTAS/1.JPG', 'HERRAMIENTAS', 0],
           [
-            'lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/001.JPG',
-            'PRUEBAS Y AYUDAS DIAGNOSTICAS'
+            'lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/3M001.JPG',
+            'PRUEBAS Y AYUDAS DIAGNOSTICAS',0
           ],
           [
-            'lib/assets/Menu Principal/videos de fijacion.jpg',
-            'VIDEOS PUNTOS DE FIJACION'
+            'lib/assets/Menu Principal/VIDEOS FIJACION.png',
+            'VIDEOS PUNTOS DE FIJACION',0
           ],
         ];
         break;
@@ -2062,11 +2070,11 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/DIAL/0.JPG', 'DIAL', 0],
           ['lib/assets/HERRAMIENTAS/1.JPG', 'HERRAMIENTAS', 0],
           [
-            'lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/001.JPG',
+            'lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/4M001.JPG',
             'PRUEBAS Y AYUDAS DIAGNOSTICAS'
           ],
           [
-            'lib/assets/Menu Principal/videos de fijacion.jpg',
+            'lib/assets/Menu Principal/VIDEOS FIJACION.png',
             'VIDEOS PUNTOS DE FIJACION'
           ],
         ];
@@ -3717,10 +3725,11 @@ class ProvideImages with ChangeNotifier {
       case '2,12,0,0,0':
         ruta = '4 METROS | herramientas';
         images = [
-          ['lib/assets/HERRAMIENTAS/1.JPG', '', 70],
-          ['lib/assets/HERRAMIENTAS/3.JPG', '', 70],
-          ['lib/assets/HERRAMIENTAS/5.JPG', '', 70],
-          ['lib/assets/HERRAMIENTAS/7.JPG', '', 70],
+          ['lib/assets/HERRAMIENTAS/1.JPG', 'HERRAMIENTAS 1', 70],
+          ['lib/assets/HERRAMIENTAS/3.JPG', 'HERRAMIENTAS 2', 70],
+          ['lib/assets/HERRAMIENTAS/5.JPG', 'HERRAMIENTAS 3', 70],
+          ['lib/assets/HERRAMIENTAS/7.JPG', 'HERRAMIENTAS 4', 0],
+          ['lib/assets/HERRAMIENTAS/8.JPG', 'HERRAMIENTAS 5', 0],
         ];
 
         break;
@@ -3999,11 +4008,11 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/DIAL/0.JPG', 'DIAL', 0],
           ['lib/assets/HERRAMIENTAS/1.JPG', 'HERRAMIENTAS', 0],
           [
-            'lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/001.JPG',
+            'lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/5M001.JPG',
             'PRUEBAS Y AYUDAS DIAGNOSTICAS'
           ],
           [
-            'lib/assets/Menu Principal/videos de fijacion.jpg',
+            'lib/assets/Menu Principal/VIDEOS FIJACION.png',
             'VIDEOS PUNTOS DE FIJACION'
           ],
         ];
@@ -4655,21 +4664,21 @@ class ProvideImages with ChangeNotifier {
       case '3,6,2,0,0':
         ruta = '5 METROS | niños | nlh';
         images = [
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/058.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/060.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/061.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/062.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/063.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/064.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/065.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/066.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/067.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/068.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/069.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/070.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/071.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/072.JPG', '', 0],
-          ['lib/assets/5 METROS/5 NIÑOS/NLH/073.JPG', '', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/058.JPG', '20/400', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/060.JPG', '20/200', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/061.JPG', '20/160', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/062.JPG', '20/125', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/063.JPG', '20/100', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/064.JPG', '20/80', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/065.JPG', '20/63', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/066.JPG', '20/50', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/067.JPG', '20/40', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/068.JPG', '20/32', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/069.JPG', '20/25', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/070.JPG', '20/20', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/071.JPG', '20/16', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/072.JPG', 'CROSSCYL', 0],
+          ['lib/assets/5 METROS/5 NIÑOS/NLH/073.JPG', 'DIAL', 0],
         ];
 
         break;
@@ -5024,12 +5033,12 @@ class ProvideImages with ChangeNotifier {
         break;
 
       case '3,7,0,0,0':
-        ruta = '5 METROS | 6 letras ';
+        ruta = '5 METROS | letras ';
         images = [
-          ['lib/assets/5 METROS/6 LETRAS/5_50-10.JPG', '', 2],
-          ['lib/assets/5 METROS/6 LETRAS/5_50-11.JPG', '', 3],
-          ['lib/assets/5 METROS/6 LETRAS/5_50-12.JPG', '', 3],
-          ['lib/assets/5 METROS/6 LETRAS/5_50-13.JPG', '', 3],
+          ['lib/assets/5 METROS/6 LETRAS/5_50-10.JPG', '20/200 - 100', 2],
+          ['lib/assets/5 METROS/6 LETRAS/5_50-11.JPG', '20/80 - 60', 3],
+          ['lib/assets/5 METROS/6 LETRAS/5_50-12.JPG', '20/50 - 30', 3],
+          ['lib/assets/5 METROS/6 LETRAS/5_50-13.JPG', '20/25 - 15', 3],
         ];
 
         break;
@@ -5133,10 +5142,10 @@ class ProvideImages with ChangeNotifier {
       case '3,8,0,0,0':
         ruta = '5 METROS | numeros';
         images = [
-          ['lib/assets/5 METROS/7 NUMEROS/5_50-6.JPG', '', -1],
-          ['lib/assets/5 METROS/7 NUMEROS/5_50-7.JPG', '', 2],
-          ['lib/assets/5 METROS/7 NUMEROS/5_50-8.JPG', '', 3],
-          ['lib/assets/5 METROS/7 NUMEROS/5_50-9.JPG', '', 3],
+          ['lib/assets/5 METROS/7 NUMEROS/5_50-6.JPG', '20/400', -1],
+          ['lib/assets/5 METROS/7 NUMEROS/5_50-7.JPG', '20/200 - 100', 2],
+          ['lib/assets/5 METROS/7 NUMEROS/5_50-8.JPG', '20/50 - 30', 3],
+          ['lib/assets/5 METROS/7 NUMEROS/5_50-9.JPG', '20/25 - 15', 3],
         ];
 
         break;
@@ -5240,32 +5249,12 @@ class ProvideImages with ChangeNotifier {
       case '3,9,0,0,0':
         ruta = '5 METROS | e direccional';
         images = [
-          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-14.JPG', '', 2],
-          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-15.JPG', '', 3],
-          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-16.JPG', '', 3],
-          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-17.JPG', '', 3],
+          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-14.JPG', '20/200 - 100', 2],
+          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-15.JPG', '20/80 - 60', 3],
+          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-16.JPG', '20/50 - 30', 3],
+          ['lib/assets/5 METROS/8 E DIRECCIONAL/5_50-17.JPG', '20/25 - 15', 3],
         ];
-        // images = [
-        //   [
-        //     'lib/assets/DEFECTOS REFRACTIVOS/VIDEOS EXPLICATIVOS.JPG',
-        //     'VIDEOS EXPLICATIVOS'
-        //   ],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', '1',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/2.JPG', '2',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/3.JPG', '3',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/4.JPG', '4',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/5.JPG', '5',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/6.JPG', '6',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/7.JPG', '7',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/8.JPG', '8',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/9.JPG', '9',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/10.JPG', '10',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/11.JPG', '11',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/12.JPG', '12',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/13.JPG', '13',0],
-        //   ['lib/assets/DEFECTOS REFRACTIVOS/14.JPG', '14',0],
-        // ];
-
+     
         break;
 
       case '3,9,1,0,0':
@@ -5367,18 +5356,18 @@ class ProvideImages with ChangeNotifier {
       case '3,10,0,0,0':
         ruta = '5 METROS | rojo - verde';
         images = [
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-6-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-7-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-8-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-9-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-10-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-11-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-12-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-13-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-14-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-15-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-16-rg.jpg', '', 0],
-          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-17-rg.jpg', '', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-6-rg.jpg', 'NUMEROS | 20/400', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-7-rg.jpg', 'NUMEROS | 20/200 - 100', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-8-rg.jpg', 'NUMEROS | 20/50 - 30', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-9-rg.jpg', 'NUMEROS | 20/25 - 15', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-10-rg.jpg', 'LETRAS | 20/200 - 100', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-11-rg.jpg', 'LETRAS | 20/80 - 60', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-12-rg.jpg', 'LETRAS | 20/50 - 30', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-13-rg.jpg', 'LETRAS | 20/25 - 15', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-14-rg.jpg', 'E DIRECCIONAL | 20/200 - 100', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-15-rg.jpg', 'E DIRECCIONAL | 20/80 - 60', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-16-rg.jpg', 'E DIRECCIONAL | 20/50 - 30', 0],
+          ['lib/assets/5 METROS/11 ROJO-VERDE/5_50-17-rg.jpg', 'E DIRECCIONAL | 20/25 - 15', 0],
         ];
 
         break;
@@ -5482,24 +5471,24 @@ class ProvideImages with ChangeNotifier {
       case '3,11,0,0,0':
         ruta = '5 METROS | dial';
         images = [
-          ['lib/assets/DIAL/0.JPG', '', 0],
-          ['lib/assets/DIAL/10.JPG', '', 0],
-          ['lib/assets/DIAL/20.JPG', '', 0],
-          ['lib/assets/DIAL/30.JPG', '', 0],
-          ['lib/assets/DIAL/40.JPG', '', 0],
-          ['lib/assets/DIAL/50.JPG', '', 0],
-          ['lib/assets/DIAL/60.JPG', '', 0],
-          ['lib/assets/DIAL/70.JPG', '', 0],
-          ['lib/assets/DIAL/80.JPG', '', 0],
-          ['lib/assets/DIAL/90.JPG', '', 0],
-          ['lib/assets/DIAL/100.JPG', '', 0],
-          ['lib/assets/DIAL/110.JPG', '', 0],
-          ['lib/assets/DIAL/120.JPG', '', 0],
-          ['lib/assets/DIAL/130.JPG', '', 0],
-          ['lib/assets/DIAL/140.JPG', '', 0],
-          ['lib/assets/DIAL/150.JPG', '', 0],
-          ['lib/assets/DIAL/160.JPG', '', 0],
-          ['lib/assets/DIAL/170.JPG', '', 0],
+          ['lib/assets/DIAL/0.JPG', '0', 0],
+          ['lib/assets/DIAL/10.JPG', '10', 0],
+          ['lib/assets/DIAL/20.JPG', '20', 0],
+          ['lib/assets/DIAL/30.JPG', '30', 0],
+          ['lib/assets/DIAL/40.JPG', '40', 0],
+          ['lib/assets/DIAL/50.JPG', '50', 0],
+          ['lib/assets/DIAL/60.JPG', '60', 0],
+          ['lib/assets/DIAL/70.JPG', '70', 0],
+          ['lib/assets/DIAL/80.JPG', '80', 0],
+          ['lib/assets/DIAL/90.JPG', '90', 0],
+          ['lib/assets/DIAL/100.JPG', '100', 0],
+          ['lib/assets/DIAL/110.JPG', '110', 0],
+          ['lib/assets/DIAL/120.JPG', '120', 0],
+          ['lib/assets/DIAL/130.JPG', '130', 0],
+          ['lib/assets/DIAL/140.JPG', '140', 0],
+          ['lib/assets/DIAL/150.JPG', '150', 0],
+          ['lib/assets/DIAL/160.JPG', '160', 0],
+          ['lib/assets/DIAL/170.JPG', '170', 0],
         ];
         break;
       case '3,11,1,0,0':
@@ -5601,14 +5590,15 @@ class ProvideImages with ChangeNotifier {
       case '3,12,0,0,0':
         ruta = '5 METROS | herramientas';
         images = [
-          ['lib/assets/HERRAMIENTAS/1.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/2.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/3.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/4.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/5.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/6.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/7.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/8.JPG', '', 0],
+          ['lib/assets/HERRAMIENTAS/1.JPG', 'HERRAMIENTAS 1', 70],
+          
+          ['lib/assets/HERRAMIENTAS/3.JPG', 'HERRAMIENTAS 2', 70],
+          
+          ['lib/assets/HERRAMIENTAS/5.JPG', 'HERRAMIENTAS 3', 70],
+          
+          ['lib/assets/HERRAMIENTAS/7.JPG', 'HERRAMIENTAS 4', 0],
+          ['lib/assets/HERRAMIENTAS/8.JPG', 'HERRAMIENTAS 5', 0],
+          
         ];
 
         break;
@@ -5716,8 +5706,8 @@ class ProvideImages with ChangeNotifier {
       case '3,13,0,0,0':
         ruta = '5 METROS | pruebas y ayudas diagnosticas';
         images = [
-          ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/001.JPG', '', 0],
-          ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/002.JPG', '', 0],
+          ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/5M001.JPG', '', 0],
+          ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/5M002.JPG', '', 0],
           ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/88.JPG', '', 0],
           ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/d.b_8.png', '', 0],
           ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/MADDOS.JPG', '', 0],
@@ -5888,11 +5878,11 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/DIAL/0.JPG', 'DIAL', 0],
           ['lib/assets/HERRAMIENTAS/1.JPG', 'HERRAMIENTAS', 0],
           [
-            'lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/001.JPG',
+            'lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/6M001.JPG',
             'PRUEBAS Y AYUDAS DIAGNOSTICAS'
           ],
           [
-            'lib/assets/Menu Principal/videos de fijacion.jpg',
+            'lib/assets/Menu Principal/VIDEOS FIJACION.png',
             'VIDEOS PUNTOS DE FIJACION'
           ],
         ];
@@ -5900,11 +5890,11 @@ class ProvideImages with ChangeNotifier {
       case '4,1,0,0,0':
         ruta = '6 METROS | optotipo snellen';
         images = [
-          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/1.JPG', '', 0],
-          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/2.JPG', '', 0],
-          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/3.JPG', '', 0],
-          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/DIAL.JPG', '', 0],
+          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/1.JPG', '1', 0],
+          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/2.JPG', '2', 0],
+          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/3.JPG', '3', 0],
+          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/CROSSCYL.JPG', 'CROSSCYL', 0],
+          ['lib/assets/6 METROS/0 OPTOTIPO SNELLEN/DIAL.JPG', 'DIAL', 0],
         ];
         break;
       case '4,1,1,0,0':
@@ -6006,14 +5996,11 @@ class ProvideImages with ChangeNotifier {
       case '4,2,0,0,0':
         ruta = '6 METROS | letras log';
         images = [
-          ['lib/assets/6 METROS/1 LETRAS LOG/1.PNG', '', 0],
-          ['lib/assets/6 METROS/1 LETRAS LOG/2.PNG', '', 0],
-          ['lib/assets/6 METROS/1 LETRAS LOG/3.PNG', '', 0],
-          ['lib/assets/6 METROS/1 LETRAS LOG/4.PNG', '', 0],
-          ['lib/assets/6 METROS/1 LETRAS LOG/5.PNG', '', 0],
-          ['lib/assets/6 METROS/1 LETRAS LOG/6.PNG', '', 0],
-          ['lib/assets/6 METROS/1 LETRAS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/1 LETRAS LOG/DIAL.JPG', '', 0]
+          ['lib/assets/6 METROS/1 LETRAS LOG/1.PNG', '1', 70],
+          ['lib/assets/6 METROS/1 LETRAS LOG/2.PNG', '2', 70],
+          ['lib/assets/6 METROS/1 LETRAS LOG/3.PNG', '3', 70],
+          ['lib/assets/6 METROS/1 LETRAS LOG/CROSSCYL.JPG', 'CROSSCYL', 0],
+          ['lib/assets/6 METROS/1 LETRAS LOG/DIAL.JPG', 'DIAL', 0]
         ];
         break;
       case '4,2,1,0,0':
@@ -6115,14 +6102,11 @@ class ProvideImages with ChangeNotifier {
       case '4,3,0,0,0':
         ruta = '6 METROS | numeros log';
         images = [
-          ['lib/assets/6 METROS/2 NUMEROS LOG/1.PNG', '', 0],
-          ['lib/assets/6 METROS/2 NUMEROS LOG/2.PNG', '', 0],
-          ['lib/assets/6 METROS/2 NUMEROS LOG/3.PNG', '', 0],
-          ['lib/assets/6 METROS/2 NUMEROS LOG/4.PNG', '', 0],
-          ['lib/assets/6 METROS/2 NUMEROS LOG/5.PNG', '', 0],
-          ['lib/assets/6 METROS/2 NUMEROS LOG/6.PNG', '', 0],
-          ['lib/assets/6 METROS/2 NUMEROS LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/2 NUMEROS LOG/DIAL.JPG', '', 0]
+          ['lib/assets/6 METROS/2 NUMEROS LOG/1.PNG', '1', 70],
+          ['lib/assets/6 METROS/2 NUMEROS LOG/2.PNG', '2', 70],
+          ['lib/assets/6 METROS/2 NUMEROS LOG/3.PNG', '3', 70],
+          ['lib/assets/6 METROS/2 NUMEROS LOG/CROSSCYL.JPG', 'CROSSCYL', 0],
+          ['lib/assets/6 METROS/2 NUMEROS LOG/DIAL.JPG', 'DIAL', 0]
         ];
 
         break;
@@ -6225,14 +6209,12 @@ class ProvideImages with ChangeNotifier {
       case '4,4,0,0,0':
         ruta = '6 METROS | e dir log';
         images = [
-          ['lib/assets/6 METROS/3 E DIR LOG/1.PNG', '', 0],
-          ['lib/assets/6 METROS/3 E DIR LOG/2.PNG', '', 0],
-          ['lib/assets/6 METROS/3 E DIR LOG/3.PNG', '', 0],
-          ['lib/assets/6 METROS/3 E DIR LOG/4.PNG', '', 0],
-          ['lib/assets/6 METROS/3 E DIR LOG/5.PNG', '', 0],
-          ['lib/assets/6 METROS/3 E DIR LOG/6.PNG', '', 0],
-          ['lib/assets/6 METROS/3 E DIR LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/3 E DIR LOG/DIAL.JPG', '', 0]
+          ['lib/assets/6 METROS/3 E DIR LOG/1.PNG', '1', 70],
+          ['lib/assets/6 METROS/3 E DIR LOG/2.PNG', '2', 70],
+          ['lib/assets/6 METROS/3 E DIR LOG/3.PNG', '3', 70],
+         
+          ['lib/assets/6 METROS/3 E DIR LOG/CROSSCYL.JPG', 'CROSSCYL', 0],
+          ['lib/assets/6 METROS/3 E DIR LOG/DIAL.JPG', 'DIAL', 0]
         ];
 
         break;
@@ -6336,14 +6318,12 @@ class ProvideImages with ChangeNotifier {
       case '4,5,0,0,0':
         ruta = '6 METROS | c landolt log';
         images = [
-          ['lib/assets/6 METROS/4 C LANDOLT LOG/1.PNG', '', 0],
-          ['lib/assets/6 METROS/4 C LANDOLT LOG/2.PNG', '', 0],
-          ['lib/assets/6 METROS/4 C LANDOLT LOG/3.PNG', '', 0],
-          ['lib/assets/6 METROS/4 C LANDOLT LOG/4.PNG', '', 0],
-          ['lib/assets/6 METROS/4 C LANDOLT LOG/5.PNG', '', 0],
-          ['lib/assets/6 METROS/4 C LANDOLT LOG/6.PNG', '', 0],
-          ['lib/assets/6 METROS/4 C LANDOLT LOG/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/4 C LANDOLT LOG/DIAL.JPG', '', 0],
+          ['lib/assets/6 METROS/4 C LANDOLT LOG/1.PNG', '1', 70],
+          ['lib/assets/6 METROS/4 C LANDOLT LOG/2.PNG', '2', 70],
+          ['lib/assets/6 METROS/4 C LANDOLT LOG/3.PNG', '3', 70],
+          
+          ['lib/assets/6 METROS/4 C LANDOLT LOG/CROSSCYL.JPG', 'CROSSCYL', 0],
+          ['lib/assets/6 METROS/4 C LANDOLT LOG/DIAL.JPG', 'DIAL', 0],
         ];
 
         break;
@@ -6446,173 +6426,133 @@ class ProvideImages with ChangeNotifier {
       case '4,6,0,0,0':
         ruta = '6 METROS | niños';
         images = [
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/059.JPG', 'NEWYORK LIGHT HOUSE', 0],
-          [
-            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 01.jpg',
-            'TEST COLOR'
-          ],
           [
             'lib/assets/Menu Principal/videos de fijacion niños.jpg',
             'VIDEOS',
             0
           ],
-          ['lib/assets/6 METROS/5 NIÑOS/1.PNG', '1', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/059.JPG', 'NEWYORK LIGHT HOUSE', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/1.PNG', 'OPTOTIPOS', 0],
+          [
+            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 01.jpg',
+            'TEST COLOR'
+          ],
+          
+          
         ];
         break;
+        
+
       case '4,6,1,0,0':
-        ruta = '6 METROS | niños | nlh';
+        ruta = '6 METROS | videos';
         images = [
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/059.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/060.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/061.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/062.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/063.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/064.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/065.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/066.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/067.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/068.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/069.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/070.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/071.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/072.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/NLH/073.JPG', '', 0],
+          ['lib/assets/LAVACALOLA.jpg', 'La vaca lola', 0],
+          ['lib/assets/LosPollitosDicen.jpg', 'Los pollitos', 0],
+          ['lib/assets/PINOCHO.jpg', 'Pinocho', 0]
         ];
 
         break;
       case '4,6,1,1,0':
-        triggerImage = true;
-        isPlaying = false;
+        isPlaying = true;
+        triggerVideo = true;
 
         break;
       case '4,6,1,2,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,3,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,4,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,5,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,6,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,7,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,8,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,9,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,10,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,11,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,12,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,13,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,14,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,15,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,16,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        triggerVideo = true;
         break;
       case '4,6,1,17,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,18,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,19,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
       case '4,6,1,20,0':
-        triggerImage = true;
-        isPlaying = false;
-
+        isPlaying = true;
+        triggerVideo = true;
         break;
-
       case '4,6,2,0,0':
-        ruta = '6 METROS | niños | test de color';
+        ruta = '6 METROS | niños | nlh';
         images = [
-          [
-            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 01.jpg',
-            '',
-            0
-          ],
-          [
-            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 03.jpg',
-            '',
-            0
-          ],
-          [
-            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 05.jpg',
-            '',
-            0
-          ],
-          [
-            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 07.jpg',
-            '',
-            0
-          ],
-          [
-            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 08.jpg',
-            '',
-            0
-          ],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/059.JPG', '20/400', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/060.JPG', '20/200', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/061.JPG', '20/200', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/062.JPG', '20/160', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/063.JPG', '20/125', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/064.JPG', '20/100', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/065.JPG', '20/80', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/066.JPG', '20/63', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/067.JPG', '20/50', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/068.JPG', '20/40', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/069.JPG', '20/32', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/070.JPG', '20/25', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/071.JPG', '20/20', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/072.JPG', '20/16', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/NLH/073.JPG', 'DIAL', 0],
         ];
 
         break;
-
       case '4,6,2,1,0':
         triggerImage = true;
         isPlaying = false;
@@ -6715,112 +6655,151 @@ class ProvideImages with ChangeNotifier {
         break;
 
       case '4,6,3,0,0':
-        ruta = '6 METROS | videos';
+        ruta = '6 METROS | niños | OPTOTIPOS';
         images = [
-          ['lib/assets/LAVACALOLA.jpg', 'La vaca lola', 0],
-          ['lib/assets/LosPollitosDicen.jpg', 'Los pollitos', 0],
-          ['lib/assets/PINOCHO.jpg', 'Pinocho', 0]
+          ['lib/assets/6 METROS/5 NIÑOS/1.PNG', 'SNELL 1', 70],
+          ['lib/assets/6 METROS/5 NIÑOS/2.PNG', 'SNELL 2', 70],
+          ['lib/assets/6 METROS/5 NIÑOS/3.PNG', 'SNELL 3', 70],
+          ['lib/assets/6 METROS/5 NIÑOS/4.PNG', 'NLH 1 ', 70],
+          ['lib/assets/6 METROS/5 NIÑOS/5.PNG', 'NLH 2', 70],
+          ['lib/assets/6 METROS/5 NIÑOS/6.PNG', 'NLH 3', 70],
+
+          ['lib/assets/6 METROS/5 NIÑOS/CROSSCYL.JPG', 'CROSSCYL', 0],
+          ['lib/assets/6 METROS/5 NIÑOS/DIAL.JPG', 'DIAL', 0]
         ];
 
         break;
+
       case '4,6,3,1,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
 
         break;
       case '4,6,3,2,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,3,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,4,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,5,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,6,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,7,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,8,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,9,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,10,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,11,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,12,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,13,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,14,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,15,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,16,0':
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,17,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,18,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,19,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       case '4,6,3,20,0':
-        isPlaying = true;
-        triggerVideo = true;
+        triggerImage = true;
+        isPlaying = false;
+
         break;
 
+
       case '4,6,4,0,0':
-        ruta = '6 METROS | niños | log';
+        ruta = '6 METROS | niños | test de color';
         images = [
-          ['lib/assets/6 METROS/5 NIÑOS/1.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/2.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/3.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/4.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/5.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/6.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/7.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/8.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/9.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/10.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/11.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/12.PNG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/CROSSCYL.JPG', '', 0],
-          ['lib/assets/6 METROS/5 NIÑOS/DIAL.JPG', '', 0]
+          [
+            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 01.jpg',
+            '',
+            0
+          ],
+          [
+            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 03.jpg',
+            '',
+            0
+          ],
+          [
+            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 05.jpg',
+            '',
+            0
+          ],
+          [
+            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 07.jpg',
+            '',
+            0
+          ],
+          [
+            'lib/assets/6 METROS/5 NIÑOS/TEST DE COLOR/TEST COLOR 08.jpg',
+            '',
+            0
+          ],
         ];
 
         break;
@@ -6925,14 +6904,13 @@ class ProvideImages with ChangeNotifier {
         isPlaying = false;
 
         break;
-
       case '4,7,0,0,0':
         ruta = '6 METROS | letras';
         images = [
-          ['lib/assets/6 METROS/6 LETRAS/6_50-10.JPG', '', 2],
-          ['lib/assets/6 METROS/6 LETRAS/6_50-11.JPG', '', 3],
-          ['lib/assets/6 METROS/6 LETRAS/6_50-12.JPG', '', 3],
-          ['lib/assets/6 METROS/6 LETRAS/6_50-13.JPG', '', 3],
+          ['lib/assets/6 METROS/6 LETRAS/6_50-10.JPG', '20/200 - 100', 2],
+          ['lib/assets/6 METROS/6 LETRAS/6_50-11.JPG', '20/80 - 60', 3],
+          ['lib/assets/6 METROS/6 LETRAS/6_50-12.JPG', '20/50 - 30', 3],
+          ['lib/assets/6 METROS/6 LETRAS/6_50-13.JPG', '20/25 - 15', 3],
         ];
 
         break;
@@ -7036,10 +7014,10 @@ class ProvideImages with ChangeNotifier {
       case '4,8,0,0,0':
         ruta = '6 METROS | numeros';
         images = [
-          ['lib/assets/6 METROS/7 NUMEROS/6_50-6.JPG', '', -1],
-          ['lib/assets/6 METROS/7 NUMEROS/6_50-7.JPG', '', 2],
-          ['lib/assets/6 METROS/7 NUMEROS/6_50-8.JPG', '', 3],
-          ['lib/assets/6 METROS/7 NUMEROS/6_50-9.JPG', '', 3],
+          ['lib/assets/6 METROS/7 NUMEROS/6_50-6.JPG', '20/400', -1],
+          ['lib/assets/6 METROS/7 NUMEROS/6_50-7.JPG', '20/200 - 100', 2],
+          ['lib/assets/6 METROS/7 NUMEROS/6_50-8.JPG', '20/50 - 30', 3],
+          ['lib/assets/6 METROS/7 NUMEROS/6_50-9.JPG', '20/25 - 15', 3],
         ];
 
         break;
@@ -7143,10 +7121,10 @@ class ProvideImages with ChangeNotifier {
       case '4,9,0,0,0':
         ruta = '6 METROS | e direccional';
         images = [
-          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-14.JPG', '', 2],
-          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-15.JPG', '', 3],
-          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-16.JPG', '', 3],
-          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-17.JPG', '', 3],
+          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-14.JPG', '20/200 - 100', 2],
+          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-15.JPG', '20/80 - 60', 3],
+          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-16.JPG', '20/50 - 30', 3],
+          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-17.JPG', '20/15 - 15', 3],
         ];
         // images = [
         //   [
@@ -7270,18 +7248,18 @@ class ProvideImages with ChangeNotifier {
       case '4,10,0,0,0':
         ruta = '6 METROS | rojo - verde';
         images = [
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-6-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-7-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-8-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-9-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-10-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-11-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-12-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-13-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-14-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-15-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-16-rg.jpg', '', 0],
-          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-17-rg.jpg', '', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-6-rg.jpg', 'NUMEROS | 20/400', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-7-rg.jpg', 'NUMEROS | 20/200 - 100', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-8-rg.jpg', 'NUMEROS | 20/50 - 30', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-9-rg.jpg', 'NUMEROS | 20/25 - 15', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-10-rg.jpg', 'LETRAS | 20/200 - 100', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-11-rg.jpg', 'LETRAS | 20/80 - 60', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-12-rg.jpg', 'LETRAS | 20/50 - 30', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-13-rg.jpg', 'LETRAS | 20/25 - 15', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-14-rg.jpg', 'E DIRECCIONAL | 20/200 - 100', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-15-rg.jpg', 'E DIRECCIONAL | 20/80 - 60', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-16-rg.jpg', 'E DIRECCIONAL | 20/50 - 30', 0],
+          ['lib/assets/6 METROS/11 ROJO-VERDE/6_50-17-rg.jpg', 'E DIRECCIONAL | 20/25 - 15', 0],
         ];
 
         break;
@@ -7385,24 +7363,24 @@ class ProvideImages with ChangeNotifier {
       case '4,11,0,0,0':
         ruta = '6 METROS | dial';
         images = [
-          ['lib/assets/DIAL/0.JPG', '', 0],
-          ['lib/assets/DIAL/10.JPG', '', 0],
-          ['lib/assets/DIAL/20.JPG', '', 0],
-          ['lib/assets/DIAL/30.JPG', '', 0],
-          ['lib/assets/DIAL/40.JPG', '', 0],
-          ['lib/assets/DIAL/50.JPG', '', 0],
-          ['lib/assets/DIAL/60.JPG', '', 0],
-          ['lib/assets/DIAL/70.JPG', '', 0],
-          ['lib/assets/DIAL/80.JPG', '', 0],
-          ['lib/assets/DIAL/90.JPG', '', 0],
-          ['lib/assets/DIAL/100.JPG', '', 0],
-          ['lib/assets/DIAL/110.JPG', '', 0],
-          ['lib/assets/DIAL/120.JPG', '', 0],
-          ['lib/assets/DIAL/130.JPG', '', 0],
-          ['lib/assets/DIAL/140.JPG', '', 0],
-          ['lib/assets/DIAL/150.JPG', '', 0],
-          ['lib/assets/DIAL/160.JPG', '', 0],
-          ['lib/assets/DIAL/170.JPG', '', 0],
+          ['lib/assets/DIAL/0.JPG', '0', 0],
+          ['lib/assets/DIAL/10.JPG', '10', 0],
+          ['lib/assets/DIAL/20.JPG', '20', 0],
+          ['lib/assets/DIAL/30.JPG', '30', 0],
+          ['lib/assets/DIAL/40.JPG', '40', 0],
+          ['lib/assets/DIAL/50.JPG', '50', 0],
+          ['lib/assets/DIAL/60.JPG', '60', 0],
+          ['lib/assets/DIAL/70.JPG', '70', 0],
+          ['lib/assets/DIAL/80.JPG', '80', 0],
+          ['lib/assets/DIAL/90.JPG', '90', 0],
+          ['lib/assets/DIAL/100.JPG', '100', 0],
+          ['lib/assets/DIAL/110.JPG', '110', 0],
+          ['lib/assets/DIAL/120.JPG', '120', 0],
+          ['lib/assets/DIAL/130.JPG', '130', 0],
+          ['lib/assets/DIAL/140.JPG', '140', 0],
+          ['lib/assets/DIAL/150.JPG', '150', 0],
+          ['lib/assets/DIAL/160.JPG', '160', 0],
+          ['lib/assets/DIAL/170.JPG', '170', 0],
         ];
         break;
       case '4,11,1,0,0':
@@ -7504,13 +7482,13 @@ class ProvideImages with ChangeNotifier {
       case '4,12,0,0,0':
         ruta = '6 METROS | herramientas';
         images = [
-          ['lib/assets/HERRAMIENTAS/1.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/2.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/3.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/4.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/5.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/6.JPG', '', 0],
-          ['lib/assets/HERRAMIENTAS/7.JPG', '', 0],
+          ['lib/assets/HERRAMIENTAS/1.JPG', '', 70],
+          
+          ['lib/assets/HERRAMIENTAS/3.JPG', '', 70],
+          
+          ['lib/assets/HERRAMIENTAS/5.JPG', '', 70],
+          
+          ['lib/assets/HERRAMIENTAS/7.JPG', '',0],
           ['lib/assets/HERRAMIENTAS/8.JPG', '', 0],
         ];
 
@@ -7619,8 +7597,8 @@ class ProvideImages with ChangeNotifier {
       case '4,13,0,0,0':
         ruta = '6 METROS | pruebas y ayudas diagnosticas';
         images = [
-          ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/001.JPG', '', 0],
-          ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/002.JPG', '', 0],
+          ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/6M001.JPG', '', 0],
+          ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/6M002.JPG', '', 0],
           ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/88.JPG', '', 0],
           ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/d.b_8.png', '', 0],
           ['lib/assets/PRUEBAS Y AYUDAS DIAGNOSTICAS/MADDOS.JPG', '', 0],
@@ -7769,156 +7747,158 @@ class ProvideImages with ChangeNotifier {
         // atlas
         ruta = 'ATLAS E IMAGENES DE REFERENCIA';
         images = [
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/0 OJO.jpg', '', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/0 OJO.jpg', 'OJO', 0],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/1 ANATOMIA DEL OJO.jpg',
-            '',
+            'ANATOMIA DEL OJO',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/2 OJO ANATOMICO.jpg',
-            '',
+            'OJO ANATOMICO',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/3  MUSCULOS OCULARES 2.jpg',
-            '',
+            'MUSCULOS OCULARES',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/4  MUSCULOS OCULARES.jpg',
-            '',
+            'MUSCULOS OCULARES',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/19 ESTRABISMOS.jpg',
-            '',
+            'ESTRABISMOS',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/20 FONDO DE OJO SANO.jpg',
-            '',
+            'FONDO DE OJO SANO',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/21 FONDO DE OJO SANO 2.jpg',
-            '',
+            'FONDO DE OJO SANO',
             0
           ],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/BLEFARITIS.jpg', '', 0],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/CATARATA.JPG', '', 0],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/CHALAZION.jpg', '', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/BLEFARITIS.jpg', 'BLEFARITIS', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/CATARATA.JPG', 'CATARATA', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/CHALAZION.jpg', 'CHALAZION', 0],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CONJUNTIVITIS ALERGICA.jpg',
-            '',
+            'CONJUNTIVITIS ALERGICA',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CONJUNTIVITIS BACTERIANA.jpg',
-            '',
+            'CONJUNTIVITIS BACTERIANA',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CONJUTIVITIS PAPILAR.jpeg',
-            '',
+            'CONJUNTIVITIS PAPILAR',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CUERPO EXTRAÑO EN CONJUNTIVA TARSAL.jpeg',
-            '',
+            'CUERPO EXTRAÑO EN CONJUNTIVA TARSAL',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/CUERPO EXTRAÑO EN CORNEA.jpeg',
-            '',
+            'CUERPO EXTRAÑO EN CORNEA',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/DACRIOSISTITIS.jpeg',
-            '',
+            'DACRIOSISTITIS',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/depositos corneales 2.jpg',
-            '',
+            'DEPOSITOS CORNEALES',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/dermatochalasis 2.jpeg',
-            '',
+            'DERMATOCHALASIS',
             0
           ],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/EPICANTO.JPG', '', 0],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/GLAUCOMA.JPG', '', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/EPICANTO.JPG', 'EPICANTO', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/GLAUCOMA.JPG', 'GLAUCOMA', 0],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/HEMORRAGIA SUBCONJUNTIVAL.jpg',
-            '',
+            'SUBCONJUNTIVAL',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/HERPES OCULAR.jpeg',
-            '',
+            'HERPES OCULAR',
             0
           ],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/NEVUS.JPG', '', 0],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/orzuelo 1.jpeg', '', 0],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/orzuelo 2.jpeg', '', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/NEVUS.JPG', 'NEVUS', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/orzuelo 1.jpeg', 'ORZUELO', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/orzuelo 2.jpeg', 'ORZUELO', 0],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/pinguecula 1.jpeg',
-            '',
+            'PINGUECULA',
             0
           ],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/PTERIGION 1.jpg', '', 0],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/pterigion 2.jpg', '', 0],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/ptosis 1.jpeg', '', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/PTERIGION 1.jpg', 'PTERIGION', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/pterigion 2.jpg', 'PTERIGION', 0],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/ptosis 1.jpeg', 'PTOSIS', 0],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/queratitis 1.jpeg',
-            '',
+            'QUERATITIS',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/queratitis herpetica.jpg',
-            ''
+            'QUERATITIS HERPETICA'
           ],
-          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/QUERATOCONO.jpg', '', 0],
-          [
-            'lib/assets/ATLAS E IMAGENES DE REFERENCIA/QUERATOGLOBO.jpeg',
-            '',
-            0
-          ],
+          ['lib/assets/ATLAS E IMAGENES DE REFERENCIA/QUERATOCONO.jpg', 'QUERATOCONO', 0],
+          // [
+          //   'lib/assets/ATLAS E IMAGENES DE REFERENCIA/QUERATOGLOBO.jpeg',
+          //   '',
+          //   0
+          // ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/RETINOPATIA DIABETICA 1.jpg',
-            '',
+            'RETINOMATIA DIABETICA',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/RETINOPATIA DIABETICA.jpg',
-            '',
+            'RETINOMATIA DIABETICA',
             0
           ],
-          [
-            'lib/assets/ATLAS E IMAGENES DE REFERENCIA/retinopatia hipertensiva.jpeg',
-            '',
-            0
-          ],
+          
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/retinopatia-diabetica (2).jpg',
-            '',
+            'RETINOMATIA DIABETICA',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/retinopatia-diabetica.jpg',
-            '',
+            'RETINOPATIA DIABETICA',
             0
           ],
           [
+            'lib/assets/ATLAS E IMAGENES DE REFERENCIA/retinopatia hipertensiva.jpeg',
+            'RETINOMATIA HIPERTENSIVA',
+            0
+          ],
+          
+          [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/toxoplasmosis 2.jpg',
-            '',
+            'TOXOPLASMOSIS',
             0
           ],
           [
             'lib/assets/ATLAS E IMAGENES DE REFERENCIA/ULCERA CORNEAL 1.jpg',
-            '',
+            'ULCERA CORNEAL',
             0
           ],
         ];
@@ -8603,6 +8583,8 @@ class ProvideImages with ChangeNotifier {
       case '9,0,0,0,0':
         ruta = 'TEST DE COLOR';
         images = [
+                ['lib/assets/TESTD/FONDO NEGRO/11.PNG', '', 0],
+          ['lib/assets/TESTD/FONDO NEGRO/12.JPG', '', 0],
           ['lib/assets/TESTD/FONDO NEGRO/1.PNG', '', 0],
           ['lib/assets/TESTD/FONDO NEGRO/2.JPG', '', 0],
           ['lib/assets/TESTD/FONDO NEGRO/3.PNG', '', 0],
@@ -8613,8 +8595,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/TESTD/FONDO NEGRO/8.JPG', '', 0],
           ['lib/assets/TESTD/FONDO NEGRO/9.PNG', '', 0],
           ['lib/assets/TESTD/FONDO NEGRO/10.JPG', '', 0],
-          ['lib/assets/TESTD/FONDO NEGRO/11.PNG', '', 0],
-          ['lib/assets/TESTD/FONDO NEGRO/12.JPG', '', 0],
+    
           ['lib/assets/TESTD/FONDO NEGRO/13.PNG', '', 0],
           ['lib/assets/TESTD/FONDO NEGRO/14.JPG', '', 0],
           ['lib/assets/TESTD/FONDO NEGRO/15.PNG', '', 0],
@@ -8873,7 +8854,7 @@ class ProvideImages with ChangeNotifier {
         images = [
           ['lib/assets/Menu Principal/VIDEOS.png', 'VIDEOS EXPLICATIVOS', 0],
           [
-            'lib/assets/Menu Principal/TIPOS DE LENTES.png',
+            'lib/assets/Menu Principal/LENTES.png',
             'TIPOS DE LENTES',
             0
           ],

@@ -39,6 +39,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   bool zoom = false;
   bool _initialPosition = false;
   int indexFondos = 0;
+  bool cuadroBlanco = false;
   List Fondos = [
     'lib/assets/Menu Principal/Fondo0.png',
     'lib/assets/Menu Principal/Fondo1.png',
@@ -282,6 +283,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               //     duration: Duration(milliseconds: 100));
               break;
             case 458792: // ENTER
+            
               if (imageTrigger) {
                 triggerBackgroundColor = !triggerBackgroundColor;
                 if (triggerBackgroundColor) {
@@ -333,9 +335,14 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   default:
                 }
               }
+print('MENUUUUUUU -> $menu');
+if(menu[0] == 6 && menu[1] == 2 && menu[2] > 0) {cuadroBlanco= true;}
+else {cuadroBlanco = false;}
+
+
               break;
             case 458756: // LETRA A
-
+cuadroBlanco = false;
               if (isInMenu) {
                 if (isPlaying && videoTrigger)
                   changeVideo = true;
@@ -504,6 +511,10 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             if (imageTrigger)
               ImagesDisplay(
                   imagenes[index][0], complemento, _scale, backgroundColor),
+                  if(cuadroBlanco)Positioned(top:
+                  4* heigthScreen/5,
+                  right: 1.2*widthScreen/7,
+                    child: Container(width: widthScreen/20,height: heigthScreen/30,color: Colors.white,)),
             if (!videoTrigger && !imageTrigger)
               Positioned(
                 top: heigthScreen * 9 / 10,
