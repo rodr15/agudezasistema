@@ -79,6 +79,7 @@ class optionImage extends StatelessWidget {
         width: widthScreen / 4,
         height: heigthScreen / 4,
         decoration: BoxDecoration(
+          backgroundBlendMode: BlendMode.darken,
           color: Colors.black,
           image:
               DecorationImage(fit: BoxFit.fitHeight, image: AssetImage(image)),

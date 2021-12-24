@@ -512,7 +512,7 @@ cuadroBlanco = false;
               ImagesDisplay(
                   imagenes[index][0], complemento, _scale, backgroundColor),
                   if(cuadroBlanco)Positioned(top:
-                  4* heigthScreen/5,
+                  3.9* heigthScreen/5,
                   right: 1.2*widthScreen/7,
                     child: Container(width: widthScreen/20,height: heigthScreen/30,color: Colors.white,)),
             if (!videoTrigger && !imageTrigger)

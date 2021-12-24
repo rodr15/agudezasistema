@@ -13,7 +13,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/Menu Principal/5 metros.jpg', '5 metros', 0],
           ['lib/assets/Menu Principal/6 metros.jpg', '6 metros', 0],
           [
-            'lib/assets/Menu Principal/ATLAS.PNG',
+            'lib/assets/Menu Principal/ATLAS.png',
             'ATLAS E IMAGENES DE REFERENCIA',
             0
           ],
@@ -104,7 +104,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/Menu Principal/5 metros.jpg', '5 metros', 0],
           ['lib/assets/Menu Principal/6 metros.jpg', '6 metros', 0],
           [
-            'lib/assets/Menu Principal/ATLAS.PNG',
+            'lib/assets/Menu Principal/ATLAS.png',
             'ATLAS E IMAGENES DE REFERENCIA',
             0
           ],
@@ -8880,6 +8880,8 @@ class ProvideImages with ChangeNotifier {
             'CONOCE LOS LENTES TRANSITIONS',
             0
           ],
+          ['lib/assets/NuevoslentesTransitionSignatureVIIFLV.png','Nuevos lentes Transition Signature VII',0],
+['lib/assets/OPTIMALLentesFotocromaticos.jfif','OPTIMAL Lentes Fotocromaticos',0],
           ['lib/assets/LentesTransitions.jpg', 'LENTES TRANSITIONS', 0],
           [
             'lib/assets/LentesPhotoFusionZeiss.jpg',
@@ -8891,6 +8893,10 @@ class ProvideImages with ChangeNotifier {
             'PROTECCION BLUE LIGTH',
             0
           ],
+          ['lib/assets/LENTES2.jpg','Que la luz azul no dañe sus ojos',0],
+          ['lib/assets/Porquelaluzazulesperjudicialparalosojos.jpg','Por que la luz azul es perjudicial para los ojos',0],
+
+
         ];
 
         break;
@@ -8976,30 +8982,63 @@ class ProvideImages with ChangeNotifier {
         break;
       case '10,2,0,0,0':
         images = [
-          ['lib/assets/TIPOS DE LENTES/ANTIRREFLEJO 1.jpg', '', 0],
-          ['lib/assets/TIPOS DE LENTES/ANTIRREFLEJO 2.jpg', '', 0],
-          ['lib/assets/TIPOS DE LENTES/BIFOCAL FLAT TOP.jpg', '', 0],
-          [
-            'lib/assets/TIPOS DE LENTES/ERGONOMIA FRENTE AL COMPUTADOR 2.jpg',
-            '',
-            0
-          ],
-          // [
-          //   'lib/assets/TIPOS DE LENTES/ERGONOMIA FRENTE AL COMPUTADOR.jpg',
-          //   '',
-          //   0
-          // ],
-          ['lib/assets/TIPOS DE LENTES/LENTE DE CONTACTO BLANDO.jpeg', '', 0],
-          [
-            'lib/assets/TIPOS DE LENTES/LENTE DE CONTACTO GAS PERMEABLE.jpeg',
-            ''
-          ],
-          ['lib/assets/TIPOS DE LENTES/LENTE PROGRESIVO 1.jpg', '', 0],
-          ['lib/assets/TIPOS DE LENTES/LENTE PROGRESIVO 2.jpg', '', 0],
-          ['lib/assets/TIPOS DE LENTES/LENTE PROGRESIVO 3.jpg', '', 0],
-          ['lib/assets/TIPOS DE LENTES/POLARIZADO 1.jpg', '', 0],
-          ['lib/assets/TIPOS DE LENTES/POLARIZADO 2.jpg', '', 0],
-          ['lib/assets/TIPOS DE LENTES/TransitionsLensColors.jpg', '', 0]
+    // ERGONOMIA
+    ['lib/assets/TIPOS DE LENTES/ERGONOMIA.png','ERGONOMIA',0],
+['lib/assets/TIPOS DE LENTES/ERGONOMIA1.jpg','ERGONOMIA',0],
+['lib/assets/TIPOS DE LENTES/ERGONOMIA2.jpg','ERGONOMIA',0],
+          // alto indice
+          ['lib/assets/TIPOS DE LENTES/ALTO INDICE.jpg','ALTO INDICE',0],
+['lib/assets/TIPOS DE LENTES/ALTO INDICE2.jpg','ALTO INDICE',0],
+['lib/assets/TIPOS DE LENTES/ALTO INDICE3.jpg','ALTO INDICE',0],
+['lib/assets/TIPOS DE LENTES/ALTO INDICE4.jpg','ALTO INDICE',0],
+//Antireflejo
+['lib/assets/TIPOS DE LENTES/ANTIRREFLEJO 2.jpg','ANTIREFLEJO',0],
+['lib/assets/TIPOS DE LENTES/lentes_antireflejo 1.jpg', 'ANTIREFLEJO',0],
+['lib/assets/TIPOS DE LENTES/lentes_antireflejo.jpg','ANTIREFLEJO',0],
+//BIFOCAL
+['lib/assets/TIPOS DE LENTES/BIFOCALES.png','BIFOCALES',0],
+['lib/assets/TIPOS DE LENTES/BIFOCAL FLAT TOP.jpg','BIFOCALES',0],
+//Espectro de luz
+['lib/assets/TIPOS DE LENTES/ESPECTRO DE LUZ 1.jpg','ESPECTRO DE LUZ',0],
+['lib/assets/TIPOS DE LENTES/ESPECTRO DE LUZ 2.jpg','ESPECTRO DE LUZ',0],
+['lib/assets/TIPOS DE LENTES/ESPECTRO DE LUZ.png','ESPECTRO DE LUZ',0],
+['lib/assets/TIPOS DE LENTES/ESPETRO DE LUZ AZUL.jpeg','ESPECTRO DE LUZ',0],
+['lib/assets/TIPOS DE LENTES/ESPECTRO DE LUZ AZUL 2.jpg','ESPECTRO DE LUZ',0],
+['lib/assets/TIPOS DE LENTES/ESPECTRO DE LUZ AZUL 3.jpg','ESPECTRO DE LUZ',0],
+//GAFAS Y ROSTROS
+['lib/assets/TIPOS DE LENTES/GAFAS Y ROSTROS 2.png','GAFAS Y ROSTROS',0],
+['lib/assets/TIPOS DE LENTES/GAFAS Y ROSTROS.png','GAFAS Y ROSTROS',0],
+//FOTOCROMATICOS
+
+['lib/assets/TIPOS DE LENTES/COLORES DE LENTES.jpg','COLORES DE LENTES',0],
+['lib/assets/TIPOS DE LENTES/FOTOCROMATICOS.jpg','FOTOCROMATICOS',0],
+['lib/assets/TIPOS DE LENTES/FOTOCROMATICOS 2 .jpg','FOTOCROMATICOS',0],
+['lib/assets/TIPOS DE LENTES/POLARIZADOS.jpg','POLARIZADOS',0],
+['lib/assets/TIPOS DE LENTES/POLARIZADO 2.jpg','POLARIZADOS',0],
+['lib/assets/TIPOS DE LENTES/Transitions.png','TRANSITIONS',0],
+['lib/assets/TIPOS DE LENTES/TransitionsLensColors.jpg','TRANSITIONS',0],
+
+//LENTES DE CONTACTO
+['lib/assets/TIPOS DE LENTES/LENTES DE CONTACTO.jpg','LENTES DE CONTACTO',0],
+['lib/assets/TIPOS DE LENTES/LENTES DE CONTACTO2.jpg','LENTES DE CONTACTO',0],
+['lib/assets/TIPOS DE LENTES/LENTES DE CONTACTO3.gif','LENTES DE CONTACTO',0],
+['lib/assets/TIPOS DE LENTES/LENTE DE CONTACTO BLANDO.jpeg','LENTES DE CONTACTO BLANDOS',0],
+['lib/assets/TIPOS DE LENTES/LENTE DE CONTACTO GAS PERMEABLE.jpeg','LENTES DE CONTACTO GAS PERMEABLE',0],
+//PROGRESIVOS
+['lib/assets/TIPOS DE LENTES/zonas de vision con progresivos.JPG','ZONAS DE VISION CON PROFRESIVOS',0],
+['lib/assets/TIPOS DE LENTES/Progresivos.png','PROGRESIVOS',0],
+['lib/assets/TIPOS DE LENTES/PROGRESIVOS STANDARD.png','PROGRESIVOS STANDARD',0],
+['lib/assets/TIPOS DE LENTES/PROGRESIVOS PREMIUM.png','PROGRESIVOS PREMIUM',0],
+
+//ZONAS DE VISION
+['lib/assets/TIPOS DE LENTES/VIEW_FAR.BMP','',0],
+['lib/assets/TIPOS DE LENTES/VIEW_MID.BMP','',0],
+['lib/assets/TIPOS DE LENTES/view_near.bmp','',0],
+['lib/assets/TIPOS DE LENTES/view_trifocal.bmp','',0],
+// MARCAS Y MATERIALES
+['lib/assets/TIPOS DE LENTES/MARCAS.png','MARCAS',0],
+['lib/assets/TIPOS DE LENTES/MATERIALES.jpg','MATERIALES',0]
+
         ];
         break;
 
@@ -9101,6 +9140,151 @@ class ProvideImages with ChangeNotifier {
       case '10,2,20,0,0':
         triggerImage = true;
         isPlaying = false;
+        break;
+        
+      case '10,2,21,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,22,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,23,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,24,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,25,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,26,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,27,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,28,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,29,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,30,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,31,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,32,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,33,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,34,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,35,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,36,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,37,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,38,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,39,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,40,0,0':
+        triggerImage = true;
+        isPlaying = false;
+        break;
+        case '10,2,41,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,42,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,43,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,44,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,45,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,46,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,47,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,48,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
+        break;
+      case '10,2,49,0,0':
+        triggerImage = true;
+        isPlaying = false;
+
         break;
       default:
     }
