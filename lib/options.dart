@@ -4,10 +4,11 @@ import 'package:videoplayer/provider/provide_images.dart';
 import 'package:videoplayer/show_images.dart';
 
 class Options extends StatefulWidget {
+  Color color = Colors.red;
   String image = '';
   String name = '';
   bool selected = false;
-  Options(this.image, this.name, this.selected);
+  Options(this.color,this.image, this.name, this.selected);
   @override
   _OptionsState createState() => _OptionsState();
 }
@@ -22,7 +23,7 @@ class _OptionsState extends State<Options> {
     return Column(children: [
       (provider.getTriggerVideo
           ? Container()
-          : optionImage(widget.image, widget.selected)),
+          : optionImage(widget.color,widget.image, widget.selected)),
       // Name(widget.name),
     ]);
   }
@@ -55,9 +56,10 @@ class Name extends StatelessWidget {
 }
 
 class optionImage extends StatelessWidget {
+  Color color = Colors.red;
   String image = '';
   bool selected = false;
-  optionImage(this.image, this.selected);
+  optionImage(this.color,this.image, this.selected);
   /*void pushRoute(BuildContext context) {
     Navigator.push(context,
         MaterialPageRoute(builder: (BuildContext context) => ImagesDisplay()));
@@ -84,7 +86,7 @@ class optionImage extends StatelessWidget {
           image:
               DecorationImage(fit: BoxFit.fitHeight, image: AssetImage(image)),
           border: Border.all(
-              color: (selected ? Colors.red : Colors.orange.shade50),
+              color: (selected ? color : Colors.orange.shade50),
               width: 5,
               style: BorderStyle.solid),
           borderRadius: BorderRadius.all(Radius.circular(20)),

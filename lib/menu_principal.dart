@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
+import 'package:videoplayer/provider/preferences.dart';
 import 'package:videoplayer/provider/provide_images.dart';
 import 'package:videoplayer/show_images.dart';
 import 'package:videoplayer/show_videos.dart';
@@ -39,6 +40,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   bool zoom = false;
   bool _initialPosition = false;
   int indexFondos = 0;
+  int indexRecuadros = 0;
   bool cuadroBlanco = false;
   List Fondos = [
     'lib/assets/Menu Principal/Fondo0.png',
@@ -56,7 +58,18 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     'lib/assets/Menu Principal/Fondo12.png',
     'lib/assets/Menu Principal/Fondo13.png',
   ];
-  String Fondo = 'lib/assets/Menu Principal/Fondo0.png';
+  List Recuadros = [
+    Colors.blue,
+    Colors.red,
+    Colors.green,
+    Colors.amber,
+    Colors.orange,
+    Colors.yellow,
+    Colors.purple,
+    Colors.pink,
+    Colors.brown,
+  ];
+
   final FocusNode _focusNode = FocusNode();
   final ScrollController _controller = ScrollController();
   @override
@@ -75,21 +88,26 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   @override
   Widget build(BuildContext context) {
     final provider = Provider.of<ProvideImages>(context);
+    final configProvider = Provider.of<ConfigProvider>(context);
     double heigthScreen = MediaQuery.of(context).size.height;
     double widthScreen = MediaQuery.of(context).size.width;
     int botones = 1;
-
+    indexFondos = configProvider.getPantalla;
+    indexRecuadros = configProvider.getRecuadro;
+    print('since widget');
+    print(indexFondos);
+    print(indexRecuadros);
     menu = provider.getMenus;
     imagenes = provider.getImages;
     isPlaying = provider.getIsPlaying;
     videoTrigger = provider.getTriggerVideo;
     imageTrigger = provider.getTriggerImage;
-
+    String Fondo = Fondos[indexFondos];
+    Color Recuadro = Recuadros[indexRecuadros];
     void izquierda() {
       _contador--;
       if (_contador < 0) _contador = imagenes.length - 1;
       index = _contador;
-      print('IZQUIERDA');
       _controller
           .jumpTo(_contador * (MediaQuery.of(context).size.width * 1 / 3));
     }
@@ -117,7 +135,6 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
           provider.setTriggerVideo = false;
           provider.setTriggerImage = false;
 
-          print('cero ${menu.indexOf(0)}');
           _contador = menu[menu.indexOf(0) - 1];
           izquierda();
           // index = menu[menu.indexOf(0) - 1] - 1;
@@ -174,31 +191,25 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     void _handleKeyEvent(RawKeyEvent event) {
       _initialPosition = false;
       setState(() {
-        print('--------------------');
         _pulsaciones++;
 
         if (_pulsaciones == 2) {
-          print('menuIndex -> $index');
-          print('contador -> $_contador');
-
-          print('IMAGE -> ${provider.getTriggerImage}');
-          print('VIDEO -> ${provider.getTriggerVideo}');
-          print('ISPLAYING -> ${provider.getIsPlaying}');
-          print('MENU en -> ${menu}');
-          print('Escribiendo en -> ${menu.indexOf(0)}');
-          print('CONTADOR -> ${_contador} ');
-          print('INDEX -> ${index}');
-          print('change -> $changeVideo');
-          print(event.physicalKey.usbHidUsage);
           switch (event.physicalKey.usbHidUsage) {
             case 458806:
               // Cambio fondo
               indexFondos++;
               if (indexFondos >= Fondos.length - 1) indexFondos = 0;
               Fondo = Fondos[indexFondos];
+              configProvider.setPantalla = indexFondos;
+              configProvider.savingConfigurations();
               break;
             case 458807:
               // Cambio contornos
+              indexRecuadros++;
+              if (indexRecuadros >= Recuadros.length - 1) indexRecuadros = 0;
+              Recuadro = Recuadros[indexRecuadros];
+              configProvider.setRecuadro = indexRecuadros;
+              configProvider.savingConfigurations();
               break;
 
             case 458782: // NUMERO 1
@@ -243,8 +254,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               break;
 
             case 458831: // DERECHA
-              print('imageTrigger -> $imageTrigger');
-              print('zoom -> $zoom');
+
               if (imageTrigger && zoom) {
                 _scale = 'flecha derecha';
                 provider.setMoveZoom = true;
@@ -283,7 +293,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               //     duration: Duration(milliseconds: 100));
               break;
             case 458792: // ENTER
-            
+
               if (imageTrigger) {
                 triggerBackgroundColor = !triggerBackgroundColor;
                 if (triggerBackgroundColor) {
@@ -299,7 +309,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   complemento = '';
                 }
               }
-              print('color -> $backgroundColor');
+
               if (isInMenu) {
                 if (changeVideo) {
                   provider.setIsPlaying = false;
@@ -335,14 +345,15 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   default:
                 }
               }
-print('MENUUUUUUU -> $menu');
-if(menu[0] == 6 && menu[1] == 2 && menu[2] > 0) {cuadroBlanco= true;}
-else {cuadroBlanco = false;}
-
+              if (menu[0] == 6 && menu[1] == 2 && menu[2] > 0) {
+                cuadroBlanco = true;
+              } else {
+                cuadroBlanco = false;
+              }
 
               break;
             case 458756: // LETRA A
-cuadroBlanco = false;
+              cuadroBlanco = false;
               if (isInMenu) {
                 if (isPlaying && videoTrigger)
                   changeVideo = true;
@@ -352,7 +363,6 @@ cuadroBlanco = false;
                   provider.setTriggerVideo = false;
                   provider.setTriggerImage = false;
 
-                  print('cero ${menu.indexOf(0)}');
                   _contador = menu[menu.indexOf(0) - 1];
                   izquierda();
                   // index = menu[menu.indexOf(0) - 1] - 1;
@@ -458,7 +468,6 @@ cuadroBlanco = false;
               provider.setTriggerVideo = false;
               provider.setTriggerImage = false;
 
-              print('cero ${menu.indexOf(0)}');
               _contador = menu[menu.indexOf(0) - 1];
               izquierda();
               // index = menu[menu.indexOf(0) - 1] - 1;
@@ -504,17 +513,22 @@ cuadroBlanco = false;
                   //controller: _controller,
                   crossAxisCount: 1,
                   children: List.generate(imagenes.length, (index) {
-                    return Options(imagenes[index][0], imagenes[index][1],
-                        isInMenu && (index == _contador));
+                    return Options(Recuadro, imagenes[index][0],
+                        imagenes[index][1], isInMenu && (index == _contador));
                   }),
                 )),
             if (imageTrigger)
               ImagesDisplay(
                   imagenes[index][0], complemento, _scale, backgroundColor),
-                  if(cuadroBlanco)Positioned(top:
-                  3.9* heigthScreen/5,
-                  right: 1.2*widthScreen/7,
-                    child: Container(width: widthScreen/20,height: heigthScreen/30,color: Colors.white,)),
+            if (cuadroBlanco)
+              Positioned(
+                  top: 3.9 * heigthScreen / 5,
+                  right: 1.2 * widthScreen / 7,
+                  child: Container(
+                    width: widthScreen / 20,
+                    height: heigthScreen / 30,
+                    color: Colors.white,
+                  )),
             if (!videoTrigger && !imageTrigger)
               Positioned(
                 top: heigthScreen * 9 / 10,
