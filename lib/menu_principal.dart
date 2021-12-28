@@ -477,6 +477,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             }
           }
           zoom = false;
+          cuadroBlanco = false;
           _scale = '0';
           return Future.value(false);
         },
