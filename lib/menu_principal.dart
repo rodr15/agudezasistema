@@ -355,10 +355,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
             case 458756: // LETRA A
               cuadroBlanco = false;
               if (isInMenu) {
-                if (isPlaying && videoTrigger)
-                  changeVideo = true;
-                else
-                  changeVideo = false;
+                
+                  changeVideo = isPlaying && videoTrigger;
                 if (menu.indexOf(0) > 0) {
                   provider.setTriggerVideo = false;
                   provider.setTriggerImage = false;
@@ -375,7 +373,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               break;
             case 458834: // Arriba
               if (isPlaying) isInMenu = false;
-              if (imageTrigger && (imagenes[index][2] > 0)) {
+              if (imageTrigger && (imagenes[index][2] > 0 && imagenes[index][2] <70)) {
                 _contadorAbajo--;
                 if (_contadorAbajo < 1) {
                   izquierda();
@@ -410,7 +408,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
                 _contadorAbajo = 1;
                 complemento = "-h1.jpg";
-              } else if (imageTrigger && (imagenes[index][2] > 0)) {
+              } else if (imageTrigger && (imagenes[index][2] > 0 && imagenes[index][2] < 70)) {
                 _contadorAbajo++;
                 if (_contadorAbajo > imagenes[index][2]) {
                   derecha();
@@ -458,27 +456,23 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       body: WillPopScope(
         onWillPop: () {
           _validation(context);
+cuadroBlanco = false;
+              if (isInMenu) {
+                
+                  changeVideo = isPlaying && videoTrigger;
+                if (menu.indexOf(0) > 0) {
+                  provider.setTriggerVideo = false;
+                  provider.setTriggerImage = false;
 
-          if (isInMenu) {
-            if (isPlaying && videoTrigger)
-              changeVideo = true;
-            else
-              changeVideo = false;
-            if (menu.indexOf(0) > 0) {
-              provider.setTriggerVideo = false;
-              provider.setTriggerImage = false;
-
-              _contador = menu[menu.indexOf(0) - 1];
-              izquierda();
-              // index = menu[menu.indexOf(0) - 1] - 1;
-              menu[menu.indexOf(0) - 1] = 0;
-
-              provider.setMenus = menu;
-            }
-          }
-          zoom = false;
-          cuadroBlanco = false;
-          _scale = '0';
+                  _contador = menu[menu.indexOf(0) - 1];
+                  izquierda();
+                  // index = menu[menu.indexOf(0) - 1] - 1;
+                  menu[menu.indexOf(0) - 1] = 0;
+                  provider.setMenus = menu;
+                }
+              }
+              zoom = false;
+              _scale = '0';
           return Future.value(false);
         },
         child: RawKeyboardListener(

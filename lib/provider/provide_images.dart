@@ -7124,7 +7124,7 @@ class ProvideImages with ChangeNotifier {
           ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-14.JPG', '20/200 - 100', 2],
           ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-15.JPG', '20/80 - 60', 3],
           ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-16.JPG', '20/50 - 30', 3],
-          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-17.JPG', '20/15 - 15', 3],
+          ['lib/assets/6 METROS/8 E DIRECCIONAL/6_50-17.JPG', '20/25 - 15', 3],
         ];
         // images = [
         //   [
@@ -8230,20 +8230,20 @@ class ProvideImages with ChangeNotifier {
         //Defectos
         ruta = 'DEFECTOS REFRACTIVOS';
         images = [
-          ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/2.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/3.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/4.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/5.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/6.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/7.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/8.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/9.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/10.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/11.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/12.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/13.JPG', '', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/14.JPG', '', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', 'EMETROPIA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/2.JPG', 'EMETROPIA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/3.JPG', 'MIOPIA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/4.JPG', 'MIOPIA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/5.JPG', 'HIPERMETROPIA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/6.JPG', 'HIPERMETROPIA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/7.JPG', 'ASTIGMATISMO', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/8.JPG', 'ASTIGMATISMO', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/9.JPG', 'CATARATA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/10.JPG', 'CATARATA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/11.JPG', 'GLAUCOMA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/12.JPG', 'GLAUCOMA', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/13.JPG', 'DEGENERACIÓN MACULAR', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/14.JPG', 'DEGENERACIÓN MACULAR', 0],
         ];
         break;
       case '6,2,1,0,0':
