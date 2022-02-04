@@ -5,6 +5,7 @@ class ProvideImages with ChangeNotifier {
   bool triggerVideo = false;
   bool triggerImage = false;
   bool isPlaying = false;
+  int defectos = 0;
   String ruta = 'Menu Principal';
   List pMenu = [0, 0, 0, 0, 0];
   List images = [
@@ -34,6 +35,16 @@ class ProvideImages with ChangeNotifier {
             0
           ]
         ];
+
+ set setDefectos(int n_defectos){
+    defectos = n_defectos;
+    notifyListeners();
+  }
+  get getDefectos{
+    return defectos;
+  }
+
+
   get getRuta {
     return ruta;
   }
@@ -8126,7 +8137,7 @@ class ProvideImages with ChangeNotifier {
         ruta = 'DEFECTOS REFRACTIVOS';
         images = [
           ['lib/assets/Menu Principal/VIDEOS.png', 'VIDEOS EXPLICATIVOS', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', 'DEFECTOS REFRACTIVOS', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/1.png', 'DEFECTOS REFRACTIVOS', 0],
         ];
         break;
       case '6,1,0,0,0':
@@ -8230,20 +8241,20 @@ class ProvideImages with ChangeNotifier {
         //Defectos
         ruta = 'DEFECTOS REFRACTIVOS';
         images = [
-          ['lib/assets/DEFECTOS REFRACTIVOS/1.JPG', 'EMETROPIA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/2.JPG', 'EMETROPIA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/3.JPG', 'MIOPIA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/4.JPG', 'MIOPIA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/5.JPG', 'HIPERMETROPIA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/6.JPG', 'HIPERMETROPIA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/7.JPG', 'ASTIGMATISMO', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/8.JPG', 'ASTIGMATISMO', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/9.JPG', 'CATARATA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/10.JPG', 'CATARATA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/11.JPG', 'GLAUCOMA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/12.JPG', 'GLAUCOMA', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/13.JPG', 'DEGENERACIÓN MACULAR', 0],
-          ['lib/assets/DEFECTOS REFRACTIVOS/14.JPG', 'DEGENERACIÓN MACULAR', 0],
+          ['lib/assets/DEFECTOS REFRACTIVOS/1.png', 'EMETROPIA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/2.JPG', 'EMETROPIA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/3.JPG', 'MIOPIA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/4.JPG', 'MIOPIA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/5.JPG', 'HIPERMETROPIA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/6.JPG', 'HIPERMETROPIA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/7.JPG', 'ASTIGMATISMO', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/8.JPG', 'ASTIGMATISMO', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/9.JPG', 'CATARATA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/10.JPG', 'CATARATA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/11.JPG', 'GLAUCOMA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/12.JPG', 'GLAUCOMA', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/13.JPG', 'DEGENERACIÓN MACULAR', 0],
+          // ['lib/assets/DEFECTOS REFRACTIVOS/14.JPG', 'DEGENERACIÓN MACULAR', 0],
         ];
         break;
       case '6,2,1,0,0':

@@ -1,5 +1,10 @@
+import 'dart:html';
+import 'dart:math';
+
 import 'package:flutter/gestures.dart';
 import "package:flutter/material.dart";
+import 'package:photo_view/photo_view.dart';
+import 'package:photo_view/photo_view_gallery.dart';
 import 'package:provider/provider.dart';
 import 'package:videoplayer/provider/preferences.dart';
 import 'package:videoplayer/provider/provide_images.dart';
@@ -42,6 +47,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   int indexFondos = 0;
   int indexRecuadros = 0;
   bool cuadroBlanco = false;
+  List Listrefractivos = [2,0,0,0,0,0,0];
+  
+  int stateRefractivos = 0;
   List Fondos = [
     'lib/assets/Menu Principal/Fondo0.png',
     'lib/assets/Menu Principal/Fondo1.png',
@@ -254,8 +262,19 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               break;
 
             case 458831: // DERECHA
+              if (cuadroBlanco) {
+                // stateRegractivos => 0 - Sin seleccionar
+                //                     1 - Para cambiar
+                //                     2 - Seleccionado
+                //                     3 - Seleccionado segunda opcion
 
-              if (imageTrigger && zoom) {
+               if(Listrefractivos.contains(2)){
+                 if(Listrefractivos.indexOf(2) < Listrefractivos.length -1){
+                 Listrefractivos[Listrefractivos.indexOf(2)+1] = 1;}else{
+                   Listrefractivos[0] = 1;
+                 }
+               }
+              } else if (imageTrigger && zoom) {
                 _scale = 'flecha derecha';
                 provider.setMoveZoom = true;
               } else {
@@ -345,18 +364,13 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
                   default:
                 }
               }
-              if (menu[0] == 6 && menu[1] == 2 && menu[2] > 0) {
-                cuadroBlanco = true;
-              } else {
-                cuadroBlanco = false;
-              }
+              cuadroBlanco = (menu[0] == 6 && menu[1] == 2);
 
               break;
             case 458756: // LETRA A
               cuadroBlanco = false;
               if (isInMenu) {
-                
-                  changeVideo = isPlaying && videoTrigger;
+                changeVideo = isPlaying && videoTrigger;
                 if (menu.indexOf(0) > 0) {
                   provider.setTriggerVideo = false;
                   provider.setTriggerImage = false;
@@ -373,7 +387,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               break;
             case 458834: // Arriba
               if (isPlaying) isInMenu = false;
-              if (imageTrigger && (imagenes[index][2] > 0 && imagenes[index][2] <70)) {
+              if (imageTrigger &&
+                  (imagenes[index][2] > 0 && imagenes[index][2] < 70)) {
                 _contadorAbajo--;
                 if (_contadorAbajo < 1) {
                   izquierda();
@@ -408,7 +423,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
                 _contadorAbajo = 1;
                 complemento = "-h1.jpg";
-              } else if (imageTrigger && (imagenes[index][2] > 0 && imagenes[index][2] < 70)) {
+              } else if (imageTrigger &&
+                  (imagenes[index][2] > 0 && imagenes[index][2] < 70)) {
                 _contadorAbajo++;
                 if (_contadorAbajo > imagenes[index][2]) {
                   derecha();
@@ -452,27 +468,96 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     }
 
     if (!_initialPosition) correctionPosition();
+
+    Container defectosrefractivos = Container(
+      color: Colors.white,
+      child: Stack(
+        children: [
+          Column(
+            children: [
+              Container(
+                height: MediaQuery.of(context).size.height * 5 / 6,
+                width: MediaQuery.of(context).size.width,
+                child: ImagesDefectos(),
+              ),
+              Row(
+                children: List.generate(7, (index) {
+                  int imgSelected=0;
+                  bool selected=false;
+                  bool preSelected=false;
+                // stateRegractivos => 0 - Sin seleccionar
+                //                     1 - Para cambiar
+                //                     2 - Seleccionado
+                //                     3 - Seleccionado segunda opcion
+                // BOTONES 
+                // => 0 - Sin seleccionar
+                // => 1 - Imagen 1
+                // => 2 - Imagen 2
+                  switch (Listrefractivos[index]) {
+                    case 0:
+                      imgSelected = 0;
+                      selected = false;
+                      preSelected = false;
+                      break;
+                      case 1: 
+                      imgSelected = 0;
+                      selected = false;
+                      preSelected = true;
+                      break;
+                      case 2: 
+                       imgSelected = 1;
+                      selected = true;
+                      preSelected = false;
+                      break;
+                      case 3: 
+                      imgSelected = 2;
+                      selected = true;
+                      preSelected = false;
+                      break;
+                    default:
+                  }
+                  return Botones(index);
+                }),
+              ),
+            ],
+          ),
+          Positioned(
+              height: 100,
+              top: MediaQuery.of(context).size.height * 7 / 10,
+              child: Container(
+                  transform: Matrix4.rotationZ(-pi / 2),
+                  height: MediaQuery.of(context).size.height * 1 / 10,
+                  width: MediaQuery.of(context).size.width * 3 / 10,
+                  decoration: const BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.contain,
+                        image: AssetImage(
+                            'lib/assets/DEFECTOS REFRACTIVOS/LOGO.png')),
+                  )))
+        ],
+      ),
+    );
+
     return Scaffold(
       body: WillPopScope(
         onWillPop: () {
           _validation(context);
-cuadroBlanco = false;
-              if (isInMenu) {
-                
-                  changeVideo = isPlaying && videoTrigger;
-                if (menu.indexOf(0) > 0) {
-                  provider.setTriggerVideo = false;
-                  provider.setTriggerImage = false;
+          cuadroBlanco = false;
+          if (isInMenu) {
+            changeVideo = isPlaying && videoTrigger;
+            if (menu.indexOf(0) > 0) {
+              provider.setTriggerVideo = false;
+              provider.setTriggerImage = false;
 
-                  _contador = menu[menu.indexOf(0) - 1];
-                  izquierda();
-                  // index = menu[menu.indexOf(0) - 1] - 1;
-                  menu[menu.indexOf(0) - 1] = 0;
-                  provider.setMenus = menu;
-                }
-              }
-              zoom = false;
-              _scale = '0';
+              _contador = menu[menu.indexOf(0) - 1];
+              izquierda();
+              // index = menu[menu.indexOf(0) - 1] - 1;
+              menu[menu.indexOf(0) - 1] = 0;
+              provider.setMenus = menu;
+            }
+          }
+          zoom = false;
+          _scale = '0';
           return Future.value(false);
         },
         child: RawKeyboardListener(
@@ -512,19 +597,11 @@ cuadroBlanco = false;
                         imagenes[index][1], isInMenu && (index == _contador));
                   }),
                 )),
-            if (imageTrigger)
+            if (imageTrigger && !cuadroBlanco)
               ImagesDisplay(
                   imagenes[index][0], complemento, _scale, backgroundColor),
-            if (cuadroBlanco)
-              Positioned(
-                  top: 3.9 * heigthScreen / 5,
-                  right: 1.2 * widthScreen / 7,
-                  child: Container(
-                    width: widthScreen / 20,
-                    height: heigthScreen / 30,
-                    color: Colors.white,
-                  )),
-            if (!videoTrigger && !imageTrigger)
+            if (cuadroBlanco) defectosrefractivos,
+            if (!videoTrigger && !imageTrigger && !cuadroBlanco)
               Positioned(
                 top: heigthScreen * 9 / 10,
                 child: Container(
@@ -542,7 +619,7 @@ cuadroBlanco = false;
                   )),
                 ),
               ),
-            if (!videoTrigger && !imageTrigger)
+            if (!videoTrigger && !imageTrigger && !cuadroBlanco)
               Positioned(
                 top: heigthScreen * 17.2 / 30,
                 child: Container(
@@ -564,5 +641,200 @@ cuadroBlanco = false;
         ),
       ),
     );
+  }
+}
+
+class ImagesDefectos extends StatefulWidget {
+  
+  @override
+  _ImagesDefectosState createState() => _ImagesDefectosState();
+}
+
+class _ImagesDefectosState extends State<ImagesDefectos> {
+  List imagenes = [];
+  String color = ' B';
+  String imagen = '';
+  int opcion = 0;
+  Color backgroundColor = Colors.white;
+  late PhotoViewScaleStateController scaleStateController;
+
+  @override
+  void initState() {
+    // TODO: implement initState
+
+    scaleStateController = PhotoViewScaleStateController();
+    // Restringir rotación de la pantalla
+    WidgetsFlutterBinding.ensureInitialized();
+    // SystemChrome.setEnabledSystemUIMode(SystemUiMode.immersiveSticky);
+
+    // SystemChrome.setPreferredOrientations(
+    //     [DeviceOrientation.landscapeRight, DeviceOrientation.landscapeLeft]);
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    // TODO: implement dispose
+    super.dispose();
+    scaleStateController.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final imagesProvider = Provider.of<ProvideImages>(context);
+    print('IMAGEN');
+    imagenes = [
+      'lib/assets/DEFECTOS REFRACTIVOS/1.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/1S.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/2.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/2S.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/3.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/3S.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/4.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/4S.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/5.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/5S.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/6.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/6S.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/7.png',
+      'lib/assets/DEFECTOS REFRACTIVOS/7S.png',
+    ];
+    imagen = imagenes[imagesProvider.getDefectos];
+    return Scaffold(
+      // Implemented with a PageView, simpler than setting it up yourself
+      // You can either specify images directly or by using a builder as in this tutorial
+      body: Container(
+        child: PhotoViewGallery.builder(
+          itemCount: 1,
+          builder: (context, index) {
+            return PhotoViewGalleryPageOptions(
+              //imageProvider: NetworkImage(imageList[index]),
+              imageProvider: AssetImage(
+                imagen,
+              ),
+              // Contained = the smallest possible size to fit one dimension of the screen
+              minScale: PhotoViewComputedScale.contained,
+              // Covered = the smallest possible size to fit the whole screen
+              maxScale: PhotoViewComputedScale.covered * 2,
+              scaleStateController: scaleStateController,
+            );
+          },
+
+          scrollPhysics: BouncingScrollPhysics(),
+          // Set the background color to the "classic white"
+          backgroundDecoration: BoxDecoration(color: backgroundColor),
+          loadingBuilder: (context, event) => const Center(
+            child: CircularProgressIndicator(),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class Botones extends StatefulWidget {
+  int index = 0;
+  Botones(this.index);
+  @override
+  _BotonesState createState() => _BotonesState();
+}
+
+class _BotonesState extends State<Botones> {
+  int imgSelected = 0;
+  bool selected = false;
+  @override
+  Widget build(BuildContext context) {
+    final imagesProvider = Provider.of<ProvideImages>(context);
+    double height = MediaQuery.of(context).size.height * 1 / 6 - 2;
+    double width = (MediaQuery.of(context).size.width - 14) / 7;
+    double freeSpace = height * 1 / 5;
+    double imageHeight = (height - freeSpace) * 3 / 4;
+    double textHeigth = height - imageHeight - freeSpace;
+    double imageWidth = imageHeight;
+    double textWidth = width * 9 / 10;
+    Color colorSelected = Colors.orange;
+    Color colorUnselected = Colors.white;
+    int index = widget.index;
+    List nombre = [
+      'emetropía',
+      'miopia',
+      'hipermetropia',
+      'astigmatismo',
+      'catarata',
+      'glaucoma',
+      'Deg.Macular'
+    ];
+    List imagen = [
+      ['lib/assets/IconosDefectos/1.png', 'lib/assets/IconosDefectos/1S.png'],
+      ['lib/assets/IconosDefectos/2.png', 'lib/assets/IconosDefectos/2S.png'],
+      ['lib/assets/IconosDefectos/3.png', 'lib/assets/IconosDefectos/3S.png'],
+      ['lib/assets/IconosDefectos/4.png', 'lib/assets/IconosDefectos/4S.png'],
+      ['lib/assets/IconosDefectos/5.png', 'lib/assets/IconosDefectos/5S.png'],
+      ['lib/assets/IconosDefectos/6.png', 'lib/assets/IconosDefectos/6S.png'],
+      ['lib/assets/IconosDefectos/7.png', 'lib/assets/IconosDefectos/7S.png'],
+    ];
+
+    print('-----------------------------');
+    selected = ((imagesProvider.getDefectos - imgSelected) / 2) == index;
+    if(!selected){ imgSelected = 0;} 
+    
+     
+    
+
+    Container ButtonImage = Container(
+        height: imageHeight,
+        width: imageWidth,
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              fit: BoxFit.contain,
+              image: AssetImage(imagen[index][imgSelected])),
+        ));
+    Container ButtonText = Container(
+      height: textHeigth,
+      width: textWidth,
+      decoration: BoxDecoration(
+        color: colorSelected,
+        borderRadius: const BorderRadius.all(Radius.circular(10)),
+      ),
+      child: Center(
+          child: Text(
+        nombre[index].toString().toUpperCase(),
+        style: TextStyle(
+            fontWeight: selected ? FontWeight.bold : FontWeight.normal),
+      )),
+    );
+    Container Boton = Container(
+        decoration: BoxDecoration(
+            color: imgSelected != 0 ? colorSelected : colorUnselected,
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
+            border:
+                Border.all(color: selected ? colorSelected : colorUnselected)),
+        child: InkWell(
+          onTap: () {
+            setState(() {
+              if (imgSelected == 0 && selected) {
+                imgSelected = 1;
+              } else {
+                imgSelected = 0;
+              }
+
+              imagesProvider.setDefectos = index * 2 + imgSelected;
+            });
+          },
+          child: Container(
+            height: height,
+            width: width,
+            child: Column(
+              children: [
+                const Spacer(),
+                ButtonImage,
+                const Spacer(),
+                ButtonText,
+                const Spacer(),
+              ],
+            ),
+          ),
+        ));
+    return Boton;
   }
 }

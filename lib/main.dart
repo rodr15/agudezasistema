@@ -22,6 +22,7 @@ class SistemaApp extends StatelessWidget {
             initialRoute: 'home',
             routes: {
               'home': (context) => MenuPrincipal(),
-            }));
+            },debugShowCheckedModeBanner: false,)
+            );
   }
 }
