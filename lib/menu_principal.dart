@@ -1,4 +1,4 @@
-import 'dart:html';
+
 import 'dart:math';
 
 import 'package:flutter/gestures.dart';
@@ -47,8 +47,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   int indexFondos = 0;
   int indexRecuadros = 0;
   bool cuadroBlanco = false;
-  List Listrefractivos = [2,0,0,0,0,0,0];
-  
+  List Listrefractivos = [2, 0, 0, 0, 0, 0, 0];
+
   int stateRefractivos = 0;
   List Fondos = [
     'lib/assets/Menu Principal/Fondo0.png',
@@ -263,17 +263,9 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
             case 458831: // DERECHA
               if (cuadroBlanco) {
-                // stateRegractivos => 0 - Sin seleccionar
-                //                     1 - Para cambiar
-                //                     2 - Seleccionado
-                //                     3 - Seleccionado segunda opcion
-
-               if(Listrefractivos.contains(2)){
-                 if(Listrefractivos.indexOf(2) < Listrefractivos.length -1){
-                 Listrefractivos[Listrefractivos.indexOf(2)+1] = 1;}else{
-                   Listrefractivos[0] = 1;
-                 }
-               }
+                provider.setDefectos =
+                    provider.getDefectos >= 12 ? 0 : provider.getDefectos + 2;
+                    provider.setDefectosSelected = provider.getDefectos;
               } else if (imageTrigger && zoom) {
                 _scale = 'flecha derecha';
                 provider.setMoveZoom = true;
@@ -291,7 +283,11 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
               break;
             case 458832: // IZQUIERDA
-              if (imageTrigger && zoom) {
+              if (cuadroBlanco) {
+                provider.setDefectos =
+                    provider.getDefectos <= 0 ? 0 : provider.getDefectos - 2;
+                    provider.setDefectosSelected = provider.getDefectos;
+              } else if (imageTrigger && zoom) {
                 _scale = 'flecha izquierda';
                 provider.setMoveZoom = true;
               } else {
@@ -312,7 +308,18 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               //     duration: Duration(milliseconds: 100));
               break;
             case 458792: // ENTER
-
+              if (cuadroBlanco) {
+                int imgIndex = (provider.getDefectos - provider.getImgSelected)/2;
+                int imgSelected = provider.getImgSelected;
+                  if (imgSelected == 0) {
+                imgSelected = 1;
+              } else {
+                imgSelected = 0;
+              }
+              
+              provider.setImgSelected = imgSelected;
+              provider.setDefectos = imgIndex * 2 + imgSelected;
+              }
               if (imageTrigger) {
                 triggerBackgroundColor = !triggerBackgroundColor;
                 if (triggerBackgroundColor) {
@@ -368,7 +375,10 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 
               break;
             case 458756: // LETRA A
+            if(cuadroBlanco){menu = [6,1,0,0,0];}
+
               cuadroBlanco = false;
+
               if (isInMenu) {
                 changeVideo = isPlaying && videoTrigger;
                 if (menu.indexOf(0) > 0) {
@@ -482,40 +492,6 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
               ),
               Row(
                 children: List.generate(7, (index) {
-                  int imgSelected=0;
-                  bool selected=false;
-                  bool preSelected=false;
-                // stateRegractivos => 0 - Sin seleccionar
-                //                     1 - Para cambiar
-                //                     2 - Seleccionado
-                //                     3 - Seleccionado segunda opcion
-                // BOTONES 
-                // => 0 - Sin seleccionar
-                // => 1 - Imagen 1
-                // => 2 - Imagen 2
-                  switch (Listrefractivos[index]) {
-                    case 0:
-                      imgSelected = 0;
-                      selected = false;
-                      preSelected = false;
-                      break;
-                      case 1: 
-                      imgSelected = 0;
-                      selected = false;
-                      preSelected = true;
-                      break;
-                      case 2: 
-                       imgSelected = 1;
-                      selected = true;
-                      preSelected = false;
-                      break;
-                      case 3: 
-                      imgSelected = 2;
-                      selected = true;
-                      preSelected = false;
-                      break;
-                    default:
-                  }
                   return Botones(index);
                 }),
               ),
@@ -542,6 +518,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
       body: WillPopScope(
         onWillPop: () {
           _validation(context);
+          if(cuadroBlanco){menu = [6,1,0,0,0];}
           cuadroBlanco = false;
           if (isInMenu) {
             changeVideo = isPlaying && videoTrigger;
@@ -645,7 +622,6 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
 }
 
 class ImagesDefectos extends StatefulWidget {
-  
   @override
   _ImagesDefectosState createState() => _ImagesDefectosState();
 }
@@ -775,11 +751,13 @@ class _BotonesState extends State<Botones> {
     ];
 
     print('-----------------------------');
-    selected = ((imagesProvider.getDefectos - imgSelected) / 2) == index;
-    if(!selected){ imgSelected = 0;} 
-    
-     
-    
+    selected = ((imagesProvider.getDefectos - imagesProvider.getImgSelected) / 2) == index;
+
+    if (!selected) {
+      imgSelected = 0;
+    }else if(imagesProvider.getImgSelected == 1){
+      imgSelected =1;
+    }else {imgSelected = 0;}
 
     Container ButtonImage = Container(
         height: imageHeight,
@@ -817,8 +795,10 @@ class _BotonesState extends State<Botones> {
               } else {
                 imgSelected = 0;
               }
-
+              
+              imagesProvider.setImgSelected = imgSelected;
               imagesProvider.setDefectos = index * 2 + imgSelected;
+              imagesProvider.setDefectosSelected = imagesProvider.getDefectos;
             });
           },
           child: Container(

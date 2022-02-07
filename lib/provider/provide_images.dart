@@ -6,6 +6,8 @@ class ProvideImages with ChangeNotifier {
   bool triggerImage = false;
   bool isPlaying = false;
   int defectos = 0;
+  int defectosSelected = 0;
+  int defectosImgSelected = 0;
   String ruta = 'Menu Principal';
   List pMenu = [0, 0, 0, 0, 0];
   List images = [
@@ -35,13 +37,27 @@ class ProvideImages with ChangeNotifier {
             0
           ]
         ];
-
+set setImgSelected(int n_defectos){
+    defectosImgSelected = n_defectos;
+    notifyListeners();
+  }
+  get getImgSelected{
+    return defectosImgSelected;
+  }
  set setDefectos(int n_defectos){
     defectos = n_defectos;
     notifyListeners();
   }
   get getDefectos{
     return defectos;
+  }
+
+ set setDefectosSelected(int n_defectos){
+    defectosSelected = n_defectos;
+    notifyListeners();
+  }
+  get getDefectosSelected{
+    return defectosSelected;
   }
 
 
