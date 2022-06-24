@@ -129,6 +129,7 @@ flutter:
     - lib/assets/DIAL/
     - lib/assets/DEFECTOS REFRACTIVOS/
     - lib/assets/ATLAS E IMAGENES DE REFERENCIA/
+    - lib/assets/IconosDefectos/
     # - lib/assets/VIDEOS PUNTOS DE FIJACION/
   #   - images/a_dot_ham.jpeg
 

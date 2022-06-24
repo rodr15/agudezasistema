@@ -38,13 +38,13 @@ class Name extends StatelessWidget {
     double heigthScreen = MediaQuery.of(context).size.height;
     double widthScreen = MediaQuery.of(context).size.width;
     return Container(
-      color: Colors.transparent,
+      color: Colors.black,
       width: widthScreen / 3,
       height: heigthScreen / 10,
       child: Center(
         child: Text(
           name,
-          style: TextStyle(
+          style: const TextStyle(
               color: Colors.white,
               fontSize: 50,
               fontStyle: FontStyle.italic,
